@@ -227,7 +227,19 @@
         .header-link-group:hover .arrow-circle { background: var(--accent); color: #fff; transform: translateY(0); }
         .header-link-group:hover .header-link-text a { color: var(--accent); border-color: var(--accent); }
         
-        .arrow-circle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #111; color: #fff; font-size: 16px; transition: 0.2s; }
+        .arrow-circle { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 44px; 
+    height: 44px; 
+    border-radius: 50%; 
+    background: #111; 
+    color: #fff; 
+    font-size: 16px; 
+    transition: 0.2s; 
+    flex-shrink: 0; /* Prevents the circle from becoming an oval on mobile */
+}
         .arrow-circle:hover { background: var(--accent); color: #fff; transform: translateY(0); }
 
         /* SECTION: TEAM & TEAMS */
@@ -607,7 +619,7 @@
                             <p class="t-body" style="font-size: 1.2rem; color: #111;">To create <span style="font-weight: 600;">always-available</span> systems that vanish into the fabric of daily life.</p>
                             
                             <a href="#research" class="explore-container">
-                                <span class="explore-text">EXPLORE RESEARCH</span>
+                                <span class="explore-text">Explore Research</span>
                                 <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
                             </a>
                         </div>
