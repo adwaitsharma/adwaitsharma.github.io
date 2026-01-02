@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Project Title | Adwait Sharma</title>
+    <meta name="description" content="Brief description of the project.">
+    
+    <meta property="og:title" content="Project Title | Adwait Sharma">
+    <meta property="og:description" content="Brief description.">
+    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:url" content="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        body { padding-top: 0; }
+        .container { display: flex; flex-direction: column; min-height: 100vh; }
+        .project-wrapper { max-width: 1000px; width: 100%; margin: 0 auto; padding: 60px 20px 60px 20px; flex: 1; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="navbar" id="top-navigation">
+            <a href="../index.html" class="nav-brand">ADWAIT SHARMA</a>
+            <div class="nav-links">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#ais-lab" class="nav-link">AIS Lab</a>
+                <a href="../index.html#teams" class="nav-link">Team</a>
+                <a href="../index.html#publications" class="nav-link">Publications</a>
+                <a href="../index.html#service" class="nav-link">Service</a>
+                <a href="../index.html#join" class="nav-link">Join Us</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mobile-link">About</a>
+            <a href="../index.html#publications" class="mobile-link">Publications</a>
+            <a href="../index.html#contact" class="mobile-link">Contact</a>
+            <button onclick="toggleMenu()" style="font-size:30px; border:none; margin-top:20px;">×</button>
+        </div>
+
+        <div class="project-wrapper">
+            
+            <a href="../index.html#publications" class="back-nav">
+                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="back-text">Back to main site</span>
+            </a>
+
+            <header class="pp-header">
+                <span id="pp-venue" class="pp-venue"></span>
+                <h1 id="pp-title" class="pp-title"></h1>
+                <div id="pp-award-container"></div>
+            </header>
+
+            <div id="pp-media" class="pp-media-container"></div>
+
+            <div class="pp-content-grid">
+                <div class="pp-main-text">
+                    <span class="pp-abstract-label">Abstract</span>
+                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                </div>
+                <aside class="pp-sidebar">
+                    <div class="pp-meta-group">
+                        <h4>Resources</h4>
+                        <div id="pp-buttons" class="pp-actions"></div>
+                    </div>
+                    <div class="pp-meta-group">
+                        <h4>Tags</h4>
+                        <div id="pp-tags" class="pp-tags"></div>
+                    </div>
+                    <div class="pp-meta-group">
+                        <h4>Share</h4>
+                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');">
+                            <i class="fa-solid fa-link"></i> Copy Link
+                        </button>
+                    </div>
+                </aside>
+            </div>
+
+            <section class="related-section">
+                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <div id="related-projects-grid" class="related-grid"></div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <span id="footer-copyright" style="color:#e0e0e0;">© 2025 ADWAIT SHARMA</span>
+                <span id="footer-update" style="color:#999;">Last updated: December 2025</span>
+            </div>
+            <div style="text-align:right; max-width: 50%; line-height: 1.6; color: #ccc;">
+                Bath – Toronto – Copenhagen – Saarbrücken – Hagenberg – Vancouver – Singapore – Bangalore – Mathura
+            </div>
+        </footer>
+
+        <div id="bibtex-modal" class="bibtex-overlay">
+            <div class="bibtex-box">
+                <div class="bibtex-header">
+                    <span class="bibtex-title">BibTeX Citation</span>
+                    <span class="close-bib" onclick="closeBibtex()">×</span>
+                </div>
+                <textarea id="bibtex-text" class="bibtex-code" readonly></textarea>
+                <button class="btn-copy" onclick="copyBibtex()">Copy to Clipboard</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const mobileMenu = document.getElementById('mobileMenu');
+        function toggleMenu() { mobileMenu.classList.toggle('active'); }
+        
+        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        window.projectID = 'p5'; 
+    </script>
+    <script src="../js/data.js"></script>
+    <script src="../js/renderer.js"></script>
+
+</body>
+</html>
