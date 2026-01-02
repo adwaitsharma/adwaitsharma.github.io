@@ -79,7 +79,7 @@ const publicationsData = [
         type: ["Conference", "Interaction Techniques", "Sensing"],
         desc: "Platform that enables high-fidelity force feedback on deformable interfaces via hydrostatic transmission.",
         fullAbstract: "Soft deformable interfaces offer unique interaction potential through input flexibility and diverse forms. However, force feedback on these devices remains limited, with pneumatic approaches lacking responsiveness and precision, while microhydraulic solutions are constrained to small form factors with limited input. We present HydroHaptics, a novel platform that enables high-fidelity force feedback on deformable interfaces via hydrostatic transmission. Surpassing current state-of-the-art methods, our approach allows fine-grained force feedback on soft interfaces, achieving a 10 N force change in <  100 ms and accurate 1 N, 10 Hz oscillation rendering. We detail the system’s design and implementation, highlighting its ability to maintain the inherent interaction benefits of soft interfaces. A user study (N = 18) evaluates the system’s performance, showing high accuracy in rendering distinct haptic effects (82.6% accuracy) and classifying input gestures (89.1% accuracy). To showcase the platform’s versatility, we present four applications illustrating HydroHaptics’ potential to enhance interaction with deformable devices and unlock novel user experiences.",
-        thumb: "images/publications/hydroHaptics_uist25.webp",
+        thumb: "images/publications/hydrohaptics_uist25.webp",
         modalVideo: "",
         award: '<span class="pub-award">Best Paper Honorable Mention</span>',
         pdf: "https://dl.acm.org/doi/epdf/10.1145/3746059.3747679",
