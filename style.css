@@ -114,7 +114,7 @@ a.text-link:hover {
 .affil-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; color: var(--text-meta); margin-bottom: 12px; display: block; letter-spacing: 0.1em; font-weight: 600;}
 .scandi-affil-list { display: flex; flex-direction: column; gap: 18px; width: 100%; }
 .scandi-affil-item { display: grid; grid-template-columns: 60px 1fr; align-items: center; gap: 16px; padding: 2px 0; }
-.scandi-affil-logo { width: 100%; height: 40px; object-fit: contain; object-position: left center; opacity: 0.85; transition: opacity 0.2s ease; }
+.scandi-affil-logo { width: 100%; height: 40px; object-fit: contain; object-position: center center; opacity: 0.85; transition: opacity 0.2s ease; }
 .scandi-affil-item:hover .scandi-affil-logo { opacity: 1; }
 .scandi-affil-info h4 { font-family: var(--font-head); font-weight: 500; font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.2; letter-spacing: -0.01em; }
 
@@ -133,6 +133,17 @@ a.text-link:hover {
 #aislab-hero { padding: var(--pad-section) var(--pad-x) !important; text-align: center; }
 .lab-brand { font-size: clamp(3.5rem, 14vw, 8rem); font-weight: 900; letter-spacing: 0.04em; line-height: 0.8; color: #111; text-transform: uppercase; }
 .lab-sub { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 24px; }
+
+/* AIS Lab Hero Grid (Responsive Fix) */
+.ais-hero-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    margin-top: 60px; 
+    align-items: start; 
+    border-top: 1px solid #E5E5E5; 
+    padding-top: 60px; 
+}
 
 .explore-container { margin-top: 24px; display: inline-flex; align-items: center; gap: 16px; text-decoration: none; cursor: pointer; }
 .explore-text { font-family: var(--font-mono); font-size: 0.75rem; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 1px; transition: 0.2s; }
@@ -313,6 +324,9 @@ a.text-link:hover {
     
     .hero-wrap, .ra-grid, .proj-grid, .team-grid, .pub-row, .panel-grid.cols-2-1, .panel-grid.cols-1-1, .contact-section { grid-template-columns: 1fr; }
     
+    /* Responsive Grid for AIS Hero */
+    .ais-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+
     .panel-cell { border-right: none; border-bottom: 1px solid var(--border); }
     .profile-col { position: static; margin-bottom: 40px; }
     .footer { flex-direction: column; gap: 20px; align-items: flex-start; }
