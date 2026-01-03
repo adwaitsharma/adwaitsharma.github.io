@@ -114,7 +114,8 @@ a.text-link:hover {
 .affil-label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; color: var(--text-meta); margin-bottom: 12px; display: block; letter-spacing: 0.1em; font-weight: 600;}
 .scandi-affil-list { display: flex; flex-direction: column; gap: 18px; width: 100%; }
 .scandi-affil-item { display: grid; grid-template-columns: 60px 1fr; align-items: center; gap: 16px; padding: 2px 0; }
-.scandi-affil-logo { width: 100%; height: 40px; object-fit: contain; object-position: center center; opacity: 0.85; transition: opacity 0.2s ease; }
+.scandi-affil-logo { width: 100%; height: 40px; object-fit: contain; object-position: left center; opacity: 0.85; transition: opacity 0.2s ease; }
+/*.scandi-affil-logo1 { width: 100%; height: 40px; object-fit: contain; object-position: left center; opacity: 0.85; transition: opacity 0.2s ease; }*/
 .scandi-affil-item:hover .scandi-affil-logo { opacity: 1; }
 .scandi-affil-info h4 { font-family: var(--font-head); font-weight: 500; font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.2; letter-spacing: -0.01em; }
 
