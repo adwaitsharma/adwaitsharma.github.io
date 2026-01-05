@@ -1,6 +1,6 @@
 /**
  * js/renderer.js
- * Handles dynamic content injection for Project Pages.
+ * Handles dynamic content injection for Project Pages with Enhanced SEO.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,7 +18,84 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Update Meta & Title
-    document.title = `${currentProject.title} | Adwait Sharma`;
+    const pageTitle = `${currentProject.title} | Adwait Sharma`;
+    document.title = pageTitle;
+    
+    // --- SEO FIX START: Auto-Generate Tags ---
+    
+    // Helper to set meta tags dynamically
+    const setMeta = (attrName, attrVal, content) => {
+        let el = document.querySelector(`meta[${attrName}='${attrVal}']`);
+        if (!el) {
+            el = document.createElement('meta');
+            el.setAttribute(attrName, attrVal);
+            document.head.appendChild(el);
+        }
+        el.content = content;
+    };
+
+    // 3.1 Meta Description (Use Abstract or Desc)
+    const seoDesc = currentProject.desc.length > 150 
+        ? currentProject.desc 
+        : (currentProject.fullAbstract ? currentProject.fullAbstract.substring(0, 155) + '...' : currentProject.title);
+    setMeta('name', 'description', seoDesc);
+
+    // 3.2 Open Graph Tags
+    setMeta('property', 'og:title', pageTitle);
+    setMeta('property', 'og:description', seoDesc);
+    setMeta('property', 'og:image', `https://www.adwaitsharma.com/${currentProject.thumb}`);
+    setMeta('property', 'og:url', window.location.href);
+    setMeta('property', 'og:type', 'article');
+
+    // 3.3 Twitter Card
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:title', pageTitle);
+    setMeta('name', 'twitter:description', seoDesc);
+    setMeta('name', 'twitter:image', `https://www.adwaitsharma.com/${currentProject.thumb}`);
+    setMeta('name', 'twitter:site', '@adwait_sharma');
+
+    // 3.4 Inject Canonical Tag (Fixes "Page with redirect" issues)
+    const cleanUrl = window.location.href.split('?')[0].split('#')[0];
+    let linkCan = document.querySelector("link[rel='canonical']");
+    if (!linkCan) {
+        linkCan = document.createElement('link');
+        linkCan.rel = 'canonical';
+        document.head.appendChild(linkCan);
+    }
+    linkCan.href = cleanUrl;
+
+    // 3.5 Inject Robots Tag (Fixes "Excluded by noindex" issues)
+    setMeta('name', 'robots', 'index, follow');
+
+    // 3.6 Structured Data (JSON-LD) for Google Scholar
+    const yearMatch = currentProject.venue.match(/\d{4}/);
+    const pubYear = yearMatch ? yearMatch[0] : new Date().getFullYear().toString();
+    
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": currentProject.title,
+        "image": `https://www.adwaitsharma.com/${currentProject.thumb}`,
+        "description": seoDesc,
+        "abstract": currentProject.fullAbstract || currentProject.desc,
+        "author": currentProject.authors.split(', ').map(name => ({
+            "@type": "Person",
+            "name": name.trim()
+        })),
+        "datePublished": pubYear,
+        "publication": {
+            "@type": "PublicationEvent",
+            "name": currentProject.venue
+        }
+    };
+    if (currentProject.pdf && currentProject.pdf !== '#') schemaData.url = currentProject.pdf;
+    
+    const scriptSchema = document.createElement('script');
+    scriptSchema.type = 'application/ld+json';
+    scriptSchema.text = JSON.stringify(schemaData);
+    document.head.appendChild(scriptSchema);
+
+    // --- SEO FIX END ---
     
     // 4. Inject Header Content
     const venueEl = document.getElementById('pp-venue');
@@ -42,11 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const mediaContainer = document.getElementById('pp-media');
     if (mediaContainer) {
         if (currentProject.modalVideo && currentProject.modalVideo !== '#') {
-            mediaContainer.innerHTML = `<iframe src="${currentProject.modalVideo}" title="${currentProject.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            mediaContainer.innerHTML = `<iframe src="${currentProject.modalVideo}" title="${currentProject.title} Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         } else {
             // Handle relative path for images from project-pages/ folder
             const imgPath = `../${currentProject.thumb}`;
-            mediaContainer.innerHTML = `<img src="${imgPath}" alt="${currentProject.title}">`;
+            mediaContainer.innerHTML = `<img src="${imgPath}" alt="${currentProject.title} project visualization">`;
         }
     }
 
@@ -58,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Helper: Only returns HTML if url exists and isn't a placeholder
         const createBtn = (label, iconClass, url, onclick = null) => {
             if (onclick) {
-                 return `<button onclick="${onclick}" class="pp-btn"><i class="${iconClass}"></i> ${label}</button>`;
+                 return `<button onclick="${onclick}" class="pp-btn" aria-label="${label}"><i class="${iconClass}"></i> ${label}</button>`;
             }
             if (!url || url.trim() === '' || url === '#') return '';
-            return `<a href="${url}" target="_blank" class="pp-btn"><i class="${iconClass}"></i> ${label}</a>`;
+            return `<a href="${url}" target="_blank" class="pp-btn" rel="noopener noreferrer" aria-label="${label}"><i class="${iconClass}"></i> ${label}</a>`;
         };
 
         // Add all supported buttons

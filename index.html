@@ -1,21 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD1R9JRBXR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XD1R9JRBXR');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD1R9JRBXR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XD1R9JRBXR');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adwait Sharma | AIS Lab</title>
+    
+    <title>Adwait Sharma | AIS Lab | University of Bath</title>
+    <meta name="description" content="Adwait Sharma is an Assistant Professor in HCI at the University of Bath and director of the AIS Lab (Advanced Interaction & Sensing). Researching always-available computing, microgestures, and robotics.">
+    <meta name="keywords" content="Adwait Sharma, AIS Lab, HCI, Human-Computer Interaction, University of Bath, Microgestures, Ubiquitous Computing, Soft Robotics, Sparse Sensing">
+    <meta name="author" content="Adwait Sharma">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.adwaitsharma.com/index.html">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Adwait Sharma | AIS Lab - Advanced Interaction & Sensing">
+    <meta property="og:description" content="Assistant Professor in HCI at the University of Bath. Researching always-available computing, microgestures, and robotics.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/adwait-headshot.JPG">
+    <meta property="og:url" content="https://www.adwaitsharma.com/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adwait Sharma | AIS Lab">
+    <meta name="twitter:description" content="Assistant Professor in HCI at the University of Bath. Researching always-available computing.">
+    <meta name="twitter:image" content="https://www.adwaitsharma.com/images/adwait-headshot.JPG">
+    <meta name="twitter:site" content="@adwait_sharma">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://www.adwaitsharma.com/#adwaitsharma",
+          "name": "Adwait Sharma",
+          "jobTitle": "Assistant Professor",
+          "image": "https://www.adwaitsharma.com/images/adwait-headshot.JPG",
+          "url": "https://www.adwaitsharma.com/",
+          "sameAs": [
+            "https://scholar.google.com/citations?user=wi9iES8AAAAJ",
+            "https://twitter.com/adwait_sharma",
+            "https://www.linkedin.com/in/adwaitsharma/",
+            "https://researchportal.bath.ac.uk/en/persons/adwait-sharma/"
+          ],
+          "affiliation": {
+            "@type": "Organization",
+            "name": "University of Bath",
+            "sameAs": "https://www.bath.ac.uk/"
+          }
+        },
+        {
+          "@type": "ResearchOrganization",
+          "name": "AIS Lab (Advanced Interaction & Sensing)",
+          "alternateName": "AIS Lab",
+          "url": "https://www.adwaitsharma.com/#ais-lab",
+          "logo": "https://www.adwaitsharma.com/images/bath-logo.webp",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "University of Bath"
+          },
+          "founder": {
+            "@id": "https://www.adwaitsharma.com/#adwaitsharma"
+          }
+        }
+      ]
+    }
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -27,7 +86,7 @@
 
     <div class="container" id="main-site-container">
         
-        <nav class="navbar" id="top-navigation">
+        <nav class="navbar" id="top-navigation" aria-label="Main Navigation">
             <a href="#" class="nav-brand" id="site-logo">ADWAIT SHARMA</a>
             <div class="nav-links" id="desktop-menu">
                 <a href="#about" class="nav-link active">About</a>
@@ -39,7 +98,7 @@
                 <a href="#join" class="nav-link">Join Us</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -53,670 +112,673 @@
             <a href="#press" onclick="toggleMenu()" class="mobile-link">Press</a>
             <a href="#join" onclick="toggleMenu()" class="mobile-link">Join Us</a>
             <a href="#contact" onclick="toggleMenu()" class="mobile-link">Contact</a>
-            <button id="close-mobile-menu" onclick="toggleMenu()" style="font-size:30px; border:none; margin-top:20px;">×</button>
+            
+            <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <section id="about" class="section-pad">
-            <div class="hero-wrap" id="about-hero-wrapper">
-                
-                <div class="profile-col" id="profile-card">
-                    <div id="profile-main-info">
-                        <img src="images/adwait-headshot.JPG" class="profile-img" alt="Adwait" id="profile-avatar" width="170" height="170">
-                        <div class="profile-name" id="profile-name">Adwait Sharma, Ph.D.</div>
-                        <div class="profile-role" id="profile-title">Asst. Prof., Computer Science<br>University of Bath (UK)</div>
-                        <a href="mailto:as5339@bath.ac.uk" class="profile-email" id="profile-email-link">as5339@bath.ac.uk</a>
-                        
-                        <div class="social-icons" id="profile-socials">
-                            <a href="https://researchportal.bath.ac.uk/en/persons/adwait-sharma/" target="_blank" rel="noopener noreferrer" title="University of Bath"><i class="fa-solid fa-building-columns"></i></a>
-                            <a href="https://scholar.google.com/citations?user=wi9iES8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                            <a href="https://dblp.org/pid/207/5446.html" target="_blank" rel="noopener noreferrer" title="DBLP"><i class="fa-solid fa-book"></i></a>
-                            <a href="https://www.linkedin.com/in/adwaitsharma/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://x.com/adwait_sharma" target="_blank" rel="noopener noreferrer" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="affil-group">
-                        <span class="affil-label">Current</span>
-                        <div class="scandi-affil-list">
-                            <div class="scandi-affil-item">
-                                <img src="images/bath-logo.webp" class="scandi-affil-logo" loading="lazy">
-                                <div class="scandi-affil-info">
-                                    <h4>University of Bath</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="affil-group">
-                        <span class="affil-label">Previous</span>
-                        <div class="scandi-affil-list" id="org-logo-list">
-                            <div class="scandi-affil-item">
-                                <img src="images/meta-logo.webp" class="scandi-affil-logo" loading="lazy">
-                                <div class="scandi-affil-info">
-                                    <h4>Meta Reality Labs</h4>
-                                </div>
-                            </div>
-                            <div class="scandi-affil-item">
-                                <img src="images/mpi-logo.webp" class="scandi-affil-logo" loading="lazy">
-                                <div class="scandi-affil-info">
-                                    <h4>HCI Lab, Saarland University & Max Planck Institute</h4>
-                                </div>
-                            </div>
-                            <div class="scandi-affil-item">
-                                <img src="images/milab-logo.webp" class="scandi-affil-logo" loading="lazy" style="height: 24px; width: auto; margin: 0 auto;">
-                                <div class="scandi-affil-info">
-                                    <h4>Media Interaction Lab, Austria</h4>
-                                </div>
-                            </div>
-                            <div class="scandi-affil-item">
-                                <img src="images/nus-logo.webp" class="scandi-affil-logo" loading="lazy">
-                                <div class="scandi-affil-info">
-                                    <h4>National University of Singapore</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="about-content-column">
-                    <h1 class="t-h1" id="about-main-headline" style="margin-bottom:35px; font-size: 2.5rem; line-height: 1.1;">
-                        Making computing<br>
-                        <span style="color:var(--text-meta);">always-available.</span>
-                    </h1>
-
-                    <p class="t-body" style="margin-bottom: 1.5em;">
-                        I am an Assistant Professor in Computer Science at the University of Bath, where I lead the <strong> <a href="#ais-lab" class="text-link">Advanced Interaction and Sensing (AIS) Lab</a></strong>. I also hold an honorary appointment with NHS Bristol Trust and am a Fellow of the Association of British Science Writers.
-                    </p>
-
-                    <p class="t-body" style="margin-bottom: 1.5em;">
-                        My research bridges Machine Learning and Human–Computer Interaction to enable always-available computing. At the AIS Lab, we develop practical solutions in three areas:
-                    </p>
-
-                    <div style="margin-bottom: 2em; border-left: 1px solid #e0e0e0; padding-left: 20px;">
-                        <div style="margin-bottom: 12px;">
-                            <span class="list-number" style="font-family: monospace; font-size: 0.9em; opacity: 0.5; margin-right: 12px;">01</span> 
-                            <span> <strong>Smart wearables </strong> that track user motion.</span>
-                        </div>
-                        <div style="margin-bottom: 12px;">
-                            <span class="list-number" style="font-family: monospace; font-size: 0.9em; opacity: 0.5; margin-right: 12px;">02</span> 
-                            <span> <strong>Input techniques </strong> that support hands-busy, eyes-free contexts.</span>
-                        </div>
-                        <div>
-                            <span class="list-number" style="font-family: monospace; font-size: 0.9em; opacity: 0.5; margin-right: 12px;">03</span> 
-                            <span> <strong>Robotic systems </strong> that assist people proactively in daily life.</span>
-                        </div>
-                    </div>
-
-                    <p class="t-body" style="margin-bottom: 3em;">
-                        Our lab specializes in developing novel approaches to interaction design, sensing, and AI, creating new ways for people to engage with computing systems, especially when hands are busy or attention is focused elsewhere. Our research is published in top venues including ACM CHI, UIST, DIS, and TOCHI, and has been featured by major media outlets such as the BBC, NPR, and The Independent.
-                    </p>
-
-                    <div style="padding-top: 20px; margin-bottom: 20px;">
-                        <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; opacity: 0.5;">Background</h3>
-                        <p class="t-body" style="margin-bottom: 1.5em;">
-                            I received my Ph.D. from the Human–Computer Interaction group at the Max Planck Institute and Saarland University in Germany. My experience spans both industrial and academic labs, enabling me to translate novel research into scalable technologies with real-world impact in healthcare and consumer applications.
-                        </p>
-                        <p class="t-body" style="margin-bottom: 2em;">
-                            Outside the lab, I collect fountain pens, enjoy clever puns, and love strolling in new cities. I welcome connections regarding student opportunities and research partnerships, or simply to chat about my experiences living across seven countries. Please feel free to <a href="#contact" class="text-link">contact me</a>.
-                        </p>
-                    </div>
-
-                    <div class="news-module" id="news-section" style="font-family: monospace; font-size: 0.85rem; color: #555;">
-                        <div class="news-item" style="margin-bottom: 6px;"><span class="news-date" style="opacity: 0.5; margin-right: 15px;">Jan 02</span><span>Pushed the new version of this new website in beta</span></div>
-                        <div class="news-item"><span class="news-date" style="opacity: 0.5; margin-right: 15px;">Jan 02</span><span>Some exciting news coming from the lab - stay tuned!</span></div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <div id="ais-lab">
-            <section id="aislab-hero">
-                <div style="max-width: 1100px; margin: 0 auto; position: relative;">
-                    <h1 class="lab-brand">AIS<span style="font-weight: 100; opacity: 0.3;">LAB</span></h1>
-                    <div class="t-mono" style="margin-top: 16px; margin-bottom: 30px; opacity: 0.6; font-size: 0.8rem; letter-spacing: 0.05em;">(pronounced “ace”)</div>
+        <main> <section id="about" class="section-pad">
+                <div class="hero-wrap" id="about-hero-wrapper">
                     
-                    <div class="lab-sub">Advanced Interaction & Sensing</div>
-                    
-                    <div class="ais-hero-grid">
-                        <div style="text-align: left;">
-                            <span class="t-mono" style="margin-bottom: 24px; display: block;">OUR TOOLS</span>
-                            <div style="height: 40px; display: flex; align-items: baseline;">
-                                <span id="lab-typewriter" style="font-size: 1.8rem; font-weight: 500; letter-spacing: -0.02em; color: #000;"></span>
-                                <span style="font-size: 1.8rem; font-weight: 100; color: #000; animation: blinkCursor 0.8s infinite;">_</span>
-                            </div>
-                        </div>
-                        <div style="text-align: left;">
-                            <span class="t-mono" style="margin-bottom: 24px; display: block;">MISSION</span>
-                            <p class="t-body" style="font-size: 1.2rem; color: #111;">To create <span style="font-weight: 600;">always-available</span> computing systems that seamlessly integrate into daily life, enabling inclusive, impactful, and practical human-technology interactions.</p>
+                    <div class="profile-col" id="profile-card">
+                        <div id="profile-main-info">
+                            <img src="images/adwait-headshot.JPG" class="profile-img" alt="Adwait Sharma Headshot" id="profile-avatar" width="170" height="170">
                             
-                            <a href="#research" class="explore-container">
-                                <span class="explore-text">Explore research</span>
-                                <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
-                            </a>
+                            <h1 class="profile-name" id="profile-name" style="font-size: 1.3rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.2;">Adwait Sharma, Ph.D.</h1>
+                            
+                            <div class="profile-role" id="profile-title">Asst. Prof., Computer Science<br>University of Bath (UK)</div>
+                            <a href="mailto:as5339@bath.ac.uk" class="profile-email" id="profile-email-link">as5339@bath.ac.uk</a>
+                            
+                            <div class="social-icons" id="profile-socials">
+                                <a href="https://researchportal.bath.ac.uk/en/persons/adwait-sharma/" target="_blank" rel="noopener noreferrer" title="University of Bath" aria-label="University of Bath Profile"><i class="fa-solid fa-building-columns"></i></a>
+                                <a href="https://scholar.google.com/citations?user=wi9iES8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+                                <a href="https://dblp.org/pid/207/5446.html" target="_blank" rel="noopener noreferrer" title="DBLP" aria-label="DBLP"><i class="fa-solid fa-book"></i></a>
+                                <a href="https://www.linkedin.com/in/adwaitsharma/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://x.com/adwait_sharma" target="_blank" rel="noopener noreferrer" title="X / Twitter" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="affil-group">
+                            <span class="affil-label">Current</span>
+                            <div class="scandi-affil-list">
+                                <div class="scandi-affil-item">
+                                    <img src="images/bath-logo.webp" class="scandi-affil-logo" alt="University of Bath Logo" loading="lazy">
+                                    <div class="scandi-affil-info">
+                                        <h4>University of Bath</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="affil-group">
+                            <span class="affil-label">Previous</span>
+                            <div class="scandi-affil-list" id="org-logo-list">
+                                <div class="scandi-affil-item">
+                                    <img src="images/meta-logo.webp" class="scandi-affil-logo" alt="Meta Reality Labs" loading="lazy">
+                                    <div class="scandi-affil-info">
+                                        <h4>Meta Reality Labs</h4>
+                                    </div>
+                                </div>
+                                <div class="scandi-affil-item">
+                                    <img src="images/mpi-logo.webp" class="scandi-affil-logo" alt="Max Planck Institute" loading="lazy">
+                                    <div class="scandi-affil-info">
+                                        <h4>HCI Lab, Saarland University & Max Planck Institute</h4>
+                                    </div>
+                                </div>
+                                <div class="scandi-affil-item">
+                                    <img src="images/milab-logo.webp" class="scandi-affil-logo" alt="Media Interaction Lab" loading="lazy" style="height: 24px; width: auto; margin: 0 auto;">
+                                    <div class="scandi-affil-info">
+                                        <h4>Media Interaction Lab, Austria</h4>
+                                    </div>
+                                </div>
+                                <div class="scandi-affil-item">
+                                    <img src="images/nus-logo.webp" class="scandi-affil-logo" alt="NUS" loading="lazy">
+                                    <div class="scandi-affil-info">
+                                        <h4>National University of Singapore</h4>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div id="about-content-column">
+                        <h2 class="t-h1" id="about-main-headline" style="margin-bottom:35px; font-size: 2.5rem; line-height: 1.1;">
+                            Making computing<br>
+                            <span style="color:var(--text-meta);">always-available.</span>
+                        </h2>
+
+                        <p class="t-body" style="margin-bottom: 1.5em;">
+                            I am an Assistant Professor in Computer Science at the University of Bath, where I lead the <strong> <a href="#ais-lab" class="text-link">Advanced Interaction and Sensing (AIS) Lab</a></strong>. I also hold an honorary appointment with NHS Bristol Trust and am a Fellow of the Association of British Science Writers.
+                        </p>
+
+                        <p class="t-body" style="margin-bottom: 1.5em;">
+                            My research bridges Machine Learning and Human–Computer Interaction to enable always-available computing. At the AIS Lab, we develop practical solutions in three areas:
+                        </p>
+
+                        <div style="margin-bottom: 2em; border-left: 1px solid #e0e0e0; padding-left: 20px;">
+                            <div style="margin-bottom: 12px;">
+                                <span class="list-number" style="font-family: monospace; font-size: 0.9em; opacity: 0.5; margin-right: 12px;">01</span> 
+                                <span> <strong>Smart wearables </strong> that track user motion.</span>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <span class="list-number" style="font-family: monospace; font-size: 0.9em; opacity: 0.5; margin-right: 12px;">02</span> 
+                                <span> <strong>Input techniques </strong> that support hands-busy, eyes-free contexts.</span>
+                            </div>
+                            <div>
+                                <span class="list-number" style="font-family: monospace; font-size: 0.9em; opacity: 0.5; margin-right: 12px;">03</span> 
+                                <span> <strong>Robotic systems </strong> that assist people proactively in daily life.</span>
+                            </div>
+                        </div>
+
+                        <p class="t-body" style="margin-bottom: 3em;">
+                            Our lab specializes in developing novel approaches to interaction design, sensing, and AI, creating new ways for people to engage with computing systems, especially when hands are busy or attention is focused elsewhere. Our research is published in top venues including ACM CHI, UIST, DIS, and TOCHI, and has been featured by major media outlets such as the BBC, NPR, and The Independent.
+                        </p>
+
+                        <div style="padding-top: 20px; margin-bottom: 20px;">
+                            <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; opacity: 0.5;">Background</h3>
+                            <p class="t-body" style="margin-bottom: 1.5em;">
+                                I received my Ph.D. from the Human–Computer Interaction group at the Max Planck Institute and Saarland University in Germany. My experience spans both industrial and academic labs, enabling me to translate novel research into scalable technologies with real-world impact in healthcare and consumer applications.
+                            </p>
+                            <p class="t-body" style="margin-bottom: 2em;">
+                                Outside the lab, I collect fountain pens, enjoy clever puns, and love strolling in new cities. I welcome connections regarding student opportunities and research partnerships, or simply to chat about my experiences living across seven countries. Please feel free to <a href="#contact" class="text-link">contact me</a>.
+                            </p>
+                        </div>
+
+                        <div class="news-module" id="news-section" style="font-family: monospace; font-size: 0.85rem; color: #555;">
+                            <div class="news-item" style="margin-bottom: 6px;"><span class="news-date" style="opacity: 0.5; margin-right: 15px;">Jan 02</span><span>Pushed the new version of this new website in beta</span></div>
+                            <div class="news-item"><span class="news-date" style="opacity: 0.5; margin-right: 15px;">Jan 02</span><span>Some exciting news coming from the lab - stay tuned!</span></div>
+                        </div>
+                    </div>
+
                 </div>
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#000 0.5px, transparent 0.5px); background-size: 40px 40px; opacity: 0.03; pointer-events: none;"></div>
             </section>
-        
-            <section id="research" class="section-pad" style="border-top: 1px solid var(--border);">
-                <div id="research-areas-container" data-aos="fade-up">
-                    <h2 class="t-h2" id="research-title">Research Areas</h2>
-                    <div class="ra-grid" id="research-grid">
-                        <div class="ra-card" id="ra-card-gestures">
-                            <div class="ra-anim-wrapper"><canvas id="anim-gestures"></canvas></div>
-                            <h3 class="ra-title">Low-effort Microgestures</h3>
-                            <p class="ra-desc">Investigating ergonomic factors for subtle input design.</p>
+
+            <div id="ais-lab">
+                <section id="aislab-hero">
+                    <div style="max-width: 1100px; margin: 0 auto; position: relative;">
+                        <h2 class="lab-brand">AIS<span style="font-weight: 200; opacity: 0.3;">LAB</span></h2>
+                        <div class="t-mono" style="margin-top: 16px; margin-bottom: 30px; opacity: 0.6; font-size: 0.8rem; letter-spacing: 0.05em;">(pronounced “ace”)</div>
+                        
+                        <div class="lab-sub">Advanced Interaction & Sensing</div>
+                        
+                        <div class="ais-hero-grid">
+                            <div style="text-align: left;">
+                                <span class="t-mono" style="margin-bottom: 24px; display: block;">OUR TOOLS</span>
+                                <div style="height: 40px; display: flex; align-items: baseline;">
+                                    <span id="lab-typewriter" style="font-size: 1.8rem; font-weight: 500; letter-spacing: -0.02em; color: #000;"></span>
+                                    <span style="font-size: 1.8rem; font-weight: 100; color: #000; animation: blinkCursor 0.8s infinite;">_</span>
+                                </div>
+                            </div>
+                            <div style="text-align: left;">
+                                <span class="t-mono" style="margin-bottom: 24px; display: block;">MISSION</span>
+                                <p class="t-body" style="font-size: 1.2rem; color: #111;">To create <span style="font-weight: 600;">always-available</span> computing systems that seamlessly integrate into daily life, enabling inclusive, impactful, and practical human-technology interactions.</p>
+                                
+                                <a href="#research" class="explore-container">
+                                    <span class="explore-text">Explore research</span>
+                                    <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="ra-card" id="ra-card-robotics">
-                            <div class="ra-anim-wrapper"><canvas id="anim-robotics"></canvas></div>
-                            <h3 class="ra-title">Ambient Robotics</h3>
-                            <p class="ra-desc">Reappropriating everyday objects into intelligent agents.</p>
+                    </div>
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#000 0.5px, transparent 0.5px); background-size: 40px 40px; opacity: 0.03; pointer-events: none;"></div>
+                </section>
+            
+                <section id="research" class="section-pad" style="border-top: 1px solid var(--border);">
+                    <div id="research-areas-container" data-aos="fade-up">
+                        <h2 class="t-h2" id="research-title">Research Areas</h2>
+                        <div class="ra-grid" id="research-grid">
+                            <article class="ra-card" id="ra-card-gestures">
+                                <div class="ra-anim-wrapper"><canvas id="anim-gestures"></canvas></div>
+                                <h3 class="ra-title">Low-effort Microgestures</h3>
+                                <p class="ra-desc">Investigating ergonomic factors for subtle input design.</p>
+                            </article>
+                            <article class="ra-card" id="ra-card-robotics">
+                                <div class="ra-anim-wrapper"><canvas id="anim-robotics"></canvas></div>
+                                <h3 class="ra-title">Ambient Robotics</h3>
+                                <p class="ra-desc">Reappropriating everyday objects into intelligent agents.</p>
+                            </article>
+                            <article class="ra-card" id="ra-card-sensing">
+                                <div class="ra-anim-wrapper"><canvas id="anim-sensing"></canvas></div>
+                                <h3 class="ra-title">Sparse Sensing</h3>
+                                <p class="ra-desc">Solving complex perception problems with minimal data points.</p>
+                            </article>
+                            <article class="ra-card" id="ra-card-edgeai">
+                                <div class="ra-anim-wrapper"><canvas id="anim-edgeai"></canvas></div>
+                                <h3 class="ra-title">Edge AI</h3>
+                                <p class="ra-desc">Creating near-zero latency inference pipelines that priortize privacy.</p>
+                            </article>
                         </div>
-                        <div class="ra-card" id="ra-card-sensing">
-                            <div class="ra-anim-wrapper"><canvas id="anim-sensing"></canvas></div>
-                            <h3 class="ra-title">Sparse Sensing</h3>
-                            <p class="ra-desc">Solving complex perception problems with minimal data points.</p>
+                    </div>
+                </section>
+
+                <section id="app-area-unique-section">
+                    <div class="app-unique-header">
+                        <h2>Always-Available Computing</h2>
+                        <p>Seamlessly integrating digital control into physical tasks, solving the disconnect between the task at hand and technology to support the primary action without interruption — across contexts like:</p>
+                    </div>
+
+                    <div class="app-unique-grid">
+                        <div class="app-unique-card">
+                            <div class="app-unique-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                </svg>
+                            </div>
+                            <h3>Healthcare</h3>
+                            <p>Ensure immediate accessibility for motor-impaired users and sterility for clinicians via contact-free, low-effort interactions.</p>
                         </div>
-                        <div class="ra-card" id="ra-card-edgeai">
-                            <div class="ra-anim-wrapper"><canvas id="anim-edgeai"></canvas></div>
-                            <h3 class="ra-title">Edge AI</h3>
-                            <p class="ra-desc">Creating near-zero latency inference pipelines that priortize privacy.</p>
+
+                        <div class="app-unique-card">
+                            <div class="app-unique-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </div>
+                            <h3>Smart Homes</h3>
+                            <p>Anticipate users' needs using ambient sensing to adjust comfort instantly, eliminating the need for loud, explicit commands.</p>
+                        </div>
+
+                        <div class="app-unique-card">
+                            <div class="app-unique-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.29-3.41a1 1 0 0 0-.83-.42H6a1 1 0 0 0-1 1v4h11"></path>
+                                    <circle cx="7" cy="16" r="2"></circle>
+                                    <circle cx="17" cy="16" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h3>Mobility</h3>
+                            <p>Preserve attention for commuters using continuous eyes-free interaction that ensures safety while navigating busy streets.</p>
+                        </div>
+
+                        <div class="app-unique-card">
+                            <div class="app-unique-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <h3>Industrial</h3>
+                            <p>Augment manual workflows with tool-aware AI agents that proactively verify precision and safety in demanding work environments.</p>
+                        </div>
+                    </div>
+
+                    <div class="app-unique-footer">
+                        <span>...and beyond.</span>
+                    </div>
+                </section>
+
+                <section id="featured-projects-section" class="section-pad" style="border-top: 1px solid var(--border);">
+                    <div data-aos="fade-up">
+                        <div class="projects-header">
+                            <h2 class="t-h2" id="projects-main-title">Featured Projects</h2>
+                            <div class="header-link-group">
+                                <span class="header-link-text">
+                                    <a href="#publications">See full list of<br>publications</a>
+                                </span>
+                                <a href="#publications" class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></a>
+                            </div>
                         </div>
                         
-                    </div>
-                </div>
-            </section>
-
-            <section id="app-area-unique-section">
-                <div class="app-unique-header">
-                    <h2>Always-Available Computing</h2>
-                    <p>Seamlessly integrating digital control into physical tasks, solving the disconnect between the task at hand and technology to support the primary action without interruption — across contexts like:</p>
-                </div>
-
-                <div class="app-unique-grid">
-                    <div class="app-unique-card">
-                        <div class="app-unique-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                            </svg>
-                        </div>
-                        <h3>Healthcare</h3>
-                        <p>Ensure immediate accessibility for motor-impaired users and sterility for clinicians via contact-free, low-effort interactions.</p>
-                    </div>
-
-                    <div class="app-unique-card">
-                        <div class="app-unique-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Smart Homes</h3>
-                        <p>Anticipate users' needs using ambient sensing to adjust comfort instantly, eliminating the need for loud, explicit commands.</p>
-                    </div>
-
-                    <div class="app-unique-card">
-                        <div class="app-unique-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.29-3.41a1 1 0 0 0-.83-.42H6a1 1 0 0 0-1 1v4h11"></path>
-                                <circle cx="7" cy="16" r="2"></circle>
-                                <circle cx="17" cy="16" r="2"></circle>
-                            </svg>
-                        </div>
-                        <h3>Mobility</h3>
-                        <p>Preserve attention for commuters using continuous eyes-free interaction that ensures safety while navigating busy streets.</p>
-                    </div>
-
-                    <div class="app-unique-card">
-                        <div class="app-unique-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                            </svg>
-                        </div>
-                        <h3>Industrial</h3>
-                        <p>Augment manual workflows with tool-aware AI agents that proactively verify precision and safety in demanding work environments.</p>
-                    </div>
-                </div>
-
-                <div class="app-unique-footer">
-                    <span>...and beyond.</span>
-                </div>
-            </section>
-
-            <section id="featured-projects-section" class="section-pad" style="border-top: 1px solid var(--border);">
-                <div data-aos="fade-up">
-                    <div class="projects-header">
-                        <h2 class="t-h2" id="projects-main-title">Featured Projects</h2>
-                        <div class="header-link-group">
-                            <span class="header-link-text">
-                                <a href="#publications">See full list of<br>publications</a>
-                            </span>
-                            <a href="#publications" class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></a>
+                        <div class="proj-grid" id="projects-grid">
+                            <article class="proj-card" onclick="window.location.href='project-pages/p14.html'">
+                                <div class="proj-thumb-wrap"><img src="images/beyond-vacuuming-featured.webp" class="proj-thumb" alt="Beyond Vacuuming Project Thumbnail"></div>
+                                <span class="proj-meta">ROBOTICS // CHI '25</span>
+                                <h3 class="proj-title">Beyond Vacuuming</h3>
+                                <p class="proj-desc">Reappropriating idle domestic robots for ubiquitous computing, providing over 100 use cases and a design space to guide researchers and designers.</p>
+                                <span class="proj-link-text">Learn More</span>
+                            </article>
+                            <article class="proj-card" onclick="window.location.href='project-pages/p11.html'">
+                                <div class="proj-thumb-wrap"><img src="images/graspui-featured.webp" class="proj-thumb" alt="GraspUI Project Thumbnail"></div>
+                                <span class="proj-meta">MICROGESTURES // DIS '24</span>
+                                <h3 class="proj-title">GraspUI</h3>
+                                <p class="proj-desc">Design space for object-centric microgesture interactions throughout the grasping process, from pre-grasp to post-grasp phases.</p>
+                                <span class="proj-link-text">Learn More</span>
+                            </article>
+                            <article class="proj-card" onclick="window.location.href='project-pages/p4.html'">
+                                <div class="proj-thumb-wrap"><img src="images/sparseimu-featured.webp" class="proj-thumb" alt="SparseIMU Project Thumbnail"></div>
+                                <span class="proj-meta">SENSING // TOCHI '23</span>
+                                <h3 class="proj-title">SparseIMU</h3>
+                                <p class="proj-desc">Computational design tool to solve a multi-factorial problem of recognizing always-available input with minimal sensors.</p>
+                                <span class="proj-link-text">Learn More</span>
+                            </article>
+                            <article class="proj-card" onclick="window.location.href='project-pages/p0.html'">
+                                <div class="proj-thumb-wrap"><img src="images/smartsleeve-featured.webp" class="proj-thumb" alt="SmartSleeve Project Thumbnail"></div>
+                                <span class="proj-meta">SENSING // UIST '17</span>
+                                <h3 class="proj-title">SmartSleeve</h3>
+                                <p class="proj-desc">Wearable textile that can detect 22 surface and deformation gestures, such as twirl, twist, fold, push, and stretch—in real time.</p>
+                                <span class="proj-link-text">Learn More</span>
+                            </article>
                         </div>
                     </div>
+                </section>
+                
+                <section id="teams" class="section-pad" style="border-top: 1px solid var(--border);">
+                    <h2 class="t-h2" id="teams-title">AIS Lab Team</h2>
                     
-                    <div class="proj-grid" id="projects-grid">
-                        <div class="proj-card" onclick="window.location.href='project-pages/p14.html'">
-                            <div class="proj-thumb-wrap"><img src="images/beyond-vacuuming-featured.webp" class="proj-thumb"></div>
-                            <span class="proj-meta">ROBOTICS // CHI '25</span>
-                            <h3 class="proj-title">Beyond Vacuuming</h3>
-                            <p class="proj-desc">Reappropriating idle domestic robots for ubiquitous computing, providing over 100 use cases and a design space to guide researchers and designers.</p>
-                            <span class="proj-link-text">Learn More</span>
+                    <div class="team-grid" id="teams-members-grid">
+                        <div class="team-card"><img src="images/adwait-headshot.webp" class="team-img" alt="Adwait Sharma"><div class="team-name"><a href="#about" class="text-link">Dr. Adwait Sharma</a></div><div class="team-role">Lab Director</div></div>
+                        <div class="team-card"><img src="images/lucy-headshot.webp" class="team-img" alt="Lucy Bilsborrow"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/lucy-bilsborrow/" class="text-link" target="_blank" rel="noopener noreferrer">Lucy Bilsborrow </a></div><div class="team-role">Ph.D. Student</div></div>
+                        <div class="team-card"><img src="images/yoshiaki-headshot.webp" class="team-img" alt="Yoshiaki Shiokawa"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/yoshiaki-shiokawa/" class="text-link" target="_blank" rel="noopener noreferrer">Yoshiaki Shiokawa </a></div><div class="team-role">Ph.D. Student</div></div>
+                        <div class="team-card"><img src="images/jack-headshot.webp" class="team-img" alt="Jack Ryan"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/jack-ryan/" class="text-link" target="_blank" rel="noopener noreferrer">Jack Ryan</a></div><div class="team-role">Ph.D. Student</div><div class="team-lead">co-advised with Prof. Jason Alexander</div></div>
+                        <div class="team-card"><img src="images/james-headshot.webp" class="team-img" alt="James Whiffing"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/james-whiffing" class="text-link" target="_blank" rel="noopener noreferrer">James Whiffing</a></div><div class="team-role">Ph.D. Student</div><div class="team-lead">co-advised with Dr. Christopher Clarke</div></div>
+                        <div class="team-card"><img src="images/zak-headshot.webp" class="team-img" alt="Zak Sheehy"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/zak-sheehy/" class="text-link" target="_blank" rel="noopener noreferrer">Zak Sheehy</a></div><div class="team-role">Ph.D. Student</div><div class="team-lead">co-advised with Dr. Ezio Preatoni</div></div>
+                    </div>
+
+                    <h3 class="sub-team-header">Master's and Undergraduates</h3>
+                    <div class="student-text-grid">
+                        <div class="student-entry"><strong>Abdullah Ijaz</strong> <span>MSc</span></div>
+                        <div class="student-entry"><strong>Dimitra Mogire</strong> <span>MSc</span></div>
+                        <div class="student-entry"><strong>Jack Baker</strong> <span>UG</span></div>
+                        <div class="student-entry"><strong>Oyin Atere</strong> <span>MSc</span></div>
+                        <div class="student-entry"><strong>Sai Charan Miryala</strong> <span>MSc</span></div>
+                        <div class="student-entry"><strong>Zebedee Marsh</strong> <span>MSc</span></div>
+                    </div>
+
+                    <h3 class="sub-team-header">Ph.D. Alumni</h3>
+                    <div class="team-grid" id="alumni-members-grid">
+                        <div class="team-card">
+                            <img src="images/alexz-headshot.webp" class="alumni-img" alt="Alexz Farrall"> 
+                            <div class="team-name"><a href="https://www.linkedin.com/in/alexzfarrall/" class="text-link" target="_blank" rel="noopener noreferrer">Dr. Alexz Farrall</a></div>
+                            <div class="team-role">co-advised with Prof. Jason Alexander</div>
                         </div>
-                        <div class="proj-card" onclick="window.location.href='project-pages/p11.html'">
-                            <div class="proj-thumb-wrap"><img src="images/graspui-featured.webp" class="proj-thumb"></div>
-                            <span class="proj-meta">MICROGESTURES // DIS '24</span>
-                            <h3 class="proj-title">GraspUI</h3>
-                            <p class="proj-desc">Design space for object-centric microgesture interactions throughout the grasping process, from pre-grasp to post-grasp phases.</p>
-                            <span class="proj-link-text">Learn More</span>
+                        <div class="team-card">
+                            <img src="images/jamesn-headshot.webp" class="alumni-img" alt="James Nash">
+                            <div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/james-nash" class="text-link" target="_blank" rel="noopener noreferrer">Dr. James Nash </a></div>
+                            <div class="team-role">co-advised with Prof. Jason Alexander</div>
                         </div>
-                        <div class="proj-card" onclick="window.location.href='project-pages/p4.html'">
-                            <div class="proj-thumb-wrap"><img src="images/sparseimu-featured.webp" class="proj-thumb"></div>
-                            <span class="proj-meta">SENSING // TOCHI '23</span>
-                            <h3 class="proj-title">SparseIMU</h3>
-                            <p class="proj-desc">Computational design tool to solve a multi-factorial problem of recognizing always-available input with minimal sensors.</p>
-                            <span class="proj-link-text">Learn More</span>
+                        <div class="team-card">
+                            <img src="images/karolina-headshot.webp" class="alumni-img" alt="Karolina Pakenaite">
+                            <div class="team-name"><a href="https://www.linkedin.com/in/karolina-pak%C4%97nait%C4%97/" class="text-link" target="_blank" rel="noopener noreferrer">Dr. Karolina Pakenaite</a></div>
+                            <div class="team-role">co-advised with Prof. Peter Hall</div>
                         </div>
-                        <div class="proj-card" onclick="window.location.href='project-pages/p0.html'">
-                            <div class="proj-thumb-wrap"><img src="images/smartsleeve-featured.webp" class="proj-thumb"></div>
-                            <span class="proj-meta">SENSING // UIST '17</span>
-                            <h3 class="proj-title">SmartSleeve</h3>
-                            <p class="proj-desc">Wearable textile that can detect 22 surface and deformation gestures, such as twirl, twist, fold, push, and stretch—in real time.</p>
-                            <span class="proj-link-text">Learn More</span>
+                    </div>
+                </section>
+            </div>
+
+            <section id="publications" class="section-pad" data-aos="fade-up">
+                <h2 class="t-h2">Peer-Reviewed Publications</h2>
+                
+                <p class="pub-header-note">Note on publication venues: In my research area of human–computer interaction, ACM CHI, UIST, DIS, and TOCHI are the most influential venues. CHI is consistently ranked #1 by Google Scholar and Microsoft Academic. Each venue follows a multi-stage, highly selective review process, with submissions evaluated by 4–6 international topic experts and program committee members. </p>
+
+                <div class="pub-controls">
+                    <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
+                    <button class="filter-btn" onclick="filterPubs('Conference', this)">Conference</button>
+                    <button class="filter-btn" onclick="filterPubs('Journal', this)">Journal</button>
+                    <button class="filter-btn" onclick="filterPubs('Thesis', this)">Thesis</button>
+                    <button class="filter-btn" onclick="filterPubs('Interaction Techniques', this)">Interaction Techniques</button>
+                    <button class="filter-btn" onclick="filterPubs('Robotics', this)">Robotics</button>
+                    <button class="filter-btn" onclick="filterPubs('Sensing', this)">Sensing</button>
+                    <button class="filter-btn" onclick="filterPubs('AI & Computational Design', this)">AI & Computational Design</button>
+                </div>
+
+                <div class="pub-list" id="publications-list-container">
+                   </div>
+            </section>
+
+            <section id="service" class="panel-grid cols-2-1" data-aos="fade-up">
+                <div class="panel-cell" id="service-cell">
+                    <h2 class="t-h2" id="service-title">Service & Talks</h2>
+                    
+                    <h3 class="t-h3" style="margin-bottom: 16px;">Program Committee</h3>
+                    <div class="data-row"><span class="data-year">2026</span><div class="data-main"><strong>ACM DIS</strong><span>Associate Chair</span></div></div>
+                    <div class="data-row"><span class="data-year">2026</span><div class="data-main"><strong>ACM AlpCHI</strong><span>Associate Chair</span></div></div>
+                    <div class="data-row"><span class="data-year">2025</span><div class="data-main"><strong>ACM UIST</strong><span>Associate Chair</span></div></div>
+                    <div class="data-row"><span class="data-year">2025</span><div class="data-main"><strong>ACM CHI</strong><span>Associate Chair - UX & Usability</span></div></div>
+                    <div class="data-row"><span class="data-year">2025</span><div class="data-main"><strong>ACM TEI</strong><span>Associate Chair</span></div></div>
+                    <div class="data-row"><span class="data-year">2024</span><div class="data-main"><strong>ACM CHI</strong><span>Associate Chair - Novel Devices</span></div></div>
+                    <div class="data-row"><span class="data-year">2023</span><div class="data-main"><strong>ACM UIST</strong><span>Associate Chair</span></div></div>
+                    <div class="data-row"><span class="data-year">2023</span><div class="data-main"><strong>ACM CHI</strong><span>Session Chair - More ways to use phones</span></div></div>
+                    <div class="data-row"><span class="data-year">2022</span><div class="data-main"><strong>ACM CHI</strong><span>Associate Chair - Student Design Competition</span></div></div>
+
+                    <div style="margin: 24px 0; border-left: 2px solid var(--border); padding-left: 15px;">
+                        <h4 style="font-size:0.95rem; margin-bottom:8px; color:var(--text-meta);">Reviewing (100+ Papers)</h4>
+                        <div style="font-size:0.9rem; line-height: 1.5; display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                            <div>
+                                <strong>CHI:</strong> '19–'24***<br>
+                                <strong>UIST:</strong> '19–'24*<br>
+                                <strong>DIS:</strong> '22, '24*<br>
+                                <strong>TEI:</strong> '18, '23–'25*<br>
+                                <strong>IMWUT:</strong> '22, '23<br>
+                                <strong>ISS:</strong> '22, '23
+                            </div>
+                            <div>
+                                <strong>NordiCHI:</strong> '24*<br>
+                                <strong>AH:</strong> '18–'20<br>
+                                <strong>IJHCS:</strong> '19, '20, '24<br>
+                                <strong>MobileHCI:</strong> '19<br>
+                                <strong>Eurographics:</strong> '25<br>
+                                <strong>SIGGRAPH Asia:</strong> '19, '20
+                            </div>
+                        </div>
+                        <div style="font-size:0.75rem; opacity:0.6; margin-top: 6px;">* Special Recognition</div>
+                    </div>
+
+                    <h3 class="t-h3" style="margin: 32px 0 16px;">Selected Invited Talks</h3>
+
+                    <div class="data-row">
+                        <span class="data-year">2025</span>
+                        <div class="data-main">
+                            <strong>London Spinal Cord Injury Centre</strong>
+                            <span>"Always-Available Computing for Everyone: Subtle Finger Motions to Friendly Robots" (Invited by Royal National Orthopaedic Hospital)</span>
+                        </div>
+                    </div>
+
+
+                    <div class="data-row">
+                        <span class="data-year">2025</span>
+                        <div class="data-main">
+                            <strong>Microsoft Research, Cambridge</strong>
+                            <span>"Always-Available Computing: Designing for the Busy World using Hand Gestures and Robotics" (Invited by Dr. Payod Panda)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2024</span>
+                        <div class="data-main">
+                            <strong>Ultraleap</strong>
+                            <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Dr. Iain Wallace)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2024</span>
+                        <div class="data-main">
+                            <strong>University of Birmingham</strong>
+                            <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Dr. Hyunyoung Kim)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2023</span>
+                        <div class="data-main">
+                            <strong>University of Bristol</strong>
+                            <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Prof. Mike Fraser)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2022</span>
+                        <div class="data-main">
+                            <strong>University of Waterloo</strong>
+                            <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Prof. Daniel Vogel)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2022</span>
+                        <div class="data-main">
+                            <strong>University of Toronto</strong>
+                            <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by DGP Lab)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2021</span>
+                        <div class="data-main">
+                            <strong>MPI Informatics</strong>
+                            <span>"Building Microgesture Dataset" (Invited by Prof. Christian Theobalt)</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2017</span>
+                        <div class="data-main">
+                            <strong>The Art of Creative Networking</strong>
+                            <span>"Beyond Touch, Swipe, and Tap for Smart Clothing"</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2014</span>
+                        <div class="data-main">
+                            <strong>Mozilla Festival</strong>
+                            <span>"Sensory Framework for Converting Ideas into a Web App"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-cell" id="teaching-cell">
+                    <h2 class="t-h2" id="teaching-title">Teaching</h2>
+                    
+                    <div class="data-row">
+                        <span class="data-year">2024</span>
+                        <div class="data-main">
+                            <strong>Applied Data Science</strong>
+                            <span>Masters • Full Year</span>
+                            <span class="invite-host">w/ Ken Cameron</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2024</span>
+                        <div class="data-main">
+                            <strong>Theory of HCI</strong>
+                            <span>Masters • Sem 2</span>
+                            <span class="invite-host">w/ Dr. Ollie Hanton</span>
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-year">2023</span>
+                        <div class="data-main">
+                            <strong>Applied Data Science</strong>
+                            <span>Masters • Full Year</span>
+                            <span class="invite-host">w/ Ken Cameron</span>
+                        </div>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-year">2023</span>
+                        <div class="data-main">
+                            <strong>Theory of HCI</strong>
+                            <span>Masters • Sem 2</span>
+                            <span class="invite-host">w/ Dr. Ollie Hanton</span>
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-year">2022</span>
+                        <div class="data-main">
+                            <strong>Applied Data Science</strong>
+                            <span>Masters • Sem 2</span>
+                            <span class="invite-host">w/ Ken Cameron</span>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            <section id="teams" class="section-pad" style="border-top: 1px solid var(--border);">
-                <h2 class="t-h2" id="teams-title">AIS Lab Team</h2>
+
+            <section id="press" class="section-pad" data-aos="fade-up">
+                <h2 class="t-h2">Selected Press</h2>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.bbc.co.uk/news/articles/c5yrzyzke8do" class="text-link" target="_blank" rel="noopener noreferrer">BBC</a></strong>
+                        <span>Robot vacuums 'could water plants or play with cat'</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://transition.meltwater.com/paywall/redirect/8N7ooOmUdSw--g1rgmQ52bRWWaw?keywords=%22University%20of%20Bath%22&cid=dfb90911-6ada-489a-b216-917cc35b8848&productType=app-export" class="text-link" target="_blank" rel="noopener noreferrer">BBC World News America</a></strong>
+                        <span>TV Feature on Robot Vacuums</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.the-independent.com/tech/robot-vacuum-roomba-reprogram-bath-b2742118.html" class="text-link" target="_blank" rel="noopener noreferrer">The Independent</a></strong>
+                        <span>Robot vacuums are ‘too idle’ and can be reprogrammed to water plants</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.homesandgardens.com/solved/vacuum-robot-can-bring-me-coffee-one-day" class="text-link" target="_blank" rel="noopener noreferrer">Homes & Gardens</a></strong>
+                        <span>'I hope one day, a vacuum robot can bring me coffee...'</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.digit.fyi/scientists-reprogramme-robot-vacuum-put-forward-over-100-new-uses/" class="text-link" target="_blank" rel="noopener noreferrer">DIGIT</a></strong>
+                        <span>Scientists Reprogramme Robot Vacuum, Put Forward Over 100 New Uses</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.londondaily.news/how-simple-hand-gestures-like-picking-up-a-cup-will-boost-productivity-using-augmented-reality/" class="text-link" target="_blank" rel="noopener noreferrer">London Daily News</a></strong>
+                        <span>How simple hand gestures – like picking up a cup – will boost productivity</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.hackster.io/news/liquid-powered-interface-gives-digital-tech-a-real-feel-a310f97a6bc2" class="text-link" target="_blank" rel="noopener noreferrer">Hackster.io</a></strong>
+                        <span>Liquid-Powered Interface Gives Digital Tech a Real Feel</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://newatlas.com/science/hydrohaptics-hydraulic-haptics/" class="text-link" target="_blank" rel="noopener noreferrer">New Atlas</a></strong>
+                        <span>Hydraulic haptic mice could have us squeezing sacks of water</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://www.bath.ac.uk/announcements/the-soft-tech-that-responds-to-your-taps-and-squeezes/" class="text-link" target="_blank" rel="noopener noreferrer">University of Bath</a></strong>
+                        <span>The soft tech that responds to your taps and squeezes</span>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-year"></span>
+                    <div class="data-main">
+                        <strong><a href="https://interestingengineering.com/culture/smart-clothes-new-tech-turns-everyday-garments-into-motion-trackers" class="text-link" target="_blank" rel="noopener noreferrer">Interesting Engineering</a></strong>
+                        <span>Smart clothes: New tech turns everyday garments into motion trackers</span>
+                    </div>
+                </div>
+
                 
-                <div class="team-grid" id="teams-members-grid">
-                    <div class="team-card"><img src="images/adwait-headshot.webp" class="team-img"><div class="team-name"><a href="#about" class="text-link">Dr. Adwait Sharma</a></div><div class="team-role">Lab Director</div></div>
-                    <div class="team-card"><img src="images/lucy-headshot.webp" class="team-img"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/lucy-bilsborrow/" class="text-link" target="_blank" rel="noopener noreferrer">Lucy Bilsborrow </a></div><div class="team-role">Ph.D. Student</div></div>
-                    <div class="team-card"><img src="images/yoshiaki-headshot.webp" class="team-img"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/yoshiaki-shiokawa/" class="text-link" target="_blank" rel="noopener noreferrer">Yoshiaki Shiokawa </a></div><div class="team-role">Ph.D. Student</div></div>
-                    <div class="team-card"><img src="images/jack-headshot.webp" class="team-img"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/jack-ryan/" class="text-link" target="_blank" rel="noopener noreferrer">Jack Ryan</a></div><div class="team-role">Ph.D. Student</div><div class="team-lead">co-advised with Prof. Jason Alexander</div></div>
-                    <div class="team-card"><img src="images/james-headshot.webp" class="team-img"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/james-whiffing" class="text-link" target="_blank" rel="noopener noreferrer">James Whiffing</a></div><div class="team-role">Ph.D. Student</div><div class="team-lead">co-advised with Dr. Christopher Clarke</div></div>
-                    <div class="team-card"><img src="images/zak-headshot.webp" class="team-img"><div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/zak-sheehy/" class="text-link" target="_blank" rel="noopener noreferrer">Zak Sheehy</a></div><div class="team-role">Ph.D. Student</div><div class="team-lead">co-advised with Dr. Ezio Preatoni</div></div>
-                </div>
-
-                <h3 class="sub-team-header">Master's and Undergraduates</h3>
-                <div class="student-text-grid">
-                    <div class="student-entry"><strong>Abdullah Ijaz</strong> <span>MSc</span></div>
-                    <div class="student-entry"><strong>Dimitra Mogire</strong> <span>MSc</span></div>
-                    <div class="student-entry"><strong>Jack Baker</strong> <span>UG</span></div>
-                    <div class="student-entry"><strong>Oyin Atere</strong> <span>MSc</span></div>
-                    <div class="student-entry"><strong>Sai Charan Miryala</strong> <span>MSc</span></div>
-                    <div class="student-entry"><strong>Zebedee Marsh</strong> <span>MSc</span></div>
-                </div>
-
-                <h3 class="sub-team-header">Ph.D. Alumni</h3>
-                <div class="team-grid" id="alumni-members-grid">
-                    <div class="team-card">
-                        <img src="images/alexz-headshot.webp" class="alumni-img"> 
-                        <div class="team-name"><a href="https://www.linkedin.com/in/alexzfarrall/" class="text-link" target="_blank" rel="noopener noreferrer">Dr. Alexz Farrall</a></div>
-                        <div class="team-role">co-advised with Prof. Jason Alexander</div>
-                    </div>
-                    <div class="team-card">
-                        <img src="images/jamesn-headshot.webp" class="alumni-img">
-                        <div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/james-nash" class="text-link" target="_blank" rel="noopener noreferrer">Dr. James Nash </a></div>
-                        <div class="team-role">co-advised with Prof. Jason Alexander</div>
-                    </div>
-                    <div class="team-card">
-                        <img src="images/karolina-headshot.webp" class="alumni-img">
-                        <div class="team-name"><a href="https://www.linkedin.com/in/karolina-pak%C4%97nait%C4%97/" class="text-link" target="_blank" rel="noopener noreferrer">Dr. Karolina Pakenaite</a></div>
-                        <div class="team-role">co-advised with Prof. Peter Hall</div>
-                    </div>
-                </div>
             </section>
-        </div>
 
-        <section id="publications" class="section-pad" data-aos="fade-up">
-            <h2 class="t-h2">Peer-Reviewed Publications</h2>
-            
-            <p class="pub-header-note">Note on publication venues: In my research area of human–computer interaction, ACM CHI, UIST, DIS, and TOCHI are the most influential venues. CHI is consistently ranked #1 by Google Scholar and Microsoft Academic. Each venue follows a multi-stage, highly selective review process, with submissions evaluated by 4–6 international topic experts and program committee members. </p>
-
-            <div class="pub-controls">
-                <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
-                <button class="filter-btn" onclick="filterPubs('Conference', this)">Conference</button>
-                <button class="filter-btn" onclick="filterPubs('Journal', this)">Journal</button>
-                <button class="filter-btn" onclick="filterPubs('Thesis', this)">Thesis</button>
-                <button class="filter-btn" onclick="filterPubs('Interaction Techniques', this)">Interaction Techniques</button>
-                <button class="filter-btn" onclick="filterPubs('Robotics', this)">Robotics</button>
-                <button class="filter-btn" onclick="filterPubs('Sensing', this)">Sensing</button>
-                <button class="filter-btn" onclick="filterPubs('AI & Computational Design', this)">AI & Computational Design</button>
-            </div>
-
-            <div class="pub-list" id="publications-list-container">
-               </div>
-        </section>
-
-        <section id="service" class="panel-grid cols-2-1" data-aos="fade-up">
-            <div class="panel-cell" id="service-cell">
-                <h2 class="t-h2" id="service-title">Service & Talks</h2>
-                
-                <h3 class="t-h3" style="margin-bottom: 16px;">Program Committee</h3>
-                <div class="data-row"><span class="data-year">2026</span><div class="data-main"><strong>ACM DIS</strong><span>Associate Chair</span></div></div>
-                <div class="data-row"><span class="data-year">2026</span><div class="data-main"><strong>ACM AlpCHI</strong><span>Associate Chair</span></div></div>
-                <div class="data-row"><span class="data-year">2025</span><div class="data-main"><strong>ACM UIST</strong><span>Associate Chair</span></div></div>
-                <div class="data-row"><span class="data-year">2025</span><div class="data-main"><strong>ACM CHI</strong><span>Associate Chair - UX & Usability</span></div></div>
-                <div class="data-row"><span class="data-year">2025</span><div class="data-main"><strong>ACM TEI</strong><span>Associate Chair</span></div></div>
-                <div class="data-row"><span class="data-year">2024</span><div class="data-main"><strong>ACM CHI</strong><span>Associate Chair - Novel Devices</span></div></div>
-                <div class="data-row"><span class="data-year">2023</span><div class="data-main"><strong>ACM UIST</strong><span>Associate Chair</span></div></div>
-                <div class="data-row"><span class="data-year">2023</span><div class="data-main"><strong>ACM CHI</strong><span>Session Chair - More ways to use phones</span></div></div>
-                <div class="data-row"><span class="data-year">2022</span><div class="data-main"><strong>ACM CHI</strong><span>Associate Chair - Student Design Competition</span></div></div>
-
-                <div style="margin: 24px 0; border-left: 2px solid var(--border); padding-left: 15px;">
-                    <h4 style="font-size:0.95rem; margin-bottom:8px; color:var(--text-meta);">Reviewing (100+ Papers)</h4>
-                    <div style="font-size:0.9rem; line-height: 1.5; display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                        <div>
-                            <strong>CHI:</strong> '19–'24***<br>
-                            <strong>UIST:</strong> '19–'24*<br>
-                            <strong>DIS:</strong> '22, '24*<br>
-                            <strong>TEI:</strong> '18, '23–'25*<br>
-                            <strong>IMWUT:</strong> '22, '23<br>
-                            <strong>ISS:</strong> '22, '23
-                        </div>
-                        <div>
-                            <strong>NordiCHI:</strong> '24*<br>
-                            <strong>AH:</strong> '18–'20<br>
-                            <strong>IJHCS:</strong> '19, '20, '24<br>
-                            <strong>MobileHCI:</strong> '19<br>
-                            <strong>Eurographics:</strong> '25<br>
-                            <strong>SIGGRAPH Asia:</strong> '19, '20
-                        </div>
+            <section id="join" class="panel-grid cols-1-1" data-aos="fade-up">
+                <div class="panel-cell" id="join-us-cell">
+                    <h2 class="t-h2" id="join-title">Join the Lab</h2>
+                    <div class="video-wrapper" id="recruitment-video-box">
+                        <iframe
+                            src="https://player.vimeo.com/video/656982451?autoplay=0&loop=0&controls=1&byline=0&title=0"
+                            frameborder="0"
+                            title="University of Bath Campus Video"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen
+                            style="position:absolute; top:0; left:0; width:100%; height:100%;">
+                        </iframe>
                     </div>
-                    <div style="font-size:0.75rem; opacity:0.6; margin-top: 6px;">* Special Recognition</div>
-                </div>
+                    <span class="video-caption" id="video-label">Life in Bath</span>
 
-                <h3 class="t-h3" style="margin: 32px 0 16px;">Selected Invited Talks</h3>
-
-<div class="data-row">
-    <span class="data-year">2025</span>
-    <div class="data-main">
-        <strong>London Spinal Cord Injury Centre</strong>
-        <span>"Always-Available Computing for Everyone: Subtle Finger Motions to Friendly Robots" (Invited by Royal National Orthopaedic Hospital)</span>
-    </div>
-</div>
-
-
-                <div class="data-row">
-    <span class="data-year">2025</span>
-    <div class="data-main">
-        <strong>Microsoft Research, Cambridge</strong>
-        <span>"Always-Available Computing: Designing for the Busy World using Hand Gestures and Robotics" (Invited by Dr. Payod Panda)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2024</span>
-    <div class="data-main">
-        <strong>Ultraleap</strong>
-        <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Dr. Iain Wallace)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2024</span>
-    <div class="data-main">
-        <strong>University of Birmingham</strong>
-        <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Dr. Hyunyoung Kim)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2023</span>
-    <div class="data-main">
-        <strong>University of Bristol</strong>
-        <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Prof. Mike Fraser)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2022</span>
-    <div class="data-main">
-        <strong>University of Waterloo</strong>
-        <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by Prof. Daniel Vogel)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2022</span>
-    <div class="data-main">
-        <strong>University of Toronto</strong>
-        <span>"Design and Recognition of Microgestures for Always-Available Input" (Invited by DGP Lab)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2021</span>
-    <div class="data-main">
-        <strong>MPI Informatics</strong>
-        <span>"Building Microgesture Dataset" (Invited by Prof. Christian Theobalt)</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2017</span>
-    <div class="data-main">
-        <strong>The Art of Creative Networking</strong>
-        <span>"Beyond Touch, Swipe, and Tap for Smart Clothing"</span>
-    </div>
-</div>
-<div class="data-row">
-    <span class="data-year">2014</span>
-    <div class="data-main">
-        <strong>Mozilla Festival</strong>
-        <span>"Sensory Framework for Converting Ideas into a Web App"</span>
-    </div>
-</div>
-            </div>
-
-            <div class="panel-cell" id="teaching-cell">
-                <h2 class="t-h2" id="teaching-title">Teaching</h2>
-                
-                <div class="data-row">
-                    <span class="data-year">2024</span>
-                    <div class="data-main">
-                        <strong>Applied Data Science</strong>
-                        <span>Masters • Full Year</span>
-                        <span class="invite-host">w/ Ken Cameron</span>
-                    </div>
-                </div>
-                <div class="data-row">
-                    <span class="data-year">2024</span>
-                    <div class="data-main">
-                        <strong>Theory of HCI</strong>
-                        <span>Masters • Sem 2</span>
-                        <span class="invite-host">w/ Dr. Ollie Hanton</span>
-                    </div>
-                </div>
-
-                <div class="data-row">
-                    <span class="data-year">2023</span>
-                    <div class="data-main">
-                        <strong>Applied Data Science</strong>
-                        <span>Masters • Full Year</span>
-                        <span class="invite-host">w/ Ken Cameron</span>
-                    </div>
-                </div>
-                <div class="data-row">
-                    <span class="data-year">2023</span>
-                    <div class="data-main">
-                        <strong>Theory of HCI</strong>
-                        <span>Masters • Sem 2</span>
-                        <span class="invite-host">w/ Dr. Ollie Hanton</span>
-                    </div>
-                </div>
-
-                <div class="data-row">
-                    <span class="data-year">2022</span>
-                    <div class="data-main">
-                        <strong>Applied Data Science</strong>
-                        <span>Masters • Sem 2</span>
-                        <span class="invite-host">w/ Ken Cameron</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="press" class="section-pad" data-aos="fade-up">
-            <h2 class="t-h2">Selected Press</h2>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.bbc.co.uk/news/articles/c5yrzyzke8do" class="text-link" target="_blank" rel="noopener noreferrer">BBC</a></strong>
-                    <span>Robot vacuums 'could water plants or play with cat'</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://transition.meltwater.com/paywall/redirect/8N7ooOmUdSw--g1rgmQ52bRWWaw?keywords=%22University%20of%20Bath%22&cid=dfb90911-6ada-489a-b216-917cc35b8848&productType=app-export" class="text-link" target="_blank" rel="noopener noreferrer">BBC World News America</a></strong>
-                    <span>TV Feature on Robot Vacuums</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.the-independent.com/tech/robot-vacuum-roomba-reprogram-bath-b2742118.html" class="text-link" target="_blank" rel="noopener noreferrer">The Independent</a></strong>
-                    <span>Robot vacuums are ‘too idle’ and can be reprogrammed to water plants</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.homesandgardens.com/solved/vacuum-robot-can-bring-me-coffee-one-day" class="text-link" target="_blank" rel="noopener noreferrer">Homes & Gardens</a></strong>
-                    <span>'I hope one day, a vacuum robot can bring me coffee...'</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.digit.fyi/scientists-reprogramme-robot-vacuum-put-forward-over-100-new-uses/" class="text-link" target="_blank" rel="noopener noreferrer">DIGIT</a></strong>
-                    <span>Scientists Reprogramme Robot Vacuum, Put Forward Over 100 New Uses</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.londondaily.news/how-simple-hand-gestures-like-picking-up-a-cup-will-boost-productivity-using-augmented-reality/" class="text-link" target="_blank" rel="noopener noreferrer">London Daily News</a></strong>
-                    <span>How simple hand gestures – like picking up a cup – will boost productivity</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.hackster.io/news/liquid-powered-interface-gives-digital-tech-a-real-feel-a310f97a6bc2" class="text-link" target="_blank" rel="noopener noreferrer">Hackster.io</a></strong>
-                    <span>Liquid-Powered Interface Gives Digital Tech a Real Feel</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://newatlas.com/science/hydrohaptics-hydraulic-haptics/" class="text-link" target="_blank" rel="noopener noreferrer">New Atlas</a></strong>
-                    <span>Hydraulic haptic mice could have us squeezing sacks of water</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://www.bath.ac.uk/announcements/the-soft-tech-that-responds-to-your-taps-and-squeezes/" class="text-link" target="_blank" rel="noopener noreferrer">University of Bath</a></strong>
-                    <span>The soft tech that responds to your taps and squeezes</span>
-                </div>
-            </div>
-
-            <div class="data-row">
-                <span class="data-year"></span>
-                <div class="data-main">
-                    <strong><a href="https://interestingengineering.com/culture/smart-clothes-new-tech-turns-everyday-garments-into-motion-trackers" class="text-link" target="_blank" rel="noopener noreferrer">Interesting Engineering</a></strong>
-                    <span>Smart clothes: New tech turns everyday garments into motion trackers</span>
-                </div>
-            </div>
-
-            
-        </section>
-
-        <section id="join" class="panel-grid cols-1-1" data-aos="fade-up">
-            <div class="panel-cell" id="join-us-cell">
-                <h2 class="t-h2" id="join-title">Join the Lab</h2>
-                <div class="video-wrapper" id="recruitment-video-box">
-                    <iframe
-  src="https://player.vimeo.com/video/656982451?autoplay=0&loop=0&controls=1&byline=0&title=0"
-  frameborder="0"
-  allow="autoplay; fullscreen; picture-in-picture"
-  allowfullscreen
-  style="position:absolute; top:0; left:0; width:100%; height:100%;">
-</iframe>
-
-                </div>
-                <span class="video-caption" id="video-label">Life in Bath</span>
-
-                <p class="t-body" style="margin-bottom: 24px;">
-                    The University of Bath is recognized as a top institution globally. See our ranking <a href="https://www.bath.ac.uk/corporate-information/rankings-and-reputation/" target="_blank" rel="noopener noreferrer" class="text-link">here</a>.
-                </p>
-
-                <p class="t-body" style="margin-bottom: 1.5em;">
-                    <strong>For prospective students: </strong> The Advanced Interaction & Sensing Lab is part of the BathHCI group in the Department of Computer Science at the University of Bath. Working as one team, we value the word <em>our</em>, not mine or yours — because progress, ownership, and learning belong to everyone together.
-                </p>
-
-                <p class="t-body" style="margin-bottom: 1.5em;">
-                    We are an interdisciplinary group brought together by curiosity and a desire to solve problems that matter. Our backgrounds span interaction design, machine learning, electronics, and psychology, but what unites us is how we work: with respect, openness,    and inclusivity. Diverse perspectives make the work stronger, and everyone should feel     welcome to contribute, question, and grow. We share ownership of both our successes and our failures.
-                </p>
-                
-                <p class="t-body" style="margin-bottom: 1.5em;">
-                    If you are interested in undergraduate or master’s dissertations, research visits, PhD,
-                    or postdoctoral opportunities, feel free to reach out to <a href="mailto:as5339@bath.ac.uk?subject=Join AIS Lab Application" class="text-link">as5339@bath.ac.uk</a>. Let’s explore what we can build together.
-                </p>
-                
-
-                </div>
-            <div class="panel-cell" id="partners">
-                <h2 class="t-h2" id="partnership-title">Partnerships</h2>
-
-                <p class="t-body" style="margin-bottom: 1em;">
-                    The Advanced Interaction & Sensing Lab actively collaborates with industry partners to translate cutting-edge research into real-world impact. We work with companies ranging from early-stage startups to global organizations, offering access to deep expertise in interaction design, robotics, sensing technologies, and human-centric AI.
-                </p>
-
-                <p class="t-body" style="margin-bottom: 1em;">
-                    Partners can engage with the lab through research consultancy, sponsored research projects, and long-term strategic collaborations. We also provide opportunities to work with and evaluate technologies using our state-of-the-art facilities, including our markerless motion capture studio for studying human movement, interaction, and behavior in naturalistic settings.
-                </p>
-
-                <p class="t-body" style="margin-bottom: 1em;">
-                    Collaboration models are designed to be flexible and industry-friendly. We support clear, well-defined intellectual property (IP) arrangements from the outset, including options for foreground IP ownership, licensing, and joint exploitation, in line with University of Bath policies. This ensures that both academic and commercial objectives are aligned, enabling partners to confidently invest in research that can move beyond the lab and into products, services, and deployed systems.
-                </p>
-
-                <p class="t-body" style="margin-bottom: 24px;">
-                    If your organization is interested in shaping future interaction technologies, sponsoring impactful research, or exploring bespoke collaborations, we would be delighted to discuss partnership opportunities. Please reach out to Adwait at <a href="mailto:as5339@bath.ac.uk?subject=Partnership Inquiry" class="text-link">as5339@bath.ac.uk</a>.
-                </p>
-
-                </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="contact-col" id="contact-info">
-                <h2 class="t-h2" style="border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 40px; color: var(--text-main);">Contact</h2>
-                <div style="font-family: var(--font-body); font-size: 1rem; color: var(--text-body); line-height: 1.8;">
-                    <p style="margin-bottom: 24px;">
-                        <strong>Dr. Adwait Sharma</strong><br>
-                        Wessex House, 9.11<br>
-                        Department of Computer Science, University of Bath<br>
-                        Claverton Down, Bath, BA2 7AY, UK
+                    <p class="t-body" style="margin-bottom: 24px;">
+                        The University of Bath is recognized as a top institution globally. See our ranking <a href="https://www.bath.ac.uk/corporate-information/rankings-and-reputation/" target="_blank" rel="noopener noreferrer" class="text-link">here</a>.
                     </p>
-                    <p style="margin-bottom: 8px;">Telephone: <a href="tel:+441225387592" style="color:var(--text-main); border-bottom:1px solid #ccc;">+44 1225 387592</a></p>
-                    <p>Email: <a href="mailto:as5339@bath.ac.uk" style="color:var(--text-main); border-bottom:1px solid #ccc;">as5339@bath.ac.uk</a></p>
-                </div>
-            </div>
-            <div class="contact-col" id="contact-map" style="height: 100%; min-height: 400px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
-                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=51.37948026228095,-2.3271474823895377&t=k&z=17&ie=UTF8&iwloc=&output=embed"></iframe>
-            </div>
-        </section>
 
-        <footer class="footer" id="site-footer">
+                    <p class="t-body" style="margin-bottom: 1.5em;">
+                        <strong>For prospective students: </strong> The Advanced Interaction & Sensing Lab is part of the BathHCI group in the Department of Computer Science at the University of Bath. Working as one team, we value the word <em>our</em>, not mine or yours — because progress, ownership, and learning belong to everyone together.
+                    </p>
+
+                    <p class="t-body" style="margin-bottom: 1.5em;">
+                        We are an interdisciplinary group brought together by curiosity and a desire to solve problems that matter. Our backgrounds span interaction design, machine learning, electronics, and psychology, but what unites us is how we work: with respect, openness,    and inclusivity. Diverse perspectives make the work stronger, and everyone should feel     welcome to contribute, question, and grow. We share ownership of both our successes and our failures.
+                    </p>
+                    
+                    <p class="t-body" style="margin-bottom: 1.5em;">
+                        If you are interested in undergraduate or master’s dissertations, research visits, PhD,
+                        or postdoctoral opportunities, feel free to reach out to <a href="mailto:as5339@bath.ac.uk?subject=Join AIS Lab Application" class="text-link">as5339@bath.ac.uk</a>. Let’s explore what we can build together.
+                    </p>
+                    
+
+                    </div>
+                <div class="panel-cell" id="partners">
+                    <h2 class="t-h2" id="partnership-title">Partnerships</h2>
+
+                    <p class="t-body" style="margin-bottom: 1em;">
+                        The Advanced Interaction & Sensing Lab actively collaborates with industry partners to translate cutting-edge research into real-world impact. We work with companies ranging from early-stage startups to global organizations, offering access to deep expertise in interaction design, robotics, sensing technologies, and human-centric AI.
+                    </p>
+
+                    <p class="t-body" style="margin-bottom: 1em;">
+                        Partners can engage with the lab through research consultancy, sponsored research projects, and long-term strategic collaborations. We also provide opportunities to work with and evaluate technologies using our state-of-the-art facilities, including our markerless motion capture studio for studying human movement, interaction, and behavior in naturalistic settings.
+                    </p>
+
+                    <p class="t-body" style="margin-bottom: 1em;">
+                        Collaboration models are designed to be flexible and industry-friendly. We support clear, well-defined intellectual property (IP) arrangements from the outset, including options for foreground IP ownership, licensing, and joint exploitation, in line with University of Bath policies. This ensures that both academic and commercial objectives are aligned, enabling partners to confidently invest in research that can move beyond the lab and into products, services, and deployed systems.
+                    </p>
+
+                    <p class="t-body" style="margin-bottom: 24px;">
+                        If your organization is interested in shaping future interaction technologies, sponsoring impactful research, or exploring bespoke collaborations, we would be delighted to discuss partnership opportunities. Please reach out to Adwait at <a href="mailto:as5339@bath.ac.uk?subject=Partnership Inquiry" class="text-link">as5339@bath.ac.uk</a>.
+                    </p>
+
+                    </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <div class="contact-col" id="contact-info">
+                    <h2 class="t-h2" style="border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 40px; color: var(--text-main);">Contact</h2>
+                    <div style="font-family: var(--font-body); font-size: 1rem; color: var(--text-body); line-height: 1.8;">
+                        <address style="font-style: normal;">
+                            <p style="margin-bottom: 24px;">
+                                <strong>Dr. Adwait Sharma</strong><br>
+                                Wessex House, 9.11<br>
+                                Department of Computer Science, University of Bath<br>
+                                Claverton Down, Bath, BA2 7AY, UK
+                            </p>
+                            <p style="margin-bottom: 8px;">Telephone: <a href="tel:+441225387592" style="color:var(--text-main); border-bottom:1px solid #ccc;">+44 1225 387592</a></p>
+                            <p>Email: <a href="mailto:as5339@bath.ac.uk" style="color:var(--text-main); border-bottom:1px solid #ccc;">as5339@bath.ac.uk</a></p>
+                        </address>
+                    </div>
+                </div>
+                <div class="contact-col" id="contact-map" style="height: 100%; min-height: 400px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" title="University of Bath Map Location" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=51.37948026228095,-2.3271474823895377&t=k&z=17&ie=UTF8&iwloc=&output=embed"></iframe>
+                </div>
+            </section>
+        </main> <footer class="footer" id="site-footer">
             <div style="display:flex; flex-direction:column; gap:8px;">
                 <span id="footer-copyright" style="color:#e0e0e0;">© 2026 ADWAIT SHARMA</span>
                 <span id="footer-update" style="color:#999;">Last updated: January 2026</span>
@@ -732,7 +794,7 @@
                     <span class="bibtex-title">BibTeX Citation</span>
                     <span class="close-bib" onclick="closeBibtex()">×</span>
                 </div>
-                <textarea id="bibtex-text" class="bibtex-code" readonly></textarea>
+                <textarea id="bibtex-text" class="bibtex-code" readonly aria-label="BibTeX Code"></textarea>
                 <button class="btn-copy" onclick="copyBibtex()">Copy to Clipboard</button>
             </div>
         </div>
@@ -807,7 +869,6 @@
             const container = document.getElementById('publications-list-container');
             if (!container) return;
             
-            // Check if publicationsData exists (loaded from js/data.js)
             if (typeof publicationsData === 'undefined') {
                 console.warn('publicationsData is not defined. Make sure js/data.js is loaded.');
                 return;
@@ -819,14 +880,11 @@
                 const catStr = Array.isArray(pub.type) ? pub.type.join(',') : pub.type;
                 const projectLink = `project-pages/${pub.id}.html`; 
                 
-                // Helper check
                 const has = (url) => url && url.trim() !== '' && url !== '#';
 
-                // Build buttons
                 let btns = '';
                 if(has(pub.pdf)) btns += `<a href="${pub.pdf}" class="btn-sm" target="_blank"><i class="fa-regular fa-file-pdf"></i> PDF</a>`;
                 
-                // Always show Details link if project page exists
                 btns += `<a href="${projectLink}" class="btn-sm"><i class="fa-solid fa-arrow-right"></i> DETAILS</a>`;
 
                 if(has(pub.projectUrl)) btns += `<a href="${pub.projectUrl}" class="btn-sm" target="_blank"><i class="fa-solid fa-globe"></i> WEB</a>`;
@@ -834,13 +892,12 @@
                 if(has(pub.videoUrl)) btns += `<a href="${pub.videoUrl}" class="btn-sm" target="_blank"><i class="fa-brands fa-youtube"></i> VIDEO</a>`;
                 if(has(pub.codeUrl)) btns += `<a href="${pub.codeUrl}" class="btn-sm" target="_blank"><i class="fa-brands fa-github"></i> CODE</a>`;
 
-                // BibTeX
                 if(pub.bibtex) btns += `<button class="btn-sm" onclick="showBibtex('${pub.id}')"><i class="fa-solid fa-quote-right"></i> BIBTEX</button>`;
 
                 return `
-                <div class="pub-row" data-category="${catStr}" data-venue="${pub.venue}">
+                <article class="pub-row" data-category="${catStr}" data-venue="${pub.venue}">
                     <a href="${projectLink}" class="pub-thumb">
-                        <img src="${pub.thumb}" width="320" height="220" loading="lazy">
+                        <img src="${pub.thumb}" width="320" height="220" loading="lazy" alt="${pub.title}">
                     </a>
                     <div>
                         <span class="pub-venue">${pub.venue}</span>
@@ -853,7 +910,7 @@
                             ${btns}
                         </div>
                     </div>
-                </div>
+                </article>
             `}).join('');
         }
 
@@ -903,7 +960,7 @@
 
         document.addEventListener('DOMContentLoaded', renderPublications);
 
-        /* --- RESEARCH ANIMATIONS (Preserved from Original) --- */
+        /* --- RESEARCH ANIMATIONS (Preserved) --- */
         const animCommon = {
             colorMain: '#111111', colorAccent: '#2563EB',
             setupCanvas: function(id, drawFn) {

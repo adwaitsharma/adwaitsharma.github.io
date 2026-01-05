@@ -88,6 +88,10 @@ a.text-link:hover {
 .nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 1px; background: var(--text-main); }
 .menu-toggle { display: none; font-size: 1.5rem; }
 
+/* FIX: Ensure the X close button is hidden on desktop */
+.menu-close { display: none; font-size: 1.5rem; cursor: pointer; }
+
+
 /* MOBILE MENU */
 .mobile-menu { position: fixed; top: var(--nav-height); left: 0; width: 100%; height: calc(100vh - var(--nav-height)); background: var(--bg-core); z-index: 999; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transform: translateY(-100%); transition: transform 0.5s var(--ease); border-top: 1px solid var(--border); }
 .mobile-menu.active { transform: translateY(0); }
@@ -320,6 +324,9 @@ a.text-link:hover {
     .navbar { padding: 0 20px; }
     .nav-links { display: none; }
     .menu-toggle { display: block; }
+
+    /* FIX: Show close button on mobile, positioned correctly */
+    .menu-close { display: block; position: absolute; top: 20px; right: 20px; z-index: 1001; }
     
     .section-pad, .panel-cell, #aislab-hero { padding: 60px 20px !important; }
     

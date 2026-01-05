@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XD1R9JRBXR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD1R9JRBXR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-XD1R9JRBXR');
-</script>
+      gtag('config', 'G-XD1R9JRBXR');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Brief description of the project.">
-    
+    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.adwaitsharma.com/">
+
     <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Brief description.">
+    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
     <meta property="og:image" content="../images/project-thumb.jpg"> 
-    <meta property="og:url" content="">
+    <meta property="og:type" content="article">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,35 +36,42 @@
     </style>
 </head>
 <body>
-   
+
     <div class="container">
         
-        <nav class="navbar" id="top-navigation">
-            <a href="../index.html" class="nav-brand">ADWAIT SHARMA</a>
-            <div class="nav-links">
+        <nav class="navbar" id="top-navigation" aria-label="Main Navigation">
+            <a href="../index.html" class="nav-brand" id="site-logo">ADWAIT SHARMA</a>
+            
+            <div class="nav-links" id="desktop-menu">
                 <a href="../index.html#about" class="nav-link">About</a>
                 <a href="../index.html#ais-lab" class="nav-link">AIS Lab</a>
                 <a href="../index.html#teams" class="nav-link">Team</a>
                 <a href="../index.html#publications" class="nav-link">Publications</a>
-                <a href="../index.html#service" class="nav-link">Service</a>
+                <a href="../index.html#service" class="nav-link">Service & Teaching</a>
+                <a href="../index.html#press" class="nav-link">Press</a>
                 <a href="../index.html#join" class="nav-link">Join Us</a>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
 
         <div class="mobile-menu" id="mobileMenu">
             <a href="../index.html#about" class="mobile-link">About</a>
+            <a href="../index.html#ais-lab" class="mobile-link">AIS Lab</a>
+            <a href="../index.html#teams" class="mobile-link">Team</a>
             <a href="../index.html#publications" class="mobile-link">Publications</a>
+            <a href="../index.html#service" class="mobile-link">Service & Teaching</a>
+            <a href="../index.html#press" class="mobile-link">Press</a>
+            <a href="../index.html#join" class="mobile-link">Join Us</a>
             <a href="../index.html#contact" class="mobile-link">Contact</a>
-            <button onclick="toggleMenu()" style="font-size:30px; border:none; margin-top:20px;">×</button>
+            
+            <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <div class="project-wrapper">
-            
-            <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
@@ -77,10 +85,10 @@
             <div id="pp-media" class="pp-media-container"></div>
 
             <div class="pp-content-grid">
-                <div class="pp-main-text">
-                    <span class="pp-abstract-label">Abstract</span>
+                <article class="pp-main-text">
+                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text"></p>
-                </div>
+                </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
                         <h4>Resources</h4>
@@ -92,7 +100,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');">
+                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -103,12 +111,12 @@
                 <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
-        </div>
+        </main>
 
         <footer class="footer">
             <div style="display:flex; flex-direction:column; gap:8px;">
-                <span id="footer-copyright" style="color:#e0e0e0;">© 2025 ADWAIT SHARMA</span>
-                <span id="footer-update" style="color:#999;">Last updated: December 2025</span>
+                <span id="footer-copyright" style="color:#e0e0e0;">© 2026 ADWAIT SHARMA</span>
+                <span id="footer-update" style="color:#999;">Last updated: January 2026</span>
             </div>
             <div style="text-align:right; max-width: 50%; line-height: 1.6; color: #ccc;">
                 Bath – Toronto – Copenhagen – Saarbrücken – Hagenberg – Vancouver – Singapore – Bangalore – Mathura
@@ -121,7 +129,7 @@
                     <span class="bibtex-title">BibTeX Citation</span>
                     <span class="close-bib" onclick="closeBibtex()">×</span>
                 </div>
-                <textarea id="bibtex-text" class="bibtex-code" readonly></textarea>
+                <textarea id="bibtex-text" class="bibtex-code" readonly aria-label="BibTeX Code"></textarea>
                 <button class="btn-copy" onclick="copyBibtex()">Copy to Clipboard</button>
             </div>
         </div>
