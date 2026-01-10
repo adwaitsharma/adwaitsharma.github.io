@@ -9,18 +9,21 @@
 
       gtag('config', 'G-XD1R9JRBXR');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>Utilizing Interactive Technologies to Encourage Healthy Dietary Behavior | Adwait Sharma</title>
+    <meta name="description" content="Workshop on utilizing interactive technologies to detect eating, minimize interruptions, and provide healthy dietary feedback. Presented at MobileHCI 2022.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="Utilizing Interactive Technologies to Encourage Healthy Dietary Behavior | Adwait Sharma">
+    <meta property="og:description" content="Workshop on utilizing interactive technologies to detect eating, minimize interruptions, and provide healthy dietary feedback.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/publications/healthy_mobilehci22.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p3.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p3.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +56,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +74,28 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2022">MobileHCI Adjunct 2022</time></span>
+                <h1 id="pp-title" class="pp-title">Utilizing Interactive Technologies to Encourage Healthy Dietary Behavior</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/publications/healthy_mobilehci22.webp" class="pp-featured-media" alt="Interactive Technologies for Healthy Diet Project Thumbnail" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        Practicing healthy habits in food intake is as important as having a healthy diet for both having a better quality of life as well as in avoiding various health issues. The purpose of this workshop is to provide an environment to discuss and enhance collaborations in the areas of eating detection, eating interruption minimization and healthy dietary feedback. The workshop plans to achieve this goal with design and brainstorming sessions, several invited talks and presentation sessions. In addition to publishing a magazine/ journal article which will provide information about the novel developments in the relevant areas of related research discussed in the workshop, we expect to inspire the participating HCI researchers in potential future collaborations in these areas of research.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +148,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p3'; 
     </script>
     <script src="../js/data.js"></script>

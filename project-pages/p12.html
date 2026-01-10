@@ -12,15 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>EMIL Project: Accelerating XR Innovation in Europe | Adwait Sharma</title>
+    <meta name="description" content="Overview of the European Media and Immersion Lab (EMIL), a network of XR labs accelerating AR/VR/MR technologies through funding and collaboration. Presented at IMX 2024.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="EMIL Project: Accelerating XR Innovation in Europe | Adwait Sharma">
+    <meta property="og:description" content="Overview of the European Media and Immersion Lab (EMIL), a network of XR labs accelerating AR/VR/MR technologies through funding and collaboration.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/publications/emil_imx24.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p12.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p12.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +55,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +73,28 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2024">IMX 2024</time></span>
+                <h1 id="pp-title" class="pp-title">EMIL: European Media and Immersion Lab</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/publications/emil_imx24.webp" class="pp-featured-media" alt="EMIL XR Innovation Network Overview" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        The European Media and Immersion Lab (EMIL) is a physical and virtual hub designed to accelerate the development of eXtended Reality (XR) technologies across Europe. As a network of leading XR labs, EMIL provides significant financial support through cascade funding to third-party projects, fostering innovation in AR, VR, and MR. This project overview highlights EMIL's mission to bridge the gap between academic research and commercial application by providing developers and researchers with access to state-of-the-art facilities, expert mentorship, and a collaborative ecosystem. We discuss the strategic pillars of the lab, including the promotion of excellence in immersive media content, the development of novel interaction paradigms, and the establishment of a sustainable infrastructure for future European XR innovation.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +147,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p12'; 
     </script>
     <script src="../js/data.js"></script>

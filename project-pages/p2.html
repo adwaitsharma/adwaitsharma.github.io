@@ -9,18 +9,21 @@
 
       gtag('config', 'G-XD1R9JRBXR');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>SoloFinger: Robust Microgestures while Grasping | Adwait Sharma</title>
+    <meta name="description" content="A novel input concept allowing single-finger microgestures that are resilient to false activations while holding everyday objects.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="SoloFinger: Robust Microgestures while Grasping | Adwait Sharma">
+    <meta property="og:description" content="A novel input concept allowing single-finger microgestures that are resilient to false activations while holding everyday objects.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/publications/solofinger_chi21.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p2.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p2.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +56,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +74,28 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2021">CHI 2021</time></span>
+                <h1 id="pp-title" class="pp-title">SoloFinger: Robust Microgestures while Grasping Everyday Objects</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/publications/solofinger_chi21.webp" class="pp-featured-media" alt="SoloFinger Project Thumbnail" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        Using microgestures, prior work has successfully enabled gestural interactions while holding objects. Yet, these existing methods are prone to false activations caused by natural finger movements while holding or manipulating the object. We address this issue with SoloFinger, a novel concept that allows design of microgestures that are robust against movements that naturally occur during primary activities. Using a data-driven approach, we establish that single-finger movements are rare in everyday hand-object actions and infer a single-finger input technique resilient to false activation. We demonstrate this concept’s robustness using a white-box classifier on a pre-existing dataset comprising 36 everyday hand-object actions. Our findings validate that simple SoloFinger gestures can relieve the need for complex finger configurations or delimiting gestures and that SoloFinger is applicable to diverse hand-object actions. Finally, we demonstrate SoloFinger’s high performance on commodity hardware using random forest classifiers.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +148,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p2'; 
     </script>
     <script src="../js/data.js"></script>

@@ -12,15 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>Beyond Vacuuming: Exploiting Domestic Robots’ Idle Time | Adwait Sharma</title>
+    <meta name="description" content="Reappropriating idle domestic robots for ubiquitous computing. Provides over 100 use cases and a design space for researchers. Covered by 100+ media outlets. Published in UbiComp 2023.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="Beyond Vacuuming: Exploiting Domestic Robots’ Idle Time | Adwait Sharma">
+    <meta property="og:description" content="Reappropriating idle domestic robots for ubiquitous computing. Provides over 100 use cases and a design space for researchers.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/beyond-vacuuming-featured.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p14.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p14.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +55,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +73,29 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2023">UbiComp 2023</time></span>
+                <h1 id="pp-title" class="pp-title">Beyond Vacuuming: Exploiting Domestic Robots' Idle Time</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/beyond-vacuuming-featured.webp" class="pp-featured-media" alt="Domestic robot performing non-cleaning ubiquitous computing tasks" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        Domestic robots, such as robotic vacuum cleaners, have become common in modern households. However, these robots spend the vast majority of their time idle at their charging stations. In this paper, we explore the potential of reappropriating these robots for ubiquitous computing tasks during their idle time. We present an extensive study that identifies over 100 potential use cases for "idle" domestic robots, ranging from home security and eldercare to environmental monitoring and interaction support. We contribute a detailed design space for researchers and developers to explore this "always-available" robotic infrastructure. Our work demonstrates that domestic robots can be much more than just cleaning tools; they can serve as mobile, sensing-rich platforms that enhance the functionality and intelligence of the smart home. This research has been widely recognized, with coverage by over 100 media outlets globally.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +148,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p14'; 
     </script>
     <script src="../js/data.js"></script>

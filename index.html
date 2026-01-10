@@ -17,7 +17,8 @@
     <meta name="author" content="Adwait Sharma">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.adwaitsharma.com/index.html">
-
+    <link rel="preload" as="image" href="images/adwait-headshot.JPG">
+    
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Adwait Sharma | AIS Lab - Advanced Interaction & Sensing">
     <meta property="og:description" content="Assistant Professor in HCI at the University of Bath. Researching always-available computing, microgestures, and robotics.">
@@ -87,7 +88,7 @@
     <div class="container" id="main-site-container">
         
         <nav class="navbar" id="top-navigation" aria-label="Main Navigation">
-            <a href="#" class="nav-brand" id="site-logo">ADWAIT SHARMA</a>
+            <a href="index.html" class="nav-brand" id="site-logo">ADWAIT SHARMA</a>
             <div class="nav-links" id="desktop-menu">
                 <a href="#about" class="nav-link active">About</a>
                 <a href="#ais-lab" class="nav-link">AIS Lab</a>
@@ -98,9 +99,13 @@
                 <a href="#join" class="nav-link">Join Us</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle Menu">
+
                 <i class="fa-solid fa-bars"></i>
             </div>
+
+
         </nav>
 
         <div class="mobile-menu" id="mobileMenu">
@@ -224,8 +229,21 @@
                         </div>
 
                         <div class="news-module" id="news-section" style="font-family: monospace; font-size: 0.85rem; color: #555;">
-                            <div class="news-item" style="margin-bottom: 6px;"><span class="news-date" style="opacity: 0.5; margin-right: 15px;">Jan 02</span><span>Pushed the new version of this new website in beta</span></div>
-                            <div class="news-item"><span class="news-date" style="opacity: 0.5; margin-right: 15px;">Jan 02</span><span>Some exciting news coming from the lab - stay tuned!</span></div>
+
+                            <div class="news-item" style="margin-bottom: 6px;">
+                                <span class="news-date" style="opacity: 0.5; margin-right: 15px;">
+                                    <time datetime="2026-01-02">Jan 02</time>
+                                </span>
+                                <span>Pushed the new version of the lab website. Still experimental.</span>
+                            </div>
+
+                            <div class="news-item" style="margin-bottom: 6px;">
+                                <span class="news-date" style="opacity: 0.5; margin-right: 15px;">
+                                    <time datetime="2026-01-02">Jan 02</time>
+                                </span>
+                                <span>Some exciting news coming from the lab - stay tuned!</span>
+                            </div>
+
                         </div>
                     </div>
 

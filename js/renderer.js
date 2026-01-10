@@ -1,6 +1,11 @@
 /**
  * js/renderer.js
- * Handles dynamic content injection for Project Pages with Enhanced SEO.
+ * Handles dynamic content injection for Project Pages.
+ * * UPDATES:
+ * - Dynamic "Related Projects" logic using tag-based scoring and randomization.
+ * - SEO: Dynamic injection of Meta Title, Description, and Open Graph tags.
+ * - SEO: Dynamic generation of JSON-LD Structured Data (ScholarlyArticle).
+ * - Performance: Explicit width/height attributes to reduce Cumulative Layout Shift (CLS).
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,193 +17,186 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Find Current Project Data
     const currentProject = publicationsData.find(p => p.id === window.projectID);
+    
     if (!currentProject) {
-        document.body.innerHTML = '<div style="padding:50px;text-align:center;"><h1>Project Not Found</h1><a href="../index.html">Back</a></div>';
+        document.querySelector('.project-wrapper').innerHTML = `
+            <div style="padding:100px 0; text-align:center;">
+                <h1>Project Not Found</h1>
+                <p>The project ID "${window.projectID}" does not exist in data.js.</p>
+                <a href="../index.html" class="pp-btn" style="display:inline-block; margin-top:20px;">Back to Home</a>
+            </div>`;
         return;
     }
 
-    // 3. Update Meta & Title
-    const pageTitle = `${currentProject.title} | Adwait Sharma`;
-    document.title = pageTitle;
-    
-    // --- SEO FIX START: Auto-Generate Tags ---
-    
-    // Helper to set meta tags dynamically
-    const setMeta = (attrName, attrVal, content) => {
-        let el = document.querySelector(`meta[${attrName}='${attrVal}']`);
-        if (!el) {
-            el = document.createElement('meta');
-            el.setAttribute(attrName, attrVal);
-            document.head.appendChild(el);
-        }
-        el.content = content;
-    };
+    // 3. Update SEO (Head Tags & Schema)
+    updateSEOMetadata(currentProject);
 
-    // 3.1 Meta Description (Use Abstract or Desc)
-    const seoDesc = currentProject.desc.length > 150 
-        ? currentProject.desc 
-        : (currentProject.fullAbstract ? currentProject.fullAbstract.substring(0, 155) + '...' : currentProject.title);
-    setMeta('name', 'description', seoDesc);
-
-    // 3.2 Open Graph Tags
-    setMeta('property', 'og:title', pageTitle);
-    setMeta('property', 'og:description', seoDesc);
-    setMeta('property', 'og:image', `https://www.adwaitsharma.com/${currentProject.thumb}`);
-    setMeta('property', 'og:url', window.location.href);
-    setMeta('property', 'og:type', 'article');
-
-    // 3.3 Twitter Card
-    setMeta('name', 'twitter:card', 'summary_large_image');
-    setMeta('name', 'twitter:title', pageTitle);
-    setMeta('name', 'twitter:description', seoDesc);
-    setMeta('name', 'twitter:image', `https://www.adwaitsharma.com/${currentProject.thumb}`);
-    setMeta('name', 'twitter:site', '@adwait_sharma');
-
-    // 3.4 Inject Canonical Tag (Fixes "Page with redirect" issues)
-    const cleanUrl = window.location.href.split('?')[0].split('#')[0];
-    let linkCan = document.querySelector("link[rel='canonical']");
-    if (!linkCan) {
-        linkCan = document.createElement('link');
-        linkCan.rel = 'canonical';
-        document.head.appendChild(linkCan);
-    }
-    linkCan.href = cleanUrl;
-
-    // 3.5 Inject Robots Tag (Fixes "Excluded by noindex" issues)
-    setMeta('name', 'robots', 'index, follow');
-
-    // 3.6 Structured Data (JSON-LD) for Google Scholar
-    const yearMatch = currentProject.venue.match(/\d{4}/);
-    const pubYear = yearMatch ? yearMatch[0] : new Date().getFullYear().toString();
-    
-    const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "ScholarlyArticle",
-        "headline": currentProject.title,
-        "image": `https://www.adwaitsharma.com/${currentProject.thumb}`,
-        "description": seoDesc,
-        "abstract": currentProject.fullAbstract || currentProject.desc,
-        "author": currentProject.authors.split(', ').map(name => ({
-            "@type": "Person",
-            "name": name.trim()
-        })),
-        "datePublished": pubYear,
-        "publication": {
-            "@type": "PublicationEvent",
-            "name": currentProject.venue
-        }
-    };
-    if (currentProject.pdf && currentProject.pdf !== '#') schemaData.url = currentProject.pdf;
-    
-    const scriptSchema = document.createElement('script');
-    scriptSchema.type = 'application/ld+json';
-    scriptSchema.text = JSON.stringify(schemaData);
-    document.head.appendChild(scriptSchema);
-
-    // --- SEO FIX END ---
-    
-    // 4. Inject Header Content
-    const venueEl = document.getElementById('pp-venue');
-    if (venueEl) venueEl.textContent = currentProject.venue;
-    
-    const titleEl = document.getElementById('pp-title');
-    if (titleEl) titleEl.textContent = currentProject.title;
-
-    const awardContainer = document.getElementById('pp-award-container');
-    if (awardContainer && currentProject.award) {
-        awardContainer.innerHTML = currentProject.award; 
-    }
-
-    // 5. Inject Abstract
-    const abstractEl = document.getElementById('pp-abstract');
-    if (abstractEl) {
-        abstractEl.textContent = currentProject.fullAbstract || currentProject.desc;
-    }
-
-    // 6. Inject Media (Embed Video or Thumbnail)
-    const mediaContainer = document.getElementById('pp-media');
-    if (mediaContainer) {
-        if (currentProject.modalVideo && currentProject.modalVideo !== '#') {
-            mediaContainer.innerHTML = `<iframe src="${currentProject.modalVideo}" title="${currentProject.title} Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        } else {
-            // Handle relative path for images from project-pages/ folder
-            const imgPath = `../${currentProject.thumb}`;
-            mediaContainer.innerHTML = `<img src="${imgPath}" alt="${currentProject.title} project visualization">`;
-        }
-    }
-
-    // 7. Inject All Action Buttons
-    const btnContainer = document.getElementById('pp-buttons');
-    if (btnContainer) {
-        const buttons = [];
-        
-        // Helper: Only returns HTML if url exists and isn't a placeholder
-        const createBtn = (label, iconClass, url, onclick = null) => {
-            if (onclick) {
-                 return `<button onclick="${onclick}" class="pp-btn" aria-label="${label}"><i class="${iconClass}"></i> ${label}</button>`;
-            }
-            if (!url || url.trim() === '' || url === '#') return '';
-            return `<a href="${url}" target="_blank" class="pp-btn" rel="noopener noreferrer" aria-label="${label}"><i class="${iconClass}"></i> ${label}</a>`;
-        };
-
-        // Add all supported buttons
-        buttons.push(createBtn('Paper (PDF)', 'fa-regular fa-file-pdf', currentProject.pdf));
-        buttons.push(createBtn('Video', 'fa-brands fa-youtube', currentProject.videoUrl));
-        buttons.push(createBtn('Code / Repo', 'fa-brands fa-github', currentProject.codeUrl));
-        buttons.push(createBtn('Slides', 'fa-regular fa-images', currentProject.slides));
-        buttons.push(createBtn('External Website', 'fa-solid fa-globe', currentProject.projectUrl));
-        
-        // BibTeX Button (Conditional)
-        if (currentProject.bibtex) {
-            buttons.push(createBtn('BibTeX', 'fa-solid fa-quote-right', null, 'showBibtex()'));
-        }
-
-        btnContainer.innerHTML = buttons.join('');
-    }
-
-    // 8. Inject Tags
-    const tagContainer = document.getElementById('pp-tags');
-    if (tagContainer && currentProject.type) {
-        const tags = Array.isArray(currentProject.type) ? currentProject.type : [currentProject.type];
-        tagContainer.innerHTML = tags.map(t => `<span style="display:block; border-bottom:1px solid #eee; padding:4px 0;">${t}</span>`).join('');
-    }
-
-    // 9. Generate Related Projects
+    // 4. Render Body Content (Visible Elements)
+    renderProjectContent(currentProject);
     renderRelatedProjects(currentProject);
 });
 
 /**
- * Related Projects Logic
+ * Updates Head elements for SEO: Title, Meta Tags, Canonical, and JSON-LD
  */
-function renderRelatedProjects(current) {
+function updateSEOMetadata(p) {
+    // A. Page Title
+    document.title = `${p.title} | Adwait Sharma`;
+
+    // B. Meta Description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", p.desc);
+
+    // C. Open Graph Tags (Social Sharing)
+    const setMeta = (prop, val) => {
+        const el = document.querySelector(`meta[property="${prop}"]`);
+        if (el) el.setAttribute("content", val);
+    };
+
+    setMeta("og:title", p.title);
+    setMeta("og:description", p.desc);
+    setMeta("og:image", `https://www.adwaitsharma.com/${p.thumb}`);
+    setMeta("og:url", `https://www.adwaitsharma.com/project-pages/${p.id}.html`);
+
+    // D. Canonical Link
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+        canonical.setAttribute('href', `https://www.adwaitsharma.com/project-pages/${p.id}.html`);
+    }
+
+    // E. JSON-LD Structured Data (ScholarlyArticle)
+    const existingScript = document.getElementById('dynamic-schema');
+    if (existingScript) existingScript.remove();
+
+    const authorList = p.authors ? p.authors.split(',').map(name => ({
+        "@type": "Person",
+        "name": name.trim()
+    })) : [{ "@type": "Person", "name": "Adwait Sharma" }];
+
+    const script = document.createElement('script');
+    script.id = 'dynamic-schema';
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": p.title,
+        "image": `https://www.adwaitsharma.com/${p.thumb}`,
+        "author": authorList,
+        "description": p.desc,
+        "publisher": {
+            "@type": "Organization",
+            "name": "AIS Lab - University of Bath",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.adwaitsharma.com/images/bath-logo4.webp"
+            }
+        }
+    });
+    document.head.appendChild(script);
+}
+
+/**
+ * Populates the main HTML structure with data from data.js
+ */
+function renderProjectContent(p) {
+    const titleEl = document.getElementById('pp-title');
+    const venueEl = document.getElementById('pp-venue');
+    const awardContainer = document.getElementById('pp-award-container');
+
+    if (titleEl) titleEl.textContent = p.title;
+    
+    if (venueEl) {
+        const yearMatch = p.venue.match(/\b(19|20)\d{2}\b/);
+        const year = yearMatch ? yearMatch[0] : '';
+        venueEl.innerHTML = year ? `<time datetime="${year}">${p.venue}</time>` : p.venue;
+    }
+
+    if (awardContainer && p.award) {
+        awardContainer.innerHTML = `<div class="pp-award"><i class="fa-solid fa-trophy"></i> ${p.award}</div>`;
+    }
+
+    const mediaContainer = document.getElementById('pp-media');
+    if (mediaContainer) {
+        let mediaHTML = '';
+        if (p.videoUrl && (p.videoUrl.includes('youtube') || p.videoUrl.includes('youtu.be'))) {
+            const videoId = p.videoUrl.split('v=')[1] || p.videoUrl.split('/').pop();
+            const cleanId = videoId.split('&')[0]; 
+            mediaHTML = `<div class="video-responsive"><iframe src="https://www.youtube.com/embed/${cleanId}" title="${p.title}" frameborder="0" allowfullscreen></iframe></div>`;
+        } else if (p.modalVideo) {
+            mediaHTML = `<video controls autoplay muted loop class="pp-featured-media" poster="../${p.thumb}"><source src="../${p.modalVideo}" type="video/mp4"></video>`;
+        } else {
+            mediaHTML = `<img src="../${p.thumb}" class="pp-featured-media" alt="${p.title}" loading="eager" width="1000" height="562">`;
+        }
+        mediaContainer.innerHTML = mediaHTML;
+    }
+
+    const abstractEl = document.getElementById('pp-abstract');
+    if (abstractEl) abstractEl.innerHTML = p.fullAbstract || p.desc;
+
+    const btnContainer = document.getElementById('pp-buttons');
+    if (btnContainer) {
+        const buttons = [];
+        if (p.pdf && p.pdf !== "#") buttons.push(`<a href="${p.pdf}" target="_blank" class="pp-btn"><i class="fa-regular fa-file-pdf"></i> PDF</a>`);
+        if (p.codeUrl && p.codeUrl !== "#") buttons.push(`<a href="${p.codeUrl}" target="_blank" class="pp-btn"><i class="fa-brands fa-github"></i> Code</a>`);
+        if (p.slides && p.slides !== "#") buttons.push(`<a href="${p.slides}" target="_blank" class="pp-btn"><i class="fa-brands fa-slideshare"></i> Slides</a>`);
+        if (p.bibtex) buttons.push(`<button onclick="showBibtex()" class="pp-btn"><i class="fa-solid fa-quote-right"></i> BibTeX</button>`);
+        btnContainer.innerHTML = buttons.join('');
+    }
+
+    const tagsContainer = document.getElementById('pp-tags');
+    if (tagsContainer && p.type) {
+        const tags = Array.isArray(p.type) ? p.type : [p.type];
+        tagsContainer.innerHTML = tags.map(tag => `<span class="pp-tag">${tag}</span>`).join('');
+    }
+}
+
+/**
+ * Renders the "Related Projects" section dynamically.
+ * Logic: Filters out current project, scores others based on shared tags, 
+ * adds randomization to break ties, and selects the top 4.
+ */
+function renderRelatedProjects(currentProject) {
     const grid = document.getElementById('related-projects-grid');
     if (!grid) return;
 
-    const currentTags = Array.isArray(current.type) ? current.type : [current.type];
-    const related = publicationsData.filter(p => {
-        if (p.id === current.id || !p.showInList) return false;
+    // 1. Exclude current project and only include those marked for the list
+    const otherProjects = publicationsData.filter(p => p.id !== currentProject.id && p.showInList);
+    
+    // 2. Score based on category/tag overlap
+    const currentTags = Array.isArray(currentProject.type) ? currentProject.type : [currentProject.type];
+    
+    const scoredProjects = otherProjects.map(p => {
         const pTags = Array.isArray(p.type) ? p.type : [p.type];
-        // Overlap check
-        return pTags.some(tag => currentTags.includes(tag));
+        // Calculate intersection of tags
+        const commonTags = pTags.filter(tag => currentTags.includes(tag)).length;
+        
+        return { 
+            data: p, 
+            // The score is (number of matching tags) + (random decimal 0-1)
+            // This ensures relevant projects rise to top, but the order changes on refresh
+            score: commonTags + Math.random() 
+        };
     });
 
-    // Take top 4
-    const top4 = related.slice(0, 4);
+    // 3. Sort by score descending and take top 4
+    const top4 = scoredProjects
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 4)
+        .map(wrapper => wrapper.data);
 
     if (top4.length === 0) {
-        document.querySelector('.related-section').style.display = 'none';
+        const section = document.querySelector('.related-section');
+        if (section) section.style.display = 'none';
         return;
     }
 
-    grid.innerHTML = top4.map(p => {
-        return `
-            <a href="./${p.id}.html" class="related-card">
-                <img src="../${p.thumb}" class="related-thumb" alt="${p.title}" loading="lazy">
-                <span class="related-venue">${p.venue}</span>
-                <div class="related-title">${p.title}</div>
-            </a>
-        `;
-    }).join('');
+    grid.innerHTML = top4.map(p => `
+        <a href="./${p.id}.html" class="related-card">
+            <img src="../${p.thumb}" class="related-thumb" alt="${p.title}" width="320" height="220" loading="lazy">
+            <span class="related-venue">${p.venue}</span>
+            <div class="related-title">${p.title}</div>
+        </a>
+    `).join('');
 }
 
 // --- BIBTEX UTILITIES ---
@@ -212,22 +210,33 @@ window.showBibtex = function() {
     if(modal && textArea) {
         textArea.value = data.bibtex;
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; 
     }
 };
 
 window.closeBibtex = function() {
-    document.getElementById('bibtex-modal').classList.remove('active');
-    document.body.style.overflow = 'auto';
+    const modal = document.getElementById('bibtex-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 };
 
 window.copyBibtex = function() {
     const copyText = document.getElementById("bibtex-text");
+    if (!copyText) return;
     copyText.select();
     navigator.clipboard.writeText(copyText.value).then(() => {
         const btn = document.querySelector('.btn-copy');
-        const original = btn.innerText;
-        btn.innerText = "Copied!";
-        setTimeout(() => btn.innerText = original, 2000);
+        if (btn) {
+            const originalText = btn.textContent;
+            btn.textContent = "Copied!";
+            setTimeout(() => { btn.textContent = originalText; }, 2000);
+        }
     });
 };
+
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('bibtex-modal');
+    if (e.target === modal) window.closeBibtex();
+});

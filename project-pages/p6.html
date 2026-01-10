@@ -12,15 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>Design and Fabrication of Body-Based Interfaces | Adwait Sharma</title>
+    <meta name="description" content="Live demonstrations of body-based interface research from the Saarland HCI Lab. Winner of People's Choice Best Demo Award at CHI '23.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="Design and Fabrication of Body-Based Interfaces | Adwait Sharma">
+    <meta property="og:description" content="Live demonstrations of body-based interface research from the Saarland HCI Lab. Winner of People's Choice Best Demo Award at CHI '23.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/publications/demo_chi23.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p6.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p6.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +55,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +73,30 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
-                <div id="pp-award-container"></div>
+                <span id="pp-venue" class="pp-venue"><time datetime="2023">CHI EA 2023</time></span>
+                <h1 id="pp-title" class="pp-title">Design and Fabrication of Body-Based Interfaces (Demo of Saarland HCI Lab)</h1>
+                <div id="pp-award-container">
+                    <div class="pp-award"><i class="fa-solid fa-trophy"></i> People's Choice Best Demo Award at CHI'23</div>
+                </div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/publications/demo_chi23.webp" class="pp-featured-media" alt="Saarland HCI Lab Demo at CHI 2023" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        This Interactivity shows live demonstrations of our lab’s most recent work on body-based interfaces. The soft, curved and deformable surface of the human body presents unique opportunities and challenges for interfaces. New form factors, materials and interaction techniques are required that move past the conventional rigid, planar and rectangular devices and the corresponding interaction styles. We highlight three themes of challenges for soft body-based interfaces: 1) How to design interfaces that are optimized for the body? We demonstrate how interactive computational design tools can help novices and experts to create better device designs. 2) Once they are designed, how to physically prototype and fabricate soft interfaces? We show accessible DIY fabrication methods for soft devices made of functional materials that make use of biomaterials. 3) How to leverage the richness of interacting on the body? We demonstrate on-body and off-body interactions that leverage the soft properties of the interface.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +149,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p6'; 
     </script>
     <script src="../js/data.js"></script>

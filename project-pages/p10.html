@@ -12,15 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>SeamSleeve: Robust Arm Movement Sensing via Stitching | Adwait Sharma</title>
+    <meta name="description" content="Minimally invasive e-textile design using clothing seams as sensors for tracking arm movements. Robust, comfortable, and accurate. Published in DIS 2024.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="SeamSleeve: Robust Arm Movement Sensing via Stitching | Adwait Sharma">
+    <meta property="og:description" content="Minimally invasive e-textile design using clothing seams as sensors for tracking arm movements. Robust, comfortable, and accurate.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/publications/seamsleeve_dis24.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p10.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p10.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +55,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +73,28 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2024">DIS 2024</time></span>
+                <h1 id="pp-title" class="pp-title">SeamSleeve: Robust Arm Movement Sensing via Stitching</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/publications/seamsleeve_dis24.webp" class="pp-featured-media" alt="SeamSleeve e-textile stitching detail and arm tracking" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        Wearable systems for arm movement sensing often rely on bulky sensors or custom-made garments that are uncomfortable for daily wear. In this work, we introduce SeamSleeve, a minimally invasive e-textile design that leverages existing clothing seams as capacitive sensors for tracking arm movements. By integrating conductive threads directly into the stitching of standard garments, SeamSleeve maintains the original aesthetics and comfort of the clothing while enabling robust activity recognition. We present a systematic evaluation of various stitching patterns and their sensing capabilities. Our results demonstrate that SeamSleeve can accurately recognize a wide range of upper-body exercises and daily activities with high precision. This approach offers a promising direction for seamlessly integrating sensing capabilities into everyday apparel without compromising on wearability or style.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +147,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p10'; 
     </script>
     <script src="../js/data.js"></script>

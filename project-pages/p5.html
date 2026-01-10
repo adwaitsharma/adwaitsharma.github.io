@@ -9,18 +9,21 @@
 
       gtag('config', 'G-XD1R9JRBXR');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>PhD Thesis: Microgestures for Always-Available Input | Adwait Sharma</title>
+    <meta name="description" content="Adwait Sharma's PhD Thesis: Design and Recognition of Microgestures for Always-Available Input. Explores interaction while holding everyday objects.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="PhD Thesis: Microgestures for Always-Available Input | Adwait Sharma">
+    <meta property="og:description" content="Adwait Sharma's PhD Thesis: Design and Recognition of Microgestures for Always-Available Input. Explores interaction while holding everyday objects.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/publications/adwait_phd22.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p5.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p5.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +56,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +74,28 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2022">PhD Thesis</time></span>
+                <h1 id="pp-title" class="pp-title">Design and Recognition of Microgestures for Always-Available Input</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/publications/adwait_phd22.webp" class="pp-featured-media" alt="Adwait Sharma PhD Thesis Cover" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        Gestural user interfaces for computing devices most commonly require the user to have at least one hand free to interact with the device, for example, moving a mouse, touching a screen, or performing mid-air gestures. Consequently, users find it difficult to operate computing devices while holding or manipulating everyday objects. This limits the users from interacting with the digital world during a significant portion of their everyday activities, such as, using tools in the kitchen or workshop, carrying items, or workout with sports equipment. This thesis pushes the boundaries towards the bigger goal of enabling always-available input. Microgestures have been recognized for their potential to facilitate direct and subtle interactions. However, it remains an open question how to interact using gestures with computing devices when both of the user’s hands are occupied holding everyday objects. We take a holistic approach and focus on three core contributions: i) To understand end-users preferences, we present an empirical analysis of users’ choice of microgestures when holding objects of diverse geometries. Instead of designing a gesture set for a specific object or geometry and to identify gestures that generalize, this thesis leverages the taxonomy of grasp types established from prior research. ii) We tackle the critical problem of avoiding false activation by introducing a novel gestural input concept that leverages a single-finger movement, which stands out from everyday finger motions during holding and manipulating objects. Through a data-driven approach, we also systematically validate the concept’s robustness with different everyday actions. iii) While full sensor coverage on the user’s hand would allow detailed hand-object interaction, minimal instrumentation is desirable for real-world use. This thesis addresses the problem of identifying sparse sensor layouts. We present the first rapid computational method, along with a GUI-based design tool that enables iterative design based on the designer’s high-level requirements. Furthermore, we demonstrate that minimal form-factor devices, like smart rings, can be used to effectively detect microgestures in hands-free and busy scenarios. Overall, the presented findings will serve as both conceptual and technical foundations for enabling interaction with computing devices wherever and whenever users need them.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +148,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p5'; 
     </script>
     <script src="../js/data.js"></script>

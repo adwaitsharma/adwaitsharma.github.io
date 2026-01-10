@@ -6,21 +6,23 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XD1R9JRBXR');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Project Title | Adwait Sharma</title>
-    <meta name="description" content="Research project by Adwait Sharma, AIS Lab.">
+    <title>SmartSleeve: Real-time Sensing on Interactive Textiles | Adwait Sharma</title>
+    <meta name="description" content="Wearable textile that detects 22 surface and deformation gestures (twirl, twist, fold, push, stretch) in real-time using a hybrid detection pipeline.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.adwaitsharma.com/">
 
-    <meta property="og:title" content="Project Title | Adwait Sharma">
-    <meta property="og:description" content="Research project by Adwait Sharma, AIS Lab.">
-    <meta property="og:image" content="../images/project-thumb.jpg"> 
+    <meta property="og:title" content="SmartSleeve: Real-time Sensing on Interactive Textiles | Adwait Sharma">
+    <meta property="og:description" content="Wearable textile that detects 22 surface and deformation gestures (twirl, twist, fold, push, stretch) in real-time using a hybrid detection pipeline.">
+    <meta property="og:image" content="https://www.adwaitsharma.com/images/smartsleeve-featured.webp"> 
     <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.adwaitsharma.com/project-pages/p0.html">
+    
+    <link rel="canonical" href="https://www.adwaitsharma.com/project-pages/p0.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +55,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -71,23 +73,28 @@
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
         </div>
 
-        <main class="project-wrapper"> <a href="../index.html#publications" class="back-nav">
+        <main class="project-wrapper"> 
+            <a href="../index.html#publications" class="back-nav">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
 
             <header class="pp-header">
-                <span id="pp-venue" class="pp-venue"></span>
-                <h1 id="pp-title" class="pp-title"></h1>
+                <span id="pp-venue" class="pp-venue"><time datetime="2017">UIST 2017</time></span>
+                <h1 id="pp-title" class="pp-title">SmartSleeve: Real-time Sensing of Surface and Deformation Gestures on Flexible, Interactive Textiles, using a Hybrid Gesture Detection Pipeline</h1>
                 <div id="pp-award-container"></div>
             </header>
 
-            <div id="pp-media" class="pp-media-container"></div>
+            <div id="pp-media" class="pp-media-container">
+                <img src="../images/smartsleeve-featured.webp" class="pp-featured-media" alt="SmartSleeve Project Thumbnail" loading="eager" width="1000" height="562">
+            </div>
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
                     <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
-                    <p id="pp-abstract" class="pp-abstract-text"></p>
+                    <p id="pp-abstract" class="pp-abstract-text">
+                        Over the last decades, there have been numerous efforts in wearable computing research to enable interactive textiles. Most work focus, however, on integrating sensors for planar touch gestures, and thus do not fully take advantage of the flexible, deformable and tangible material properties of textile. In this work, we introduce SmartSleeve, a deformable textile sensor, which can sense both surface and deformation gestures in real-time. It expands the gesture vocabulary with a range of expressive interaction techniques, and we explore new opportunities using advanced deformation gestures, such as, Twirl, Twist, Fold, Push and Stretch. We describe our sensor design, hardware implementation and its novel non-rigid connector architecture. We provide a detailed description of our hybrid gesture detection pipeline that uses learning-based algorithms and heuristics to enable real-time gesture detection and tracking. Its modular architecture allows us to derive new gestures through the combination with continuous properties like pressure, location, and direction. Finally, we report on the promising results from our evaluations which demonstrate real-time classification.
+                    </p>
                 </article>
                 <aside class="pp-sidebar">
                     <div class="pp-meta-group">
@@ -140,7 +147,7 @@
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMenu() { mobileMenu.classList.toggle('active'); }
         
-        // !!! IMPORTANT: CHANGE THIS ID for each new project file !!!
+        // Project ID
         window.projectID = 'p0'; 
     </script>
     <script src="../js/data.js"></script>
