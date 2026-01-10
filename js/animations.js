@@ -15,29 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /**
          * SETUP CANVAS with IntersectionObserver
-         * Automaticaly pauses animation loop when canvas is not in viewport.
+         * Uses FIXED design dimensions to prevent distortion on resize/scroll.
+         * CSS handles scaling the canvas to fit the container.
          */
-        setupCanvas: function (id, drawFn) {
+        setupCanvas: function (id, drawFn, designWidth = 300, designHeight = 225) {
             const cvs = document.getElementById(id);
             if (!cvs) return;
 
-            const ctx = cvs.getContext('2d', { alpha: true }); // Optimize for transparency if needed
-            let w, h;
+            const ctx = cvs.getContext('2d', { alpha: true });
             let animationFrameId;
             let isVisible = false;
 
-            // Resize Handler
-            const resize = () => {
-                if (!cvs.parentElement) return;
-                w = cvs.parentElement.offsetWidth;
-                h = cvs.parentElement.offsetHeight;
-                const dpr = window.devicePixelRatio || 1;
-                cvs.width = w * dpr;
-                cvs.height = h * dpr;
-                ctx.scale(dpr, dpr);
-            };
-            window.addEventListener('resize', resize);
-            resize(); // Initial sizing
+            // Fixed design dimensions - never change
+            const w = designWidth;
+            const h = designHeight;
+
+            // Size canvas once at initialization (with DPR for sharpness)
+            const dpr = window.devicePixelRatio || 1;
+            cvs.width = w * dpr;
+            cvs.height = h * dpr;
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(dpr, dpr);
 
             // Animation Loop
             function loop() {
@@ -60,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (animationFrameId) cancelAnimationFrame(animationFrameId);
                     }
                 });
-            }, { threshold: 0.0, rootMargin: "50px" }); // Start slightly before in view
+            }, { threshold: 0.0, rootMargin: "50px" });
 
             observer.observe(cvs);
         }
