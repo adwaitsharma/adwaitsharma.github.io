@@ -36,6 +36,23 @@
         .container { display: flex; flex-direction: column; min-height: 100vh; }
         .project-wrapper { max-width: 1000px; width: 100%; margin: 0 auto; padding: 60px 20px 60px 20px; flex: 1; }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "EMIL Project: Accelerating XR Innovation in Europe",
+      "abstract": "Overview of the European Media and Immersion Lab (EMIL), a network of XR labs accelerating AR/VR/MR technologies through funding and collaboration. Presented at IMX 2024.",
+      "image": "https://www.adwaitsharma.com/images/publications/emil_imx24.webp",
+      "url": "https://www.adwaitsharma.com/project-pages/p12.html",
+      "author": {
+            "@type": "Person",
+            "name": "Adwait Sharma",
+            "url": "https://www.adwaitsharma.com/"
+      },
+      "datePublished": "2024"
+}
+    </script>
 </head>
 <body>
 
@@ -60,7 +77,7 @@
             </div>
         </nav>
 
-        <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu" id="mobileMenu">
             <a href="../index.html#about" class="mobile-link">About</a>
             <a href="../index.html#ais-lab" class="mobile-link">AIS Lab</a>
             <a href="../index.html#teams" class="mobile-link">Team</a>
@@ -71,10 +88,10 @@
             <a href="../index.html#contact" class="mobile-link">Contact</a>
             
             <button id="close-mobile-menu" onclick="toggleMenu()" class="menu-close" aria-label="Close Menu">×</button>
-        </div>
+        </nav>
 
         <main class="project-wrapper"> 
-            <a href="../index.html#publications" class="back-nav">
+            <a href="../index.html#publications" class="back-nav" aria-label="Back to main site">
                 <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="back-text">Back to main site</span>
             </a>
