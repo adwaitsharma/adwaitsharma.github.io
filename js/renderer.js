@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Find Current Project Data
     const currentProject = publicationsData.find(p => p.id === window.projectID);
-    
+
     if (!currentProject) {
         document.querySelector('.project-wrapper').innerHTML = `
             <div style="padding:100px 0; text-align:center;">
@@ -104,7 +104,7 @@ function renderProjectContent(p) {
     const awardContainer = document.getElementById('pp-award-container');
 
     if (titleEl) titleEl.textContent = p.title;
-    
+
     if (venueEl) {
         const yearMatch = p.venue.match(/\b(19|20)\d{2}\b/);
         const year = yearMatch ? yearMatch[0] : '';
@@ -112,7 +112,7 @@ function renderProjectContent(p) {
     }
 
     if (awardContainer && p.award) {
-        awardContainer.innerHTML = `<div class="pp-award"><i class="fa-solid fa-trophy"></i> ${p.award}</div>`;
+        awardContainer.innerHTML = p.award;
     }
 
     const mediaContainer = document.getElementById('pp-media');
@@ -120,7 +120,7 @@ function renderProjectContent(p) {
         let mediaHTML = '';
         if (p.videoUrl && (p.videoUrl.includes('youtube') || p.videoUrl.includes('youtu.be'))) {
             const videoId = p.videoUrl.split('v=')[1] || p.videoUrl.split('/').pop();
-            const cleanId = videoId.split('&')[0]; 
+            const cleanId = videoId.split('&')[0];
             mediaHTML = `<div class="video-responsive"><iframe src="https://www.youtube.com/embed/${cleanId}" title="${p.title}" frameborder="0" allowfullscreen></iframe></div>`;
         } else if (p.modalVideo) {
             mediaHTML = `<video controls autoplay muted loop class="pp-featured-media" poster="../${p.thumb}"><source src="../${p.modalVideo}" type="video/mp4"></video>`;
@@ -161,20 +161,20 @@ function renderRelatedProjects(currentProject) {
 
     // 1. Exclude current project and only include those marked for the list
     const otherProjects = publicationsData.filter(p => p.id !== currentProject.id && p.showInList);
-    
+
     // 2. Score based on category/tag overlap
     const currentTags = Array.isArray(currentProject.type) ? currentProject.type : [currentProject.type];
-    
+
     const scoredProjects = otherProjects.map(p => {
         const pTags = Array.isArray(p.type) ? p.type : [p.type];
         // Calculate intersection of tags
         const commonTags = pTags.filter(tag => currentTags.includes(tag)).length;
-        
-        return { 
-            data: p, 
+
+        return {
+            data: p,
             // The score is (number of matching tags) + (random decimal 0-1)
             // This ensures relevant projects rise to top, but the order changes on refresh
-            score: commonTags + Math.random() 
+            score: commonTags + Math.random()
         };
     });
 
@@ -200,21 +200,21 @@ function renderRelatedProjects(currentProject) {
 }
 
 // --- BIBTEX UTILITIES ---
-window.showBibtex = function() {
+window.showBibtex = function () {
     const id = window.projectID;
     const data = publicationsData.find(p => p.id === id);
     if (!data || !data.bibtex) return;
-    
+
     const modal = document.getElementById('bibtex-modal');
     const textArea = document.getElementById('bibtex-text');
-    if(modal && textArea) {
+    if (modal && textArea) {
         textArea.value = data.bibtex;
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
+        document.body.style.overflow = 'hidden';
     }
 };
 
-window.closeBibtex = function() {
+window.closeBibtex = function () {
     const modal = document.getElementById('bibtex-modal');
     if (modal) {
         modal.classList.remove('active');
@@ -222,7 +222,7 @@ window.closeBibtex = function() {
     }
 };
 
-window.copyBibtex = function() {
+window.copyBibtex = function () {
     const copyText = document.getElementById("bibtex-text");
     if (!copyText) return;
     copyText.select();
