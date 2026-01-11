@@ -146,7 +146,7 @@ function renderProjectContent(p) {
     const tagsContainer = document.getElementById('pp-tags');
     if (tagsContainer && p.type) {
         const tags = Array.isArray(p.type) ? p.type : [p.type];
-        tagsContainer.innerHTML = tags.map(tag => `<span class="pp-tag">${tag}</span>`).join('');
+        tagsContainer.innerHTML = tags.join('<span class="pp-tag-separator">, </span>');
     }
 }
 

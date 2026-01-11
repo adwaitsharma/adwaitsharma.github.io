@@ -116,8 +116,9 @@ function renderPublications() {
             <div>
                 <span class="pub-venue">${pub.venue}</span>
                 <h3 class="pub-title">
-                    <a href="${projectLink}">${pub.title}</a> ${pub.award || ''}
+                    <a href="${projectLink}">${pub.title}</a>
                 </h3>
+                ${pub.award ? `<div class="pub-award-row">${pub.award}</div>` : ''}
                 <p class="pub-authors">${pub.authors}</p>
                 <p class="pub-desc">${pub.desc}</p>
                 <div class="pub-actions">
