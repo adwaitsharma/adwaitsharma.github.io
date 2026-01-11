@@ -238,13 +238,39 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     text-decoration-color: var(--accent);
 }
 
+.text-link-thick {
+    text-decoration-thickness: 2px !important;
+    /* Slightly thicker than base 1px */
+    text-underline-offset: 3px;
+}
+
+/* News Section Refinements */
+.news-module {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-left: 2px solid var(--accent);
+    /* Blue accent for distinction */
+    padding-left: 20px;
+    margin-bottom: 2em;
+    margin-top: 3em;
+    /* Significant spacing to distinguish from above content */
+}
+
+.news-item {
+    display: block;
+    /* Revert to standard block flow */
+    margin-bottom: 8px;
+}
+
 .news-date {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    opacity: 0.5;
+    /* Inherits 0.8rem from parent */
     margin-right: 12px;
     letter-spacing: 0.02em;
-    color: var(--text-main);
+    color: var(--text-meta);
+    font-weight: 500;
+    display: inline;
+    /* Ensure it flows inline with text */
 }
 
 
@@ -553,36 +579,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     letter-spacing: var(--tracking-normal);
 }
 
-/* News Module */
-.news-module {
-    border-left: 2px solid var(--accent);
-    background: #FFFFFF;
-    padding: 20px 24px;
-    margin-top: 48px;
-    border-radius: 0 var(--radius-soft) var(--radius-soft) 0;
-    border: 1px solid var(--border);
-    border-left-width: 3px;
-    border-left-color: var(--accent);
-}
-
-.news-item {
-    font-size: var(--text-sm);
-    color: var(--text-body);
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 16px;
-    align-items: baseline;
-    margin-bottom: 10px;
-    line-height: var(--leading-normal);
-}
-
-.news-date {
-    font-family: var(--font-mono);
-    color: var(--text-meta);
-    font-weight: var(--weight-medium);
-    font-size: var(--text-xs);
-    letter-spacing: var(--tracking-wide);
-}
+/* News Module Duplicate Removed */
 
 /* SECTION: AIS LAB HEADER */
 #ais-lab {
