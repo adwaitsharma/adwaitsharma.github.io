@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Accessible tactile images are vital for individuals with visual impairments, yet their creation is often complex, time-consuming, and expensive. In this paper, we introduce Pic2Tac, a novel system for generating tactile images from standard photographs. Pic2Tac leverages computer vision and image processing to automatically simplify photographs and convert them into tactile formats. We describe the system’s architecture, including its semantic-aware simplification process that preserves key information while reducing visual clutter. We present a user study with blind and low-vision participants to evaluate the effectiveness of the generated tactile images in object recognition and scene understanding. Our results indicate that Pic2Tac provides a practical and cost-effective solution for creating accessible tactile content from everyday photographs, significantly lowering the barrier to entry for tactile image production.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

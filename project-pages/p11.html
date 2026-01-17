@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         While microgestures allow for subtle interaction, their application has largely focused on freehand input or static grasping. In this work, we present GraspUI, a comprehensive design space that treats the act of grasping as a multi-phase interaction journey. We identify seven distinct phases of grasping—from the initial reach and pre-grasp adjustment to the firm grasp and eventual release. For each phase, we propose object-centric microgestures that leverage the physical properties of the object being held. This approach enables a seamless transition between physical manipulation and digital control. We validate GraspUI through a user study exploring the intuitiveness and social acceptability of these gestures across various object categories. Our findings suggest that integrating gestures into the natural flow of grasping provides a more fluid and context-aware interface for ubiquitous computing environments.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

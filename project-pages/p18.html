@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Designing user interfaces for handheld objects requires a deep understanding of how users naturally position their fingers. However, finger placement varies significantly based on individual hand anatomy and the specific object being held. In this paper, we introduce GraspR, a computational model that predicts user preferences for single-finger microgestures in GraspUIs. By leveraging a dataset of user-elicited finger placements across various objects and grasp types, GraspR can accurately suggest the most ergonomic and intuitive locations for UI elements. We demonstrate how GraspR can be used to create adaptive interface layouts that automatically adjust to the user's current grasp, maximizing interaction efficiency and comfort. Our technical evaluation shows that GraspR outperforms baseline models in predicting preferred interaction areas, paving the way for more personalized and accessible gestural interfaces on everyday objects.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

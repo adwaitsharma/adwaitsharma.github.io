@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Force-based input offers a promising alternative to traditional touch interactions, providing a pressure-sensitive dimension for digital control. However, the physical properties of the surface—such as its rigidity, deformability, or movability—can significantly influence how users perceive and perform force-based tasks. In this work, we present a systematic investigation into the impact of these surface properties on force-input interactions. We evaluated three distinct surface conditions: rigid (standard glass), deformable (silicone-based), and movable (spring-mounted). Through a series of target acquisition and pressure-tracking tasks, we quantified performance in terms of accuracy, stability, and speed. Our results reveal that while deformable surfaces provide better haptic feedback for fine-grained pressure control, rigid surfaces offer faster response times for binary-like force triggers. We conclude with a set of design recommendations for choosing surface materials based on the desired interaction complexity and tactile feedback requirements in pressure-sensitive devices.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

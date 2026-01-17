@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Deformable displays provide unique interaction opportunities by combining touch input with physical deformation. However, most existing deformable displays have static material properties, limiting the range of tactile feedback they can provide. In this work, we present DeformIO, a novel deformable display that supports continuous force input, multi-touch interaction, and dynamic stiffness control. By utilizing a pneumatic-based actuation system, DeformIO can actively vary the stiffness of its interaction surface in real-time. This allows the display to provide rich haptic feedback, such as simulating different material properties or providing tactile cues for UI elements. We describe the design and implementation of DeformIO, including its sensing and actuation pipelines. Furthermore, we demonstrate several interaction scenarios that leverage dynamic stiffness, such as tactile maps, deformable widgets, and gaming applications.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

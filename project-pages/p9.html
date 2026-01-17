@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Driver emotions significantly impact road safety and the overall driving experience. While modern vehicles incorporate various feedback systems to assist drivers, these systems often ignore the driver's emotional state. In this research, we explore the design of emotion-aware in-car feedback systems. We conducted a multi-phase study to evaluate how different feedback modalities (visual, auditory, and haptic) affect driver emotions and performance across various driving scenarios. Our findings highlight that personalized feedback, tailored to the driver's current emotional state and personality traits, can effectively mitigate negative emotions like frustration and stress while enhancing situational awareness. Based on our results, we propose a set of design guidelines for automotive designers to create more empathetic and effective in-car interfaces that promote both safety and well-being.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

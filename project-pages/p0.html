@@ -111,7 +111,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Over the last decades, there have been numerous efforts in wearable computing research to enable interactive textiles. Most work focus, however, on integrating sensors for planar touch gestures, and thus do not fully take advantage of the flexible, deformable and tangible material properties of textile. In this work, we introduce SmartSleeve, a deformable textile sensor, which can sense both surface and deformation gestures in real-time. It expands the gesture vocabulary with a range of expressive interaction techniques, and we explore new opportunities using advanced deformation gestures, such as, Twirl, Twist, Fold, Push and Stretch. We describe our sensor design, hardware implementation and its novel non-rigid connector architecture. We provide a detailed description of our hybrid gesture detection pipeline that uses learning-based algorithms and heuristics to enable real-time gesture detection and tracking. Its modular architecture allows us to derive new gestures through the combination with continuous properties like pressure, location, and direction. Finally, we report on the promising results from our evaluations which demonstrate real-time classification.
                     </p>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -135,7 +135,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

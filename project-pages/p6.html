@@ -114,7 +114,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         This Interactivity shows live demonstrations of our lab’s most recent work on body-based interfaces. The soft, curved and deformable surface of the human body presents unique opportunities and challenges for interfaces. New form factors, materials and interaction techniques are required that move past the conventional rigid, planar and rectangular devices and the corresponding interaction styles. We highlight three themes of challenges for soft body-based interfaces: 1) How to design interfaces that are optimized for the body? We demonstrate how interactive computational design tools can help novices and experts to create better device designs. 2) Once they are designed, how to physically prototype and fabricate soft interfaces? We show accessible DIY fabrication methods for soft devices made of functional materials that make use of biomaterials. 3) How to leverage the richness of interacting on the body? We demonstrate on-body and off-body interactions that leverage the soft properties of the interface.
                     </p>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -138,7 +138,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

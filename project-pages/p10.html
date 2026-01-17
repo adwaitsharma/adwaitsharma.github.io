@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Wearable systems for arm movement sensing often rely on bulky sensors or custom-made garments that are uncomfortable for daily wear. In this work, we introduce SeamSleeve, a minimally invasive e-textile design that leverages existing clothing seams as capacitive sensors for tracking arm movements. By integrating conductive threads directly into the stitching of standard garments, SeamSleeve maintains the original aesthetics and comfort of the clothing while enabling robust activity recognition. We present a systematic evaluation of various stitching patterns and their sensing capabilities. Our results demonstrate that SeamSleeve can accurately recognize a wide range of upper-body exercises and daily activities with high precision. This approach offers a promising direction for seamlessly integrating sensing capabilities into everyday apparel without compromising on wearability or style.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

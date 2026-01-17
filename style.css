@@ -16,25 +16,25 @@
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
 
-    /* Type Scale - Minor Third (1.2) */
-    --text-xs: 0.694rem;
-    /* 11px */
-    --text-sm: 0.833rem;
-    /* 13px */
+    /* Type Scale - Refined for Scandinavian Aesthetic */
+    --text-xs: 0.75rem;
+    /* 12px - captions, metadata */
+    --text-sm: 0.875rem;
+    /* 14px - secondary text */
     --text-base: 1rem;
-    /* 16px */
+    /* 16px - body text (WCAG baseline) */
     --text-md: 1.125rem;
-    /* 18px */
+    /* 18px - large body */
     --text-lg: 1.25rem;
-    /* 20px */
+    /* 20px - small headings */
     --text-xl: 1.5rem;
-    /* 24px */
+    /* 24px - section headings */
     --text-2xl: 1.875rem;
-    /* 30px */
-    --text-3xl: 2.25rem;
-    /* 36px */
+    /* 30px - page headings */
+    --text-3xl: 2.5rem;
+    /* 40px - hero text */
     --text-4xl: 3rem;
-    /* 48px */
+    /* 48px - display text */
 
     /* Letter Spacing */
     --tracking-tighter: -0.03em;
@@ -201,6 +201,128 @@ button:focus-visible {
     text-transform: uppercase;
 }
 
+/* Additional Semantic Typography Classes */
+.t-display {
+    font-family: var(--font-head);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-3xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--text-main);
+}
+
+.t-display-lg {
+    font-family: var(--font-head);
+    font-weight: var(--weight-semibold);
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: var(--tracking-tighter);
+    color: var(--text-main);
+}
+
+.t-body-lg {
+    font-family: var(--font-body);
+    font-weight: var(--weight-normal);
+    font-size: var(--text-md);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-body);
+}
+
+.t-caption {
+    font-family: var(--font-body);
+    font-weight: var(--weight-normal);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--text-body);
+}
+
+.t-caption-xs {
+    font-family: var(--font-body);
+    font-weight: var(--weight-normal);
+    font-size: var(--text-xs);
+    line-height: var(--leading-normal);
+    color: var(--text-meta);
+    opacity: 0.7;
+}
+
+.t-meta {
+    font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-meta);
+    text-transform: uppercase;
+}
+
+.t-label-number {
+    font-family: var(--font-mono);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-meta);
+    margin-right: var(--space-md);
+}
+
+/* Utility Classes */
+.text-accent-subtle {
+    color: var(--text-meta);
+}
+
+.hero-heading {
+    margin-bottom: var(--space-xl);
+}
+
+.mission-text {
+    color: var(--text-main);
+}
+
+.cursor-blink {
+    font-family: var(--font-head);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-light);
+    color: var(--text-main);
+    animation: blinkCursor 0.8s infinite;
+}
+
+/* Additional Spacing Utilities */
+.mb-1 { margin-bottom: var(--space-sm); }      /* 8px */
+.mb-2 { margin-bottom: var(--space-md); }      /* 16px */
+.mb-3 { margin-bottom: var(--space-lg); }      /* 24px */
+.mb-4 { margin-bottom: var(--space-xl); }      /* 40px */
+
+.mt-1 { margin-top: var(--space-sm); }
+.mt-2 { margin-top: var(--space-md); }
+.mt-3 { margin-top: var(--space-lg); }
+.mt-4 { margin-top: var(--space-xl); }
+
+/* Typography Utilities */
+.font-medium { font-weight: var(--weight-medium); }
+.font-semibold { font-weight: var(--weight-semibold); }
+.font-bold { font-weight: var(--weight-bold); }
+
+.text-main { color: var(--text-main); }
+.text-body { color: var(--text-body); }
+.text-meta { color: var(--text-meta); }
+.text-accent { color: var(--accent); }
+
+.uppercase { text-transform: uppercase; }
+
+/* Layout Utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: var(--space-sm); }
+.gap-2 { gap: var(--space-md); }
+.gap-3 { gap: var(--space-lg); }
+
+/* Border Utilities */
+.border-l { border-left: 1px solid var(--border); }
+.border-l-accent { border-left: 2px solid var(--accent); }
+.pl-2 { padding-left: var(--space-md); }
+.pl-3 { padding-left: var(--space-lg); }
+
 /* LINKS */
 
 /* Telephone Links */
@@ -246,8 +368,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* News Section Refinements */
 .news-module {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
     border-left: 2px solid var(--accent);
     /* Blue accent for distinction */
     padding-left: 20px;
@@ -264,11 +386,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 .news-date {
     font-family: var(--font-mono);
-    /* Inherits 0.8rem from parent */
-    margin-right: 12px;
-    letter-spacing: 0.02em;
+    margin-right: var(--space-md);
+    letter-spacing: var(--tracking-normal);
     color: var(--text-meta);
-    font-weight: 500;
+    font-weight: var(--weight-medium);
     display: inline;
     /* Ensure it flows inline with text */
 }
@@ -597,9 +718,11 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 }
 
 .lab-brand {
-    font-size: clamp(3.5rem, 14vw, 7rem);
-    letter-spacing: 0;
-    line-height: 0.85;
+    font-family: var(--font-head);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: var(--weight-semibold);
+    line-height: 0.9;
+    letter-spacing: var(--tracking-tighter);
     text-transform: uppercase;
     display: inline-flex;
     align-items: baseline;
@@ -608,13 +731,12 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .lab-brand-ais {
     font-weight: 900;
     color: var(--text-main);
-    letter-spacing: var(--tracking-tighter);
 }
 
 .lab-brand-lab {
-    font-weight: 300;
-    color: #aaa;
-    letter-spacing: 0.06em;
+    font-weight: 200;
+    color: var(--text-meta);
+    letter-spacing: var(--tracking-wider);
     margin-left: 0.02em;
 }
 
@@ -848,27 +970,23 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .app-unique-footer {
     background-color: transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 28px 24px;
+    padding: 32px 24px;
     display: flex;
     align-items: center;
     justify-content: right;
     gap: 16px;
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.5);
     cursor: default;
-    font-family: var(--font-head);
-    font-size: var(--text-base);
-    font-weight: var(--weight-medium);
-    letter-spacing: var(--tracking-normal);
-    transition: background-color 0.2s ease;
-}
-
-.app-unique-footer:hover {
-    background-color: rgba(255, 255, 255, 0.03);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-normal);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
 }
 
 /* FEATURED PROJECTS */
 #featured-projects-section {
-    padding-top: var(--pad-section);
+    padding-top: 68px;
 }
 
 .proj-grid {
@@ -1228,8 +1346,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 .pub-venue {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: var(--weight-medium);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
     letter-spacing: var(--tracking-wide);
     color: var(--accent);
     margin-bottom: 6px;
@@ -1523,7 +1641,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     align-items: center;
     gap: 8px;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     color: var(--text-meta);
     border: 1px solid var(--border);
     padding: 8px 16px;
@@ -1920,6 +2038,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         --pad-section: 60px;
     }
 
+    #featured-projects-section {
+        padding-top: 52px;
+    }
+
     .navbar {
         padding: 0 20px;
     }
@@ -2082,6 +2204,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         --pad-section: 48px;
     }
 
+    #featured-projects-section {
+        padding-top: 48px;
+    }
+
     .t-h2 {
         font-size: 1.6rem;
     }
@@ -2159,7 +2285,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     /* Improve touch targets on mobile */
     .btn-sm {
         padding: 10px 16px;
-        font-size: 0.75rem;
+        font-size: var(--text-xs);
     }
 
     .filter-btn {

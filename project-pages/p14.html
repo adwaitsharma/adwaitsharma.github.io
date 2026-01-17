@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     
                     <p id="pp-abstract" class="pp-abstract-text">
                         Domestic robots, such as robotic vacuum cleaners, have become common in modern households. However, these robots spend the vast majority of their time idle at their charging stations. In this paper, we explore the potential of reappropriating these robots for ubiquitous computing tasks during their idle time. We present an extensive study that identifies over 100 potential use cases for "idle" domestic robots, ranging from home security and eldercare to environmental monitoring and interaction support. We contribute a detailed design space for researchers and developers to explore this "always-available" robotic infrastructure. Our work demonstrates that domestic robots can be much more than just cleaning tools; they can serve as mobile, sensing-rich platforms that enhance the functionality and intelligence of the smart home. This research has been widely recognized, with coverage by over 100 media outlets globally.
@@ -129,7 +129,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -137,7 +137,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

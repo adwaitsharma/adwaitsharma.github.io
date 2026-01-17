@@ -176,6 +176,14 @@ window.copyBibtex = function () {
     });
 };
 
+window.copyPageLink = function (btn) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        setTimeout(() => btn.innerHTML = original, 2000);
+    });
+};
+
 document.addEventListener('click', (e) => {
     const modal = document.getElementById('bibtex-modal');
     if (e.target === modal) window.closeBibtex();

@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Gestural user interfaces for computing devices most commonly require the user to have at least one hand free to interact with the device, for example, moving a mouse, touching a screen, or performing mid-air gestures. Consequently, users find it difficult to operate computing devices while holding or manipulating everyday objects. This limits the users from interacting with the digital world during a significant portion of their everyday activities, such as, using tools in the kitchen or workshop, carrying items, or workout with sports equipment. This thesis pushes the boundaries towards the bigger goal of enabling always-available input. Microgestures have been recognized for their potential to facilitate direct and subtle interactions. However, it remains an open question how to interact using gestures with computing devices when both of the user’s hands are occupied holding everyday objects. We take a holistic approach and focus on three core contributions: i) To understand end-users preferences, we present an empirical analysis of users’ choice of microgestures when holding objects of diverse geometries. Instead of designing a gesture set for a specific object or geometry and to identify gestures that generalize, this thesis leverages the taxonomy of grasp types established from prior research. ii) We tackle the critical problem of avoiding false activation by introducing a novel gestural input concept that leverages a single-finger movement, which stands out from everyday finger motions during holding and manipulating objects. Through a data-driven approach, we also systematically validate the concept’s robustness with different everyday actions. iii) While full sensor coverage on the user’s hand would allow detailed hand-object interaction, minimal instrumentation is desirable for real-world use. This thesis addresses the problem of identifying sparse sensor layouts. We present the first rapid computational method, along with a GUI-based design tool that enables iterative design based on the designer’s high-level requirements. Furthermore, we demonstrate that minimal form-factor devices, like smart rings, can be used to effectively detect microgestures in hands-free and busy scenarios. Overall, the presented findings will serve as both conceptual and technical foundations for enabling interaction with computing devices wherever and whenever users need them.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

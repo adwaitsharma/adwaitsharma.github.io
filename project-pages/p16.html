@@ -111,7 +111,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Electromyography (EMG) is a powerful modality for sensing muscle activity and recognizing subtle finger gestures. However, finding an effective but sparse electrode layout remains a significant challenge for designers, as the placement significantly impacts recognition accuracy and device form factor. In this work, we introduce SparseEMG, a computational design tool for the rapid prototyping of sparse EMG layouts. Our approach leverages a large-scale dataset of high-density EMG recordings to simulate and evaluate thousands of potential sparse configurations. We provide a GUI-based tool that allows designers to specify target gesture sets and hardware constraints, automatically suggesting the most performant and robust electrode placements. We validate SparseEMG through a series of experiments, demonstrating that computationally optimized sparse layouts can achieve recognition accuracies comparable to high-density arrays while significantly reducing hardware complexity and power consumption.
                     </p>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -135,7 +135,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

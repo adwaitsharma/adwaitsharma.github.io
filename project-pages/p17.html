@@ -114,7 +114,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         Deformable interfaces provide unique opportunities for rich tactile interaction, but providing high-fidelity force feedback on soft surfaces remains technically challenging due to the inherent compliance of the material. In this paper, we introduce HydroHaptics, a platform that enables high-fidelity force feedback on deformable interfaces using hydrostatic transmission. By leveraging the near-incompressibility of fluids, HydroHaptics can transmit precise forces from remote actuators to a soft interaction surface with minimal latency and high transparency. We describe the design and fabrication of the hydrostatic cells, our closed-loop control system for force rendering, and a series of technical evaluations characterizing the system's dynamic range and frequency response. Furthermore, we demonstrate the versatility of HydroHaptics through several interaction scenarios, including simulating varying material stiffness, rendering complex textures on soft buttons, and providing reactive feedback for musical expression on deformable controllers.
                     </p>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -138,7 +138,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>

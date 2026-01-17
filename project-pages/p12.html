@@ -112,7 +112,7 @@
 
             <div class="pp-content-grid">
                 <article class="pp-main-text">
-                    <h2 class="pp-abstract-label" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 10px;">Abstract</h2>
+                    <h2 class="pp-abstract-label">Abstract</h2>
                     <p id="pp-abstract" class="pp-abstract-text">
                         The European Media and Immersion Lab (EMIL) is a physical and virtual hub designed to accelerate the development of eXtended Reality (XR) technologies across Europe. As a network of leading XR labs, EMIL provides significant financial support through cascade funding to third-party projects, fostering innovation in AR, VR, and MR. This project overview highlights EMIL's mission to bridge the gap between academic research and commercial application by providing developers and researchers with access to state-of-the-art facilities, expert mentorship, and a collaborative ecosystem. We discuss the strategic pillars of the lab, including the promotion of excellence in immersive media content, the development of novel interaction paradigms, and the establishment of a sustainable infrastructure for future European XR innovation.
                     </p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="pp-meta-group">
                         <h4>Share</h4>
-                        <button class="pp-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');" aria-label="Copy Link">
+                        <button class="pp-btn" onclick="copyPageLink(this)" aria-label="Copy Link">
                             <i class="fa-solid fa-link"></i> Copy Link
                         </button>
                     </div>
@@ -136,7 +136,7 @@
             </div>
 
             <section class="related-section">
-                <h2 class="t-h2" style="font-size: 1.5rem; border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
+                <h2 class="t-h2" style="border-bottom: none; margin-bottom: 20px;">Related Projects</h2>
                 <div id="related-projects-grid" class="related-grid"></div>
             </section>
         </main>
