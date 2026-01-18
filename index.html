@@ -299,7 +299,7 @@
                                 <span>Some exciting news coming from the lab - stay tuned!</span>
                             </div>
 
-                            
+
 
                         </div>
                     </article>
@@ -312,8 +312,7 @@
                     <div style="max-width: 1100px; margin: 0 auto; position: relative;">
                         <h2 class="lab-brand"><span class="lab-brand-ais">AIS</span><span
                                 class="lab-brand-lab">LAB</span></h2>
-                        <div class="t-mono"
-                            style="margin-top: 16px; margin-bottom: 30px; opacity: 0.6;">
+                        <div class="t-mono" style="margin-top: 16px; margin-bottom: 30px; opacity: 0.6;">
                             (pronounced "ace")</div>
 
                         <div class="lab-sub">Advanced Interaction & Sensing</div>
@@ -336,7 +335,13 @@
 
                                 <a href="#research" class="explore-container">
                                     <span class="explore-text">Explore research</span>
-                                    <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
+                                    <span class="arrow-circle">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="square"
+                                            stroke-linejoin="round">
+                                            <path d="M12 5v14M19 12l-7 7-7-7" />
+                                        </svg>
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -372,6 +377,29 @@
                                     privacy.</p>
                             </article>
                         </div>
+                        <div class="ra-nav-controls">
+                            <!-- Counter Left -->
+                            <div class="ra-counter" id="ra-counter">
+                                <span class="ra-current">1</span>
+                                <span class="ra-separator">/</span>
+                                <span class="ra-total">4</span>
+                            </div>
+                            <!-- Arrows Right -->
+                            <div class="ra-nav-buttons">
+                                <button class="ra-nav-btn" id="ra-nav-prev" aria-label="Previous research area">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="square" stroke-linejoin="round">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                <button class="ra-nav-btn" id="ra-nav-next" aria-label="Next research area">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="square" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -383,6 +411,108 @@
                             contexts like:</p>
                     </div>
 
+                    <!-- Mobile Accordion (visible only on mobile) -->
+                    <div class="app-accordion">
+                        <div class="app-accordion-item">
+                            <button class="app-accordion-header" onclick="toggleAppAccordion(0)">
+                                <div class="app-accordion-title">
+                                    <span class="accordion-number">[01]</span>
+                                    <div class="app-accordion-title-row">
+                                        <div class="app-accordion-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Healthcare</h3>
+                                    </div>
+                                </div>
+                                <div class="app-accordion-toggle" id="app-toggle-0">+</div>
+                            </button>
+                            <div class="app-accordion-content" id="app-content-0">
+                                <p>Ensure immediate accessibility for motor-impaired users and sterility for clinicians
+                                    via
+                                    contact-free, low-effort interactions.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-accordion-item">
+                            <button class="app-accordion-header" onclick="toggleAppAccordion(1)">
+                                <div class="app-accordion-title">
+                                    <span class="accordion-number">[02]</span>
+                                    <div class="app-accordion-title-row">
+                                        <div class="app-accordion-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                            </svg>
+                                        </div>
+                                        <h3>Smart Homes</h3>
+                                    </div>
+                                </div>
+                                <div class="app-accordion-toggle" id="app-toggle-1">+</div>
+                            </button>
+                            <div class="app-accordion-content" id="app-content-1">
+                                <p>Anticipate users' needs using ambient sensing to adjust comfort instantly,
+                                    eliminating
+                                    the need for loud, explicit commands.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-accordion-item">
+                            <button class="app-accordion-header" onclick="toggleAppAccordion(2)">
+                                <div class="app-accordion-title">
+                                    <span class="accordion-number">[03]</span>
+                                    <div class="app-accordion-title-row">
+                                        <div class="app-accordion-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.29-3.41a1 1 0 0 0-.83-.42H6a1 1 0 0 0-1 1v4h11">
+                                                </path>
+                                                <circle cx="7" cy="16" r="2"></circle>
+                                                <circle cx="17" cy="16" r="2"></circle>
+                                            </svg>
+                                        </div>
+                                        <h3>Mobility</h3>
+                                    </div>
+                                </div>
+                                <div class="app-accordion-toggle" id="app-toggle-2">+</div>
+                            </button>
+                            <div class="app-accordion-content" id="app-content-2">
+                                <p>Preserve attention for commuters using continuous eyes-free interaction that ensures
+                                    safety while navigating busy streets.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-accordion-item">
+                            <button class="app-accordion-header" onclick="toggleAppAccordion(3)">
+                                <div class="app-accordion-title">
+                                    <span class="accordion-number">[04]</span>
+                                    <div class="app-accordion-title-row">
+                                        <div class="app-accordion-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <h3>Industrial</h3>
+                                    </div>
+                                </div>
+                                <div class="app-accordion-toggle" id="app-toggle-3">+</div>
+                            </button>
+                            <div class="app-accordion-content" id="app-content-3">
+                                <p>Augment manual workflows with tool-aware AI agents that proactively verify precision
+                                    and
+                                    safety in demanding work environments.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Grid (hidden on mobile) -->
                     <div class="app-unique-grid">
                         <div class="app-unique-card">
                             <div class="app-unique-icon">
@@ -454,57 +584,103 @@
                                 <span class="header-link-text">
                                     <a href="#publications">See Full List of Publications</a>
                                 </span>
-                                <a href="#publications" class="arrow-circle" aria-label="Scroll to publications"><i
-                                        class="fa-solid fa-arrow-down"></i></a>
+                                <a href="#publications" class="arrow-circle" aria-label="Scroll to publications">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="square" stroke-linejoin="round">
+                                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                                    </svg>
+                                </a>
                             </div>
                         </div>
 
                         <div class="proj-grid" id="projects-grid">
-                            <article class="proj-card" onclick="window.location.href='project-pages/p14.html'">
-                                <div class="proj-thumb-wrap"><img src="images/beyond-vacuuming-featured.webp"
-                                        class="proj-thumb"
-                                        alt="Beyond Vacuuming - Domestic Robot Idle Time Research for Ubiquitous Computing"
-                                        loading="lazy">
+                            <div class="carousel-track" id="carousel-track">
+                                <article class="proj-card" onclick="window.location.href='project-pages/p14.html'">
+                                    <div class="proj-thumb-wrap"><img src="images/beyond-vacuuming-featured.webp"
+                                            class="proj-thumb"
+                                            alt="Beyond Vacuuming - Domestic Robot Idle Time Research for Ubiquitous Computing"
+                                            loading="lazy">
+                                    </div>
+                                    <div class="proj-card-content">
+                                        <span class="proj-meta">ROBOTICS // CHI '25</span>
+                                        <h3 class="proj-title">Beyond Vacuuming</h3>
+                                        <p class="proj-desc">Reappropriating idle domestic robots for ubiquitous
+                                            computing,
+                                            providing over 100 use cases and a design space to guide researchers and
+                                            designers.
+                                        </p>
+                                        <span class="proj-link-text">View Project</span>
+                                    </div>
+                                </article>
+                                <article class="proj-card" onclick="window.location.href='project-pages/p11.html'">
+                                    <div class="proj-thumb-wrap"><img src="images/graspui-featured.webp"
+                                            class="proj-thumb"
+                                            alt="GraspUI - Object-Centric Microgesture Interaction Design Space"
+                                            loading="lazy"></div>
+                                    <div class="proj-card-content">
+                                        <span class="proj-meta">MICROGESTURES // DIS '24</span>
+                                        <h3 class="proj-title">GraspUI</h3>
+                                        <p class="proj-desc">Design space for object-centric microgesture interactions
+                                            throughout the grasping process, from pre-grasp to post-grasp phases.</p>
+                                        <span class="proj-link-text">View Project</span>
+                                    </div>
+                                </article>
+                                <article class="proj-card" onclick="window.location.href='project-pages/p4.html'">
+                                    <div class="proj-thumb-wrap"><img src="images/sparseimu-featured.webp"
+                                            class="proj-thumb"
+                                            alt="SparseIMU - Computational Design Tool for Sparse IMU Sensor Placement"
+                                            loading="lazy"></div>
+                                    <div class="proj-card-content">
+                                        <span class="proj-meta">SENSING // TOCHI '23</span>
+                                        <h3 class="proj-title">SparseIMU</h3>
+                                        <p class="proj-desc">Computational design tool to solve a multi-factorial
+                                            problem of
+                                            recognizing always-available input with minimal sensors.</p>
+                                        <span class="proj-link-text">View Project</span>
+                                    </div>
+                                </article>
+                                <article class="proj-card" onclick="window.location.href='project-pages/p0.html'">
+                                    <div class="proj-thumb-wrap"><img src="images/smartsleeve-featured.webp"
+                                            class="proj-thumb"
+                                            alt="SmartSleeve - Interactive Wearable Textile for Gesture Recognition"
+                                            loading="lazy"></div>
+                                    <div class="proj-card-content">
+                                        <span class="proj-meta">SENSING // UIST '17</span>
+                                        <h3 class="proj-title">SmartSleeve</h3>
+                                        <p class="proj-desc">Wearable textile that can detect 22 surface and deformation
+                                            gestures, such as twirl, twist, fold, push, and stretch—in real time.</p>
+                                        <span class="proj-link-text">View Project</span>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <!-- Carousel Controls (Mobile Only) - Centered -->
+                            <div class="carousel-controls" id="carousel-controls">
+                                <div class="carousel-dots" id="carousel-dots">
+                                    <div class="carousel-dot" data-index="0">
+                                        <div class="carousel-progress"></div>
+                                    </div>
+                                    <div class="carousel-dot" data-index="1">
+                                        <div class="carousel-progress"></div>
+                                    </div>
+                                    <div class="carousel-dot" data-index="2">
+                                        <div class="carousel-progress"></div>
+                                    </div>
+                                    <div class="carousel-dot" data-index="3">
+                                        <div class="carousel-progress"></div>
+                                    </div>
                                 </div>
-                                <span class="proj-meta">ROBOTICS // CHI '25</span>
-                                <h3 class="proj-title">Beyond Vacuuming</h3>
-                                <p class="proj-desc">Reappropriating idle domestic robots for ubiquitous computing,
-                                    providing over 100 use cases and a design space to guide researchers and designers.
-                                </p>
-                                <span class="proj-link-text">Learn More</span>
-                            </article>
-                            <article class="proj-card" onclick="window.location.href='project-pages/p11.html'">
-                                <div class="proj-thumb-wrap"><img src="images/graspui-featured.webp" class="proj-thumb"
-                                        alt="GraspUI - Object-Centric Microgesture Interaction Design Space"
-                                        loading="lazy"></div>
-                                <span class="proj-meta">MICROGESTURES // DIS '24</span>
-                                <h3 class="proj-title">GraspUI</h3>
-                                <p class="proj-desc">Design space for object-centric microgesture interactions
-                                    throughout the grasping process, from pre-grasp to post-grasp phases.</p>
-                                <span class="proj-link-text">Learn More</span>
-                            </article>
-                            <article class="proj-card" onclick="window.location.href='project-pages/p4.html'">
-                                <div class="proj-thumb-wrap"><img src="images/sparseimu-featured.webp"
-                                        class="proj-thumb"
-                                        alt="SparseIMU - Computational Design Tool for Sparse IMU Sensor Placement"
-                                        loading="lazy"></div>
-                                <span class="proj-meta">SENSING // TOCHI '23</span>
-                                <h3 class="proj-title">SparseIMU</h3>
-                                <p class="proj-desc">Computational design tool to solve a multi-factorial problem of
-                                    recognizing always-available input with minimal sensors.</p>
-                                <span class="proj-link-text">Learn More</span>
-                            </article>
-                            <article class="proj-card" onclick="window.location.href='project-pages/p0.html'">
-                                <div class="proj-thumb-wrap"><img src="images/smartsleeve-featured.webp"
-                                        class="proj-thumb"
-                                        alt="SmartSleeve - Interactive Wearable Textile for Gesture Recognition"
-                                        loading="lazy"></div>
-                                <span class="proj-meta">SENSING // UIST '17</span>
-                                <h3 class="proj-title">SmartSleeve</h3>
-                                <p class="proj-desc">Wearable textile that can detect 22 surface and deformation
-                                    gestures, such as twirl, twist, fold, push, and stretch—in real time.</p>
-                                <span class="proj-link-text">Learn More</span>
-                            </article>
+                                <button class="carousel-play-pause" id="carousel-play-pause"
+                                    aria-label="Pause auto-play">
+                                    <svg id="pause-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                    </svg>
+                                    <svg id="play-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                                        style="display: none;">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -539,21 +715,21 @@
                             <div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/jack-ryan/"
                                     class="text-link" target="_blank" rel="noopener noreferrer">Jack Ryan</a></div>
                             <div class="team-role">Ph.D. Student</div>
-                            <div class="team-lead">co-advised with Prof. Jason Alexander</div>
+                            <div class="team-lead">co-advised with <br> Prof. Jason Alexander</div>
                         </div>
                         <div class="team-card"><img src="images/james-headshot.webp" class="team-img"
                                 alt="James Whiffing" loading="lazy">
                             <div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/james-whiffing"
                                     class="text-link" target="_blank" rel="noopener noreferrer">James Whiffing</a></div>
                             <div class="team-role">Ph.D. Student</div>
-                            <div class="team-lead">co-advised with Dr. Christopher Clarke</div>
+                            <div class="team-lead">co-advised with <br> Dr. Christopher Clarke</div>
                         </div>
                         <div class="team-card"><img src="images/zak-headshot.webp" class="team-img" alt="Zak Sheehy"
                                 loading="lazy">
                             <div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/zak-sheehy/"
                                     class="text-link" target="_blank" rel="noopener noreferrer">Zak Sheehy</a></div>
                             <div class="team-role">Ph.D. Student</div>
-                            <div class="team-lead">co-advised with Dr. Ezio Preatoni</div>
+                            <div class="team-lead">co-advised with <br> Dr. Ezio Preatoni</div>
                         </div>
                     </div>
 
@@ -573,14 +749,14 @@
                             <img src="images/alexz-headshot.webp" class="alumni-img" alt="Alexz Farrall" loading="lazy">
                             <div class="team-name"><a href="https://www.linkedin.com/in/alexzfarrall/" class="text-link"
                                     target="_blank" rel="noopener noreferrer">Dr. Alexz Farrall</a></div>
-                            <div class="team-lead">co-advised with Prof. Jason Alexander</div>
+                            <div class="team-lead">co-advised with <br> Prof. Jason Alexander</div>
                         </div>
                         <div class="team-card">
                             <img src="images/jamesn-headshot.webp" class="alumni-img" alt="James Nash" loading="lazy">
                             <div class="team-name"><a href="https://researchportal.bath.ac.uk/en/persons/james-nash"
                                     class="text-link" target="_blank" rel="noopener noreferrer">Dr. James Nash </a>
                             </div>
-                            <div class="team-lead">co-advised with Prof. Jason Alexander</div>
+                            <div class="team-lead">co-advised with <br> Prof. Jason Alexander</div>
                         </div>
                         <div class="team-card">
                             <img src="images/karolina-headshot.webp" class="alumni-img" alt="Karolina Pakenaite"
@@ -588,7 +764,7 @@
                             <div class="team-name"><a href="https://www.linkedin.com/in/karolina-pak%C4%97nait%C4%97/"
                                     class="text-link" target="_blank" rel="noopener noreferrer">Dr. Karolina
                                     Pakenaite</a></div>
-                            <div class="team-lead">co-advised with Prof. Peter Hall</div>
+                            <div class="team-lead">co-advised with <br> Prof. Peter Hall</div>
                         </div>
                     </div>
                 </section>
@@ -660,8 +836,7 @@
                     <div style="margin: 24px 0; border-left: 2px solid var(--border); padding-left: 15px;">
                         <h4 class="t-meta" style="margin-bottom:8px;">Reviewing (100+
                             Papers)</h4>
-                        <div class="t-caption"
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                        <div class="t-caption" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
                             <div>
                                 <strong>CHI:</strong> '19–'24***<br>
                                 <strong>UIST:</strong> '19–'24*<br>
@@ -917,6 +1092,8 @@
             <section id="join" class="panel-grid cols-1-1" data-aos="fade-up">
                 <div class="panel-cell" id="join-us-cell">
                     <h2 class="t-h2" id="join-title">Join the Lab</h2>
+
+                    <span class="section-label" id="video-label">Life in Bath</span>
                     <div class="video-wrapper" id="recruitment-video-box">
                         <iframe
                             src="https://player.vimeo.com/video/656982451?autoplay=0&loop=0&controls=1&byline=0&title=0"
@@ -925,16 +1102,17 @@
                             style="position:absolute; top:0; left:0; width:100%; height:100%;">
                         </iframe>
                     </div>
-                    <span class="video-caption" id="video-label">Life in Bath</span>
 
-                    <p class="t-body" style="margin-bottom: 24px;">
+                    <p class="t-body" style="margin-bottom: 24px; margin-top: 16px;">
                         The University of Bath is recognized as a top institution globally. See our ranking <a
                             href="https://www.bath.ac.uk/corporate-information/rankings-and-reputation/" target="_blank"
                             rel="noopener noreferrer" class="text-link">here</a>.
                     </p>
 
-                    <p class="t-body" style="margin-bottom: 1.5em;">
-                        <strong>For prospective students: </strong> The Advanced Interaction & Sensing Lab is part of
+                    <span class="section-label" style="margin-top: 32px; display: block;">For Prospective
+                        Students</span>
+                    <p class="t-body" style="margin-bottom: 1.5em; margin-top: 12px;">
+                        The Advanced Interaction & Sensing Lab is part of
                         the BathHCI group in the Department of Computer Science at the University of Bath. Working as
                         one team, we value the word <em>our</em>, not mine or yours — because progress, ownership, and
                         learning belong to everyone together.
@@ -1041,7 +1219,10 @@
                     <span class="close-bib" onclick="closeBibtex()">×</span>
                 </div>
                 <textarea id="bibtex-text" class="bibtex-code" readonly aria-label="BibTeX Code"></textarea>
-                <button class="btn-copy" onclick="copyBibtex()">Copy to Clipboard</button>
+                <button class="btn-copy" onclick="copyBibtex()">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copy to Clipboard</span>
+                </button>
             </div>
         </div>
 

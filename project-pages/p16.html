@@ -95,7 +95,11 @@
 
         <main class="project-wrapper"> 
             <a href="../index.html#publications" class="back-nav" aria-label="Back to main site">
-                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="arrow-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
                 <span class="back-text">Back to main site</span>
             </a>
 
@@ -157,7 +161,10 @@
                     <span class="close-bib" onclick="closeBibtex()">×</span>
                 </div>
                 <textarea id="bibtex-text" class="bibtex-code" readonly aria-label="BibTeX Code"></textarea>
-                <button class="btn-copy" onclick="copyBibtex()">Copy to Clipboard</button>
+                <button class="btn-copy" onclick="copyBibtex()">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copy to Clipboard</span>
+                </button>
             </div>
         </div>
 
