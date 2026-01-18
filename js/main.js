@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobileMenu');
+    const menuToggle = document.getElementById('mobile-menu-trigger');
     window.toggleMenu = function () { // Expose to window for onclick
         mobileMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
     };
 
     // 3. Render Publications if data exists
@@ -130,8 +132,11 @@ function renderPublications() {
 }
 
 window.filterPubs = function (cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    // Remove active class from ALL filter buttons (desktop + mobile)
+    document.querySelectorAll('.filter-btn, .scandi-filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
+    // Filter desktop publications
     document.querySelectorAll('.pub-row').forEach(row => {
         const cats = (row.getAttribute('data-category') || '').split(',').map(s => s.trim());
         const venue = (row.getAttribute('data-venue') || '');
@@ -141,6 +146,23 @@ window.filterPubs = function (cat, btn) {
             row.classList.add('hidden');
         }
     });
+
+    // Filter mobile publications
+    if (typeof publicationsData !== 'undefined') {
+        document.querySelectorAll('.scandi-pub-card').forEach((card, idx) => {
+            const pub = publicationsData[idx];
+            if (!pub) return;
+
+            const cats = Array.isArray(pub.type) ? pub.type : [pub.type];
+            const venue = pub.venue || '';
+
+            if (cat === 'all' || cats.includes(cat) || venue.includes(cat)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
 };
 
 
@@ -187,6 +209,17 @@ window.copyPageLink = function (btn) {
 document.addEventListener('click', (e) => {
     const modal = document.getElementById('bibtex-modal');
     if (e.target === modal) window.closeBibtex();
+});
+
+// Re-render publications on window resize to handle device switching
+let pubResizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(pubResizeTimeout);
+    pubResizeTimeout = setTimeout(() => {
+        if (typeof renderPublications === 'function') {
+            renderPublications();
+        }
+    }, 150);
 });
 
 // --- RESEARCH AREAS CAROUSEL NAVIGATION ---
@@ -309,9 +342,6 @@ window.toggleAppAccordion = function (index) {
 
 // --- FEATURED PROJECTS NATIVE SCROLL CAROUSEL (MOBILE ONLY) ---
 (function () {
-    // Only initialize on mobile (≤600px)
-    if (window.innerWidth > 600) return;
-
     const track = document.getElementById('carousel-track');
     const dots = document.querySelectorAll('.carousel-dot');
     const playPauseBtn = document.getElementById('carousel-play-pause');
@@ -534,19 +564,29 @@ window.toggleAppAccordion = function (index) {
         }, 150);
     });
 
-    // Initialize
+    // Initialize - only start autoplay on mobile
     updateDotStates();
-    startAutoPlay();
+    if (window.innerWidth <= 600) {
+        startAutoPlay();
+    }
 
-    // Handle resize
+    // Handle resize - properly start/stop autoplay based on viewport
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             if (window.innerWidth > 600) {
-                stopAutoPlay();
+                // Desktop: stop autoplay
+                if (isPlaying) {
+                    stopAutoPlay();
+                }
             } else if (window.innerWidth <= 600) {
-                updateDotStates();
+                // Mobile: start autoplay if not already playing
+                if (!isPlaying && !isUserScrolling) {
+                    startAutoPlay();
+                } else {
+                    updateDotStates();
+                }
             }
         }, 150);
     });

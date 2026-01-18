@@ -88,7 +88,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1768757659">
 </head>
 
 
@@ -111,8 +111,8 @@
 
             <div class="menu-toggle" id="mobile-menu-trigger" onclick="toggleMenu()" role="button" tabindex="0"
                 aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle Menu">
-
-                <i class="fa-solid fa-bars"></i>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </div>
 
 
@@ -416,7 +416,6 @@
                         <div class="app-accordion-item">
                             <button class="app-accordion-header" onclick="toggleAppAccordion(0)">
                                 <div class="app-accordion-title">
-                                    <span class="accordion-number">[01]</span>
                                     <div class="app-accordion-title-row">
                                         <div class="app-accordion-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -439,7 +438,6 @@
                         <div class="app-accordion-item">
                             <button class="app-accordion-header" onclick="toggleAppAccordion(1)">
                                 <div class="app-accordion-title">
-                                    <span class="accordion-number">[02]</span>
                                     <div class="app-accordion-title-row">
                                         <div class="app-accordion-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -463,7 +461,6 @@
                         <div class="app-accordion-item">
                             <button class="app-accordion-header" onclick="toggleAppAccordion(2)">
                                 <div class="app-accordion-title">
-                                    <span class="accordion-number">[03]</span>
                                     <div class="app-accordion-title-row">
                                         <div class="app-accordion-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -489,7 +486,6 @@
                         <div class="app-accordion-item">
                             <button class="app-accordion-header" onclick="toggleAppAccordion(3)">
                                 <div class="app-accordion-title">
-                                    <span class="accordion-number">[04]</span>
                                     <div class="app-accordion-title-row">
                                         <div class="app-accordion-icon">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -771,28 +767,42 @@
             </section>
 
             <section id="publications" class="section-pad" data-aos="fade-up">
-                <h2 class="t-h2">Peer-Reviewed Publications</h2>
+                <!-- Desktop Version -->
+                <div class="desktop-only">
+                    <h2 class="pub-section-title">Peer-Reviewed Publications</h2>
 
-                <p class="pub-header-note">Note on publication venues: In my research area of human–computer
-                    interaction, ACM CHI, UIST, DIS, and TOCHI are the most influential venues. CHI is consistently
-                    ranked #1 by Google Scholar and Microsoft Academic. Each venue follows a multi-stage, highly
-                    selective review process, with submissions evaluated by 4–6 international topic experts and program
-                    committee members. </p>
+                    <!-- Filter Controls - Desktop -->
+                    <div class="pub-controls">
+                        <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
+                        <button class="filter-btn" onclick="filterPubs('Conference', this)">Conference</button>
+                        <button class="filter-btn" onclick="filterPubs('Journal', this)">Journal</button>
+                        <button class="filter-btn" onclick="filterPubs('Thesis', this)">Thesis</button>
+                        <button class="filter-btn" onclick="filterPubs('Interaction Techniques', this)">Interaction
+                            Techniques</button>
+                        <button class="filter-btn" onclick="filterPubs('Robotics', this)">Robotics</button>
+                        <button class="filter-btn" onclick="filterPubs('Sensing', this)">Sensing</button>
+                        <button class="filter-btn" onclick="filterPubs('AI & Computational Design', this)">AI &
+                            Computational Design</button>
+                    </div>
 
-                <div class="pub-controls">
-                    <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
-                    <button class="filter-btn" onclick="filterPubs('Conference', this)">Conference</button>
-                    <button class="filter-btn" onclick="filterPubs('Journal', this)">Journal</button>
-                    <button class="filter-btn" onclick="filterPubs('Thesis', this)">Thesis</button>
-                    <button class="filter-btn" onclick="filterPubs('Interaction Techniques', this)">Interaction
-                        Techniques</button>
-                    <button class="filter-btn" onclick="filterPubs('Robotics', this)">Robotics</button>
-                    <button class="filter-btn" onclick="filterPubs('Sensing', this)">Sensing</button>
-                    <button class="filter-btn" onclick="filterPubs('AI & Computational Design', this)">AI &
-                        Computational Design</button>
+                    <!-- Note - Desktop only -->
+                    <div class="pub-section-note-container" style="margin-bottom: 48px;">
+                        <span class="pub-section-note-label">Note on publication venues</span>
+                        <p class="pub-section-note-text">In my research area of human–computer
+                            interaction, ACM CHI, UIST, DIS, and TOCHI are the most influential venues. CHI is consistently
+                            ranked #1 by Google Scholar and Microsoft Academic. Each venue follows a multi-stage, highly
+                            selective review process, with submissions evaluated by 4–6 international topic experts and program
+                            committee members.</p>
+                    </div>
+
+                    <div class="pub-list" id="publications-list-container">
+                        <!-- Filled by JS (Desktop) -->
+                    </div>
                 </div>
 
-                <div class="pub-list" id="publications-list-container">
+                <!-- Mobile Sticky Locked Version -->
+                <div class="mobile-only" id="mobile-publications-locked">
+                    <!-- Filled by JS (Mobile) - includes heading, note, filters, and content -->
                 </div>
             </section>
 
@@ -1231,7 +1241,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/data.js"></script>
 
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=8" defer></script>
+    <script src="js/mobile-pubs.js?v=8" defer></script>
     <script src="js/animations.js" defer></script>
 </body>
 
