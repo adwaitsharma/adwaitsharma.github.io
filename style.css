@@ -810,17 +810,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 
 
-.scandi-affil-logo[src*="mpi-logo"] {
-    transform: scale(1.1);
-}
-
-
-
-.scandi-affil-logo[src*="milab-logo"] {
-    transform: scale(0.9);
-}
-
-
+/* All logos render at the same scale — no per-logo hacks */
 /*.scandi-affil-logo1 { width: 100%; height: 40px; object-fit: contain; object-position: left center; opacity: 0.85; transition: opacity 0.2s ease; }*/
 .scandi-affil-item:hover .scandi-affil-logo {
     opacity: 1;
@@ -1002,16 +992,16 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     display: none;
 }
 
-/* Narrow phones: single-column team */
+/* Narrow phones: slightly smaller but still prominent */
 @media (max-width: 480px) {
     .team-img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .alumni-img {
-        width: 90px;
-        height: 90px;
+        width: 110px;
+        height: 110px;
     }
 
     .student-text-grid {
@@ -2852,17 +2842,17 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     }
 
     .team-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .alumni-img {
         width: 130px;
         height: 130px;
     }
 
-    .alumni-img {
-        width: 110px;
-        height: 110px;
-    }
-
     .team-card {
-        padding: 32px 12px;
+        padding: 36px 16px;
     }
 
     /* Student text grid: 2-column on mobile */

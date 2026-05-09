@@ -9,13 +9,38 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Verify Environment
+    // 1. Shared UI: footer date + cities from siteConfig (single source of truth)
+    if (typeof siteConfig !== 'undefined') {
+        const update = document.getElementById('footer-update');
+        const copyright = document.getElementById('footer-copyright');
+        const cities = document.querySelector('.footer-cities') || document.getElementById('footer-cities');
+        if (update) update.textContent = `Last updated: ${siteConfig.lastUpdated}`;
+        if (copyright) copyright.textContent = `© ${siteConfig.copyrightYear} ADWAIT SHARMA`;
+        if (cities) cities.textContent = siteConfig.cities;
+    }
+
+    // 2. Shared UI: improved mobile menu (aria-expanded + scroll lock) for project pages
+    const menuToggle = document.getElementById('mobile-menu-trigger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuToggle && mobileMenu) {
+        window.toggleMenu = function () {
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            const isExpanded = mobileMenu.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            document.body.style.overflow = isExpanded ? 'hidden' : '';
+        };
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-controls', 'mobileMenu');
+    }
+
+    // 3. Verify project data environment
     if (typeof publicationsData === 'undefined' || typeof window.projectID === 'undefined') {
         console.error('Error: Data or Project ID missing.');
         return;
     }
 
-    // 2. Find Current Project Data
+    // 4. Find Current Project Data
     const currentProject = publicationsData.find(p => p.id === window.projectID);
 
     if (!currentProject) {
@@ -28,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 3. Update SEO (Head Tags & Schema)
+    // 5. Update SEO (Head Tags & Schema)
     updateSEOMetadata(currentProject);
 
-    // 4. Render Body Content (Visible Elements)
+    // 6. Render Body Content (Visible Elements)
     renderProjectContent(currentProject);
     renderRelatedProjects(currentProject);
 });

@@ -1,7 +1,15 @@
 /**
  * js/data.js
  * Central data source for both the main index.html (Project List) and individual Project Pages.
+ *
+ * SITE CONFIG — edit this object to update site-wide values across all pages.
+ * No other file needs to change when updating the date, copyright year, or cities.
  */
+const siteConfig = {
+    lastUpdated: 'January 2026',
+    copyrightYear: '2026',
+    cities: 'Bath – Toronto – Copenhagen – Saarbrücken – Hagenberg – Vancouver – Singapore – Bangalore – Mathura',
+};
 
 const publicationsData = [
   // --- 2026 ---
