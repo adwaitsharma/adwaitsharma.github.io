@@ -6,7 +6,7 @@
  * No other file needs to change when updating the date, copyright year, or cities.
  */
 const siteConfig = {
-    lastUpdated: 'January 2026',
+    lastUpdated: 'May 2026',
     copyrightYear: '2026',
     cities: 'Bath – Toronto – Copenhagen – Saarbrücken – Hagenberg – Vancouver – Singapore – Bangalore – Mathura',
 };

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Initialize AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, offset: 50, once: true });
+        AOS.init({ duration: 500, offset: 50, once: true });
     }
 
     // 2. Footer — pulled from siteConfig so the date only needs changing in data.js

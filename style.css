@@ -278,6 +278,14 @@ button:focus-visible {
     color: var(--text-main);
 }
 
+.mission-text strong {
+    font-weight: var(--weight-semibold);
+}
+
+.border-top {
+    border-top: 1px solid var(--border);
+}
+
 .cursor-blink {
     font-family: var(--font-head);
     font-size: var(--text-2xl);
@@ -619,6 +627,11 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     transition: color 0.2s ease;
     text-align: center;
     text-transform: uppercase;
+    padding: 10px 32px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-link:hover {
@@ -874,6 +887,54 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     margin-top: 20px;
 }
 
+/* AIS Lab inner wrapper */
+.aislab-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Pronunciation sub-label */
+.aislab-pronunciation {
+    margin-top: 16px;
+    margin-bottom: 30px;
+    opacity: 0.6;
+}
+
+/* AIS hero grid cell labels */
+.ais-hero-cell-label {
+    margin-bottom: 24px;
+    display: block;
+}
+
+/* Typewriter container */
+.aislab-typewriter-wrap {
+    height: 40px;
+    display: flex;
+    align-items: baseline;
+}
+
+/* Typewriter span */
+.lab-typewriter-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+}
+
+/* Dot-matrix decorative background */
+.aislab-dot-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#000 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
 /* AIS Lab Hero Grid (Responsive Fix) */
 .ais-hero-grid {
     display: grid;
@@ -883,6 +944,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     align-items: start;
     border-top: 1px solid #E5E5E5;
     padding-top: 60px;
+    text-align: left;
 }
 
 .explore-container {
@@ -1384,7 +1446,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 .proj-card {
     cursor: pointer;
-    transition: all 0.2s;
+    transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 
 /* Full-card accessible link wrapper */
@@ -1415,6 +1477,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s var(--ease);
+}
+
+.proj-card:hover {
+    transform: translateY(-2px);
 }
 
 .proj-card:hover .proj-thumb {
@@ -1764,7 +1830,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .pub-controls {
     display: flex;
     gap: 12px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     flex-wrap: wrap;
 }
 
@@ -1785,6 +1851,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     justify-content: center;
     line-height: 1;
     cursor: pointer;
+    min-height: 40px;
 }
 
 .filter-btn:hover {
@@ -2561,6 +2628,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     text-align: center;
     white-space: nowrap;
     line-height: 1.3;
+    min-height: 40px;
 }
 
 .pp-btn i {
@@ -3094,6 +3162,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         line-height: 1;
         cursor: pointer;
         white-space: nowrap;
+        min-height: 40px;
     }
 
     .scandi-filter-btn:hover {
@@ -3286,6 +3355,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         text-align: center;
         white-space: nowrap;
         line-height: 1.3;
+        min-height: 40px;
     }
 
     .scandi-pub-link i {
@@ -3464,6 +3534,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         padding: 10px 12px;
         font-size: 10px;
         letter-spacing: 0.06em;
+        min-height: 40px;
     }
 
     .panel-grid.cols-2-1,
@@ -3613,6 +3684,11 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         text-align: left;
     }
 
+    .footer-cities {
+        text-align: left;
+        max-width: 100%;
+    }
+
     .ra-anim-wrapper {
         width: 100%;
         aspect-ratio: 16/9;
@@ -3750,8 +3826,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     }
 
     .team-img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 12px;
     }
 
@@ -3768,8 +3844,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     }
 
     .alumni-img {
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
     }
 
     .app-unique-grid {
@@ -3824,16 +3900,21 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         font-size: 1.4rem;
     }
 
+    #contact-map {
+        min-height: 260px !important;
+    }
+
     /* Improve touch targets on mobile */
     .btn-sm {
         padding: 10px 16px;
         font-size: var(--text-xs);
-        min-height: 36px;
+        min-height: 40px;
         min-width: 85px;
         margin-bottom: 8px;
     }
 
     .filter-btn {
-        padding: 9px 18px;
+        padding: 10px 18px;
         font-size: 10px;
+        min-height: 40px;
     }
