@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.toggleMenu = function () { // Expose to window for onclick
         mobileMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
+        const isExpanded = mobileMenu.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+        document.body.style.overflow = isExpanded ? 'hidden' : '';
     };
 
     // 3. Render Publications if data exists

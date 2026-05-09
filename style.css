@@ -266,7 +266,8 @@ button:focus-visible {
 
 /* Utility Classes */
 .text-accent-subtle {
-    color: var(--text-meta);
+    color: var(--text-main);
+    font-style: italic;
 }
 
 .hero-heading {
@@ -537,7 +538,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 .nav-link {
     font-family: var(--font-mono);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: var(--weight-medium);
     color: var(--text-body);
     text-transform: uppercase;
@@ -554,14 +555,20 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     color: var(--text-main);
 }
 
-.nav-link.active::after {
+/* Animated underline — slides in from left on activation */
+.nav-link::after {
     content: '';
     position: absolute;
     bottom: -4px;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 1px;
     background: var(--text-main);
+    transition: width 0.25s var(--ease-out);
+}
+
+.nav-link.active::after {
+    width: 100%;
 }
 
 .menu-toggle {
@@ -692,8 +699,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     border-radius: 50%;
     margin: 0 auto 16px;
     border: 1px solid var(--border);
-    padding: 4px;
-    background: #fff;
+    object-fit: cover;
 }
 
 .profile-name {
@@ -873,7 +879,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .lab-sub {
     font-size: var(--text-base);
     font-weight: var(--weight-semibold);
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 20px;
 }
@@ -882,7 +888,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .ais-hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: clamp(40px, 5vw, 80px);
     margin-top: 60px;
     align-items: start;
     border-top: 1px solid #E5E5E5;
@@ -996,6 +1002,23 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     display: none;
 }
 
+/* Narrow phones: single-column team */
+@media (max-width: 480px) {
+    .team-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .alumni-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .student-text-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
     /* Mobile shows mobile version, hides desktop */
     .desktop-only {
@@ -1087,10 +1110,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* APPLICATION AREAS (Dark Section) */
 #app-area-unique-section {
-    background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: #0F0F0F !important;
     color: #FFFFFF;
     padding: 50px 50px;
-    width: 82% !important;
+    width: 90% !important;
     max-width: 1440px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1374,6 +1397,19 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     transition: all 0.2s;
 }
 
+/* Full-card accessible link wrapper */
+.proj-card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.proj-card-link:hover {
+    color: inherit;
+}
+
 .proj-thumb-wrap {
     overflow: hidden;
     border-radius: var(--radius-soft);
@@ -1555,15 +1591,19 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     background: #FFFFFF;
     padding: 48px 20px;
     text-align: center;
-    transition: 0.2s;
+    transition: background 0.2s, transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .team-card:hover {
-    background: #FDFDFD;
+    background: #FAFAFA;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    z-index: 1;
 }
 
 .team-img {
@@ -1654,8 +1694,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 }
 
 .alumni-img {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     margin-bottom: 16px;
     object-fit: cover;
@@ -1706,9 +1746,9 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .scandi-pub-note-text {
     font-family: var(--font-body);
     font-size: var(--text-base);
-    line-height: 1.7;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: var(--weight-light);
+    line-height: var(--leading-relaxed);
+    color: var(--text-body);
+    font-weight: var(--weight-normal);
     max-width: 100%;
 }
 
@@ -2069,6 +2109,61 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
+/* ABOUT SECTION — Research Pillars List (01/02/03) */
+.research-pillars {
+    margin-bottom: 2em;
+    border-left: 1px solid var(--border);
+    padding-left: 20px;
+}
+
+.research-pillars-item {
+    margin-bottom: 12px;
+}
+
+.research-pillars-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Background sub-section label */
+.section-subhead {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--text-meta);
+    margin-bottom: 12px;
+    display: block;
+    letter-spacing: var(--tracking-wider);
+    font-weight: var(--weight-medium);
+    margin-top: 3em;
+}
+
+/* About section body paragraph spacing */
+.about-p {
+    margin-bottom: 1.5em;
+}
+
+/* Footer child layout */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-copyright {
+    color: #e0e0e0;
+}
+
+.footer-update {
+    color: #999;
+}
+
+.footer-cities {
+    text-align: right;
+    max-width: 50%;
+    line-height: 1.6;
+    color: #ccc;
+}
+
 /* CONTACT & FOOTER */
 .contact-section {
     background: var(--bg-lab-group);
@@ -2076,7 +2171,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     padding: var(--pad-section) var(--pad-x);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: clamp(32px, 5vw, 80px);
     border-top: 1px solid var(--border);
 }
 
@@ -2599,6 +2694,28 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* RESPONSIVE */
 
+/* Tablet panel collapse — prevents cramped 2-col on small tablets */
+@media (max-width: 900px) {
+    .panel-grid.cols-2-1,
+    .panel-grid.cols-1-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .panel-cell:last-child {
+        border-bottom: none;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
 /* Tablet breakpoint - smoother transition */
 @media (max-width: 1100px) {
     :root {
@@ -2632,7 +2749,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .app-unique-card:nth-child(2) {
+    .app-unique-card:nth-child(even) {
         border-right: none;
     }
 
@@ -2666,6 +2783,12 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* Mobile/Tablet breakpoint - show hamburger menu ONLY on small screens */
 @media (max-width: 768px) {
+    /* Scale down spacing for mobile */
+    :root {
+        --pad-x: 20px;
+        --pad-section: 64px;
+    }
+
     .nav-links {
         display: none !important;
     }
@@ -2710,6 +2833,50 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     .hero-wrap {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    /* Un-sticky the profile card so it doesn't compete with content on short screens */
+    .profile-col {
+        position: static;
+    }
+
+    /* AIS hero grid: stack vertically on mobile */
+    .ais-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Team grid: 2-column on mobile so images are legible */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .alumni-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .team-card {
+        padding: 32px 12px;
+    }
+
+    /* Student text grid: 2-column on mobile */
+    .student-text-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 16px;
+    }
+
+    /* Dark section: full width and tighter padding on mobile */
+    #app-area-unique-section {
+        width: 100% !important;
+        border-radius: 0;
+        padding: 40px 20px !important;
+        margin-bottom: 0 !important;
     }
 
     .ra-grid {
