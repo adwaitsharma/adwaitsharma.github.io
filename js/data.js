@@ -6,13 +6,48 @@
  * No other file needs to change when updating the date, copyright year, or cities.
  */
 const siteConfig = {
-    lastUpdated: 'May 2026',
+    lastUpdated: 'June 2026',
     copyrightYear: '2026',
     cities: 'Bath – Toronto – Copenhagen – Saarbrücken – Hagenberg – Vancouver – Singapore – Bangalore – Mathura',
 };
 
 const publicationsData = [
   // --- 2026 ---
+
+{
+    id: 'p21',
+    showInList: true,
+    title: "Non-dyadic Mobile Multi-Robot System Interaction: A Systematic Literature Review",
+    authors: "Jack Ryan, Adwait Sharma, Michael Wright, Jason Alexander",
+    venue: "THRI 2026",
+    type: ["Journal", "Interaction Techniques", "Robotics"],
+    desc: "Systematic review of non-dyadic multi-robot HRI, with a reporting framework to standardise future studies.",
+    fullAbstract: " The increasing deployment of low-cost mobile robotic platforms offers transformative potential for addressing dull, dirty, and dangerous tasks across sectors such as defence, nuclear, logistics, and agriculture. Forecasts project the global multi-robot systems (MRS) market to exceed $5.9 billion by 2028, driven by demand for scalable, autonomous solutions. As Mobile Multi-Robot Systems (MMRS) transition from research prototypes to operational assets, the design of effective human–robot interaction (HRI) becomes a critical enabler of safe, efficient, and mission-relevant deployment. Non-dyadic deployment, where the number of robots exceeds the number of human operators, is the natural extension to maximise benefit by delivering systems at increased scales. Thus, this paper is the first systematic review to focus on the application of HRI paradigms exclusively to non-dyadic MMRS. The systematic literature review employed the PRISMA methodology, analysing 2,314 peer-reviewed papers sourced from ACM and IEEE repositories. This paper identifies three persistent gaps in the MMRS interaction literature: (1) the limited treatment of Manned-Unmanned Teaming (MUM-T) as an operational scenario, and (2) the under-utilisation of Consumer-Off-The-Shelf (COTS) wearable devices as viable interaction paradigms. Additionally, (3) the paper introduces a structured reporting framework to enhance consistency, replicability, and contextual richness in MMRS interaction studies, elevating the comparative and practical value of future work. Identified gaps, and the proposed reporting framework, are particularly salient in light of expanding global investment and the trajectory toward increasingly complex, cross-sector MMRS deployments. By supporting structured future research directions and enhancing reporting practices, this paper contributes to advancing the state-of-the-art in MMRS interaction, fostering more impactful and practically relevant research outcomes. For researchers and practitioners alike, this review provides a foundation for designing scalable multi-robot interaction that meets the demands of tomorrow’s autonomous systems, where human oversight must remain effective, as robot numbers grow.",
+    thumb: "images/publications/non-dyadic.webp",
+    modalVideo: "",
+    pdf: "https://dl.acm.org/doi/pdf/10.1145/3819075",
+    projectUrl: "#",
+    slides: "#",
+    videoUrl: "#",
+    codeUrl: "#",
+    bibtex: `@article{10.1145/3819075,
+author = {Ryan, Jack and Sharma, Adwait and Wright, Michael and Alexander, Jason},
+title = {Non-dyadic Mobile Multi-Robot System Interaction: A Systematic Literature Review},
+year = {2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3819075},
+doi = {10.1145/3819075},
+abstract = {The increasing deployment of low-cost mobile robotic platforms offers transformative potential for addressing dull, dirty, and dangerous tasks across sectors such as defence, nuclear, logistics, and agriculture. Forecasts project the global multi-robot systems (MRS) market to exceed $5.9 billion by 2028, driven by demand for scalable, autonomous solutions. As Mobile Multi-Robot Systems (MMRS) transition from research prototypes to operational assets, the design of effective human–robot interaction (HRI) becomes a critical enabler of safe, efficient, and mission-relevant deployment. Non-dyadic deployment, where the number of robots exceeds the number of human operators, is the natural extension to maximise benefit by delivering systems at increased scales. Thus, this paper is the first systematic review to focus on the application of HRI paradigms exclusively to non-dyadic MMRS.The systematic literature review employed the PRISMA methodology, analysing 2,314 peer-reviewed papers sourced from ACM and IEEE repositories. This paper identifies three persistent gaps in the MMRS interaction literature: (1) the limited treatment of Manned-Unmanned Teaming (MUM-T) as an operational scenario, and (2) the under-utilisation of Consumer-Off-The-Shelf (COTS) wearable devices as viable interaction paradigms. Additionally, (3) the paper introduces a structured reporting framework to enhance consistency, replicability, and contextual richness in MMRS interaction studies, elevating the comparative and practical value of future work.Identified gaps, and the proposed reporting framework, are particularly salient in light of expanding global investment and the trajectory toward increasingly complex, cross-sector MMRS deployments. By supporting structured future research directions and enhancing reporting practices, this paper contributes to advancing the state-of-the-art in MMRS interaction, fostering more impactful and practically relevant research outcomes. For researchers and practitioners alike, this review provides a foundation for designing scalable multi-robot interaction that meets the demands of tomorrow’s autonomous systems, where human oversight must remain effective, as robot numbers grow.},
+note = {Just Accepted},
+journal = {J. Hum.-Robot Interact.},
+month = may,
+keywords = {Human-robot interaction, multi-robot systems, mobile robots, systematic, literature review}
+}
+`},
+
+
+
 {
     id: 'p20',
     showInList: true,
@@ -162,7 +197,7 @@ series = {CHI '26}
     fullAbstract: "Gesture recognition with electromyography (EMG) is a complex problem influenced by gesture sets, electrode count and placement, and machine learning parameters (e.g., features, classifiers). Most existing toolkits focus on streamlining model development but overlook the impact of electrode selection on classification accuracy. In this work, we present the first data-driven analysis of how electrode selection and classifier choice affect both accuracy and sparsity. Through a systematic evaluation of 28 combinations (4 selection schemes, 7 classifiers), across six datasets, we identify an approach that minimizes electrode count without compromising accuracy. The results show that Permutation Importance (selection scheme) with Random Forest (classifier) reduces the number of electrodes by 53.5%. Based on these findings, we introduce SparseEMG, a design tool that generates sparse electrode layouts based on user-selected gesture sets, electrode constraints, and ML parameters while also predicting classification performance. SparseEMG supports 50+ unique gestures and is validated in three real-world applications using different hardware setups. Results from our multi-dataset evaluation show that the layouts generated from the SparseEMG design tool are transferable across users with only minimal variation in gesture recognition performance.",
     thumb: "images/publications/sparseemg_uist25.webp",
     modalVideo: "",
-    pdf: "https://dl.acm.org/doi/epdf/10.1145/3746059.3747679",
+    pdf: "https://dl.acm.org/doi/pdf/10.1145/3746059.3747614",
     projectUrl: "#",
     slides: "#",
     videoUrl: "https://youtu.be/Glz_zT70TPc?si=LDBbB3VOuYuvH5jY",
