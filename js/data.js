@@ -1,16 +1,61 @@
 /**
  * js/data.js
  * Central data source for both the main index.html (Project List) and individual Project Pages.
+ *
+ * SITE CONFIG — edit this object to update site-wide values across all pages.
+ * No other file needs to change when updating the date, copyright year, or cities.
  */
+const siteConfig = {
+    lastUpdated: 'May 2026',
+    copyrightYear: '2026',
+    cities: 'Bath – Toronto – Copenhagen – Saarbrücken – Hagenberg – Vancouver – Singapore – Bangalore – Mathura',
+};
 
 const publicationsData = [
-  // --- 2025 ---
+  // --- 2026 ---
+{
+    id: 'p20',
+    showInList: true,
+    title: "Encouraging Breath: Increasing Out‑of‑Session DMHI Engagement using a Shape‑Changing Biofeedback Physicalization within a Longitudinal RCT",
+    authors: "Alexz Farrall, Adwait Sharma, Ben Ainsworth, Pamela Jacobsen, Jason Alexander",
+    venue: "CHI 2026",
+    type: ["Conference", "Interaction Techniques"],
+    desc: "Leveraging a shape-changing handheld device to improve long-term engagement with digital mindfulness and mental health interventions.",
+    fullAbstract: "Out-of-session or “homework” engagement is a primary limiting factor in clinical mental health outcomes. Despite weekly practitioner contact, adherence to prescribed Digital Mental Health Interventions (DMHIs) typically drops by 96.1% within two weeks. We evaluate Ankor, a handheld shape-changing biofeedback physicalization, as an adjunct to standard audio-guided mindfulness. In a longitudinal randomized controlled study (N=69), participants were assigned to Ankor+audio or audio-only control across six weekly 15-minute laboratory sessions, with optional DMHI use between sessions. Relative to control, Ankor yielded a 351% increase in total DMHI practice initiations and, by week 2, maintained 29.4% active users versus 2.9% in control, indicating substantially higher out-of-session engagement and reduced early disengagement. These findings demonstrate the capacity of shape-changing biofeedback physicalizations to extend adherence to DMHIs, highlighting kinaesthetic interactions as a promising design pathway for sustaining engagement in mental health interventions.",
+    thumb: "images/publications/Encouraging_Breath.webp",
+    modalVideo: "",
+    pdf: "https://dl.acm.org/doi/epdf/10.1145/3772318.3790933",
+    projectUrl: "#",
+    slides: "#",
+    videoUrl: "#",
+    codeUrl: "#",
+    bibtex: `@inproceedings{10.1145/3772318.3790933,
+author = {Farrall, Alexz and Sharma, Adwait and Ainsworth, Ben and Jacobsen, Pamela and Alexander, Jason},
+title = {Encouraging Breath: Increasing Out‑of‑Session DMHI Engagement using a Shape‑Changing Biofeedback Physicalization within a Longitudinal RCT},
+year = {2026},
+isbn = {9798400722783},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3772318.3790933},
+doi = {10.1145/3772318.3790933},
+abstract = {Out-of-session or “homework” engagement is a primary limiting factor in clinical mental health outcomes. Despite weekly practitioner contact, adherence to prescribed Digital Mental Health Interventions (DMHIs) typically drops by 96.1\% within two weeks. We evaluate Ankor, a handheld shape-changing biofeedback physicalization, as an adjunct to standard audio-guided mindfulness. In a longitudinal randomized controlled study (N=69), participants were assigned to Ankor+audio or audio-only control across six weekly 15-minute laboratory sessions, with optional DMHI use between sessions. Relative to control, Ankor yielded a 351\% increase in total DMHI practice initiations and, by week 2, maintained 29.4\% active users versus 2.9\% in control, indicating substantially higher out-of-session engagement and reduced early disengagement. These findings demonstrate the capacity of shape-changing biofeedback physicalizations to extend adherence to DMHIs, highlighting kinaesthetic interactions as a promising design pathway for sustaining engagement in mental health interventions.},
+booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+articleno = {1024},
+numpages = {17},
+keywords = {Physicalization, Biofeedback, Shape-Change, Mental Health, Longitudinal Study, Randomized Control Trial, Breath, Engagement},
+location = {
+},
+series = {CHI '26}
+}
+`},
+
+
   {
     id: 'p19',
     showInList: true,
     title: "Understanding Freehand Cursorless Pointing Variability and Its Impact on Selection Performance",
     authors: "James Whiffing, Tobias Langlotz, Christof Lutteroth, Adwait Sharma, Christopher Clarke",
-    venue: "TOCHI 2025",
+    venue: "TOCHI 2026",
     type: ["Journal", "Interaction Techniques"],
     desc: "Systematically characterised and described three distinct pointing behaviours, each with three different traits, ranging from accurate stereotypical pointing observed in prior works to more casual hip fire-style pointing.",
     fullAbstract: "Freehand pointing is a fundamental gesture commonly used for cursorless interactions. Prior work in HCI often elicits the same pointing behaviour – facing the target with an outstretched dominant arm and index finger. However, freehand pointing outside of HCI shows more variability across hand pose, usage, and coordination with gaze. To understand what variability exists and how it affects pointing performance, we collected data (N=23) using a hybrid motion capture system. To elicit a wide variety of pointing behaviours we included different levels of user effort and attention, as well as the widest range of target placements studied. We systematically characterised and described three distinct pointing behaviours, each with three different traits, ranging from accurate stereotypical pointing observed in prior works to more casual hip fire-style pointing. Our analysis demonstrates how different pointing behaviours affect pointing performance and highlights their importance when designing interactive systems for more naturalistic freehand pointing.",
@@ -24,7 +69,7 @@ const publicationsData = [
     bibtex: `@article{10.1145/3770583,
   author = {Whiffing, James and Langlotz, Tobias and Lutteroth, Christof and Sharma, Adwait and Clarke, Christopher},
   title = {Understanding Freehand Cursorless Pointing Variability and Its Impact on Selection Performance},
-  year = {2025},
+  year = {2026},
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   issn = {1073-0516},
@@ -36,6 +81,7 @@ const publicationsData = [
   keywords = {Cursorless, Freehand, Pointing, Interaction Techniques, Gesture}
 }
 `},
+ // --- 2025 ---
   {
     id: 'p18',
     showInList: true,

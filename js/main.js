@@ -8,23 +8,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Initialize AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, offset: 50, once: true });
+        AOS.init({ duration: 500, offset: 50, once: true });
     }
 
-    // 2. Mobile Menu Toggle
+    // 2. Footer — pulled from siteConfig so the date only needs changing in data.js
+    if (typeof siteConfig !== 'undefined') {
+        const update = document.getElementById('footer-update');
+        const copyright = document.getElementById('footer-copyright');
+        const cities = document.querySelector('.footer-cities');
+        if (update) update.textContent = `Last updated: ${siteConfig.lastUpdated}`;
+        if (copyright) copyright.textContent = `© ${siteConfig.copyrightYear} ADWAIT SHARMA`;
+        if (cities) cities.textContent = siteConfig.cities;
+    }
+
+    // 3. Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobileMenu');
     const menuToggle = document.getElementById('mobile-menu-trigger');
     window.toggleMenu = function () { // Expose to window for onclick
         mobileMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
+        const isExpanded = mobileMenu.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+        document.body.style.overflow = isExpanded ? 'hidden' : '';
     };
 
-    // 3. Render Publications if data exists
+    // 4. Render Publications if data exists
     if (typeof renderPublications === 'function') {
         renderPublications();
     }
 
-    // 4. Typewriter Effect
+    // 5. Typewriter Effect
     (function () {
         const el = document.getElementById('lab-typewriter');
         if (!el) return;

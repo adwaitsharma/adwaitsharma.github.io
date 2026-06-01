@@ -266,7 +266,8 @@ button:focus-visible {
 
 /* Utility Classes */
 .text-accent-subtle {
-    color: var(--text-meta);
+    color: var(--text-main);
+    font-style: italic;
 }
 
 .hero-heading {
@@ -275,6 +276,14 @@ button:focus-visible {
 
 .mission-text {
     color: var(--text-main);
+}
+
+.mission-text strong {
+    font-weight: var(--weight-semibold);
+}
+
+.border-top {
+    border-top: 1px solid var(--border);
 }
 
 .cursor-blink {
@@ -537,7 +546,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 .nav-link {
     font-family: var(--font-mono);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: var(--weight-medium);
     color: var(--text-body);
     text-transform: uppercase;
@@ -554,14 +563,20 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     color: var(--text-main);
 }
 
-.nav-link.active::after {
+/* Animated underline — slides in from left on activation */
+.nav-link::after {
     content: '';
     position: absolute;
     bottom: -4px;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 1px;
     background: var(--text-main);
+    transition: width 0.25s var(--ease-out);
+}
+
+.nav-link.active::after {
+    width: 100%;
 }
 
 .menu-toggle {
@@ -612,6 +627,11 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     transition: color 0.2s ease;
     text-align: center;
     text-transform: uppercase;
+    padding: 10px 32px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-link:hover {
@@ -692,8 +712,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     border-radius: 50%;
     margin: 0 auto 16px;
     border: 1px solid var(--border);
-    padding: 4px;
-    background: #fff;
+    object-fit: cover;
 }
 
 .profile-name {
@@ -804,17 +823,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 
 
-.scandi-affil-logo[src*="mpi-logo"] {
-    transform: scale(1.1);
-}
-
-
-
-.scandi-affil-logo[src*="milab-logo"] {
-    transform: scale(0.9);
-}
-
-
+/* All logos render at the same scale — no per-logo hacks */
 /*.scandi-affil-logo1 { width: 100%; height: 40px; object-fit: contain; object-position: left center; opacity: 0.85; transition: opacity 0.2s ease; }*/
 .scandi-affil-item:hover .scandi-affil-logo {
     opacity: 1;
@@ -873,20 +882,69 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .lab-sub {
     font-size: var(--text-base);
     font-weight: var(--weight-semibold);
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 20px;
+}
+
+/* AIS Lab inner wrapper */
+.aislab-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Pronunciation sub-label */
+.aislab-pronunciation {
+    margin-top: 16px;
+    margin-bottom: 30px;
+    opacity: 0.6;
+}
+
+/* AIS hero grid cell labels */
+.ais-hero-cell-label {
+    margin-bottom: 24px;
+    display: block;
+}
+
+/* Typewriter container */
+.aislab-typewriter-wrap {
+    height: 40px;
+    display: flex;
+    align-items: baseline;
+}
+
+/* Typewriter span */
+.lab-typewriter-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+}
+
+/* Dot-matrix decorative background */
+.aislab-dot-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#000 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    opacity: 0.03;
+    pointer-events: none;
 }
 
 /* AIS Lab Hero Grid (Responsive Fix) */
 .ais-hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: clamp(40px, 5vw, 80px);
     margin-top: 60px;
     align-items: start;
     border-top: 1px solid #E5E5E5;
     padding-top: 60px;
+    text-align: left;
 }
 
 .explore-container {
@@ -996,6 +1054,23 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     display: none;
 }
 
+/* Narrow phones: slightly smaller but still prominent */
+@media (max-width: 480px) {
+    .team-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .alumni-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .student-text-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
     /* Mobile shows mobile version, hides desktop */
     .desktop-only {
@@ -1087,10 +1162,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* APPLICATION AREAS (Dark Section) */
 #app-area-unique-section {
-    background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: #0F0F0F !important;
     color: #FFFFFF;
     padding: 50px 50px;
-    width: 82% !important;
+    width: 90% !important;
     max-width: 1440px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1371,7 +1446,20 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 .proj-card {
     cursor: pointer;
-    transition: all 0.2s;
+    transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+
+/* Full-card accessible link wrapper */
+.proj-card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.proj-card-link:hover {
+    color: inherit;
 }
 
 .proj-thumb-wrap {
@@ -1389,6 +1477,10 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s var(--ease);
+}
+
+.proj-card:hover {
+    transform: translateY(-2px);
 }
 
 .proj-card:hover .proj-thumb {
@@ -1555,15 +1647,19 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     background: #FFFFFF;
     padding: 48px 20px;
     text-align: center;
-    transition: 0.2s;
+    transition: background 0.2s, transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .team-card:hover {
-    background: #FDFDFD;
+    background: #FAFAFA;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    z-index: 1;
 }
 
 .team-img {
@@ -1654,8 +1750,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 }
 
 .alumni-img {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     margin-bottom: 16px;
     object-fit: cover;
@@ -1706,9 +1802,9 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .scandi-pub-note-text {
     font-family: var(--font-body);
     font-size: var(--text-base);
-    line-height: 1.7;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: var(--weight-light);
+    line-height: var(--leading-relaxed);
+    color: var(--text-body);
+    font-weight: var(--weight-normal);
     max-width: 100%;
 }
 
@@ -1734,7 +1830,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 .pub-controls {
     display: flex;
     gap: 12px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     flex-wrap: wrap;
 }
 
@@ -1755,6 +1851,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     justify-content: center;
     line-height: 1;
     cursor: pointer;
+    min-height: 40px;
 }
 
 .filter-btn:hover {
@@ -2069,6 +2166,61 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
+/* ABOUT SECTION — Research Pillars List (01/02/03) */
+.research-pillars {
+    margin-bottom: 2em;
+    border-left: 1px solid var(--border);
+    padding-left: 20px;
+}
+
+.research-pillars-item {
+    margin-bottom: 12px;
+}
+
+.research-pillars-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Background sub-section label */
+.section-subhead {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--text-meta);
+    margin-bottom: 12px;
+    display: block;
+    letter-spacing: var(--tracking-wider);
+    font-weight: var(--weight-medium);
+    margin-top: 3em;
+}
+
+/* About section body paragraph spacing */
+.about-p {
+    margin-bottom: 1.5em;
+}
+
+/* Footer child layout */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-copyright {
+    color: #e0e0e0;
+}
+
+.footer-update {
+    color: #999;
+}
+
+.footer-cities {
+    text-align: right;
+    max-width: 50%;
+    line-height: 1.6;
+    color: #ccc;
+}
+
 /* CONTACT & FOOTER */
 .contact-section {
     background: var(--bg-lab-group);
@@ -2076,7 +2228,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     padding: var(--pad-section) var(--pad-x);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: clamp(32px, 5vw, 80px);
     border-top: 1px solid var(--border);
 }
 
@@ -2476,6 +2628,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     text-align: center;
     white-space: nowrap;
     line-height: 1.3;
+    min-height: 40px;
 }
 
 .pp-btn i {
@@ -2599,6 +2752,28 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* RESPONSIVE */
 
+/* Tablet panel collapse — prevents cramped 2-col on small tablets */
+@media (max-width: 900px) {
+    .panel-grid.cols-2-1,
+    .panel-grid.cols-1-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .panel-cell:last-child {
+        border-bottom: none;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
 /* Tablet breakpoint - smoother transition */
 @media (max-width: 1100px) {
     :root {
@@ -2632,7 +2807,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .app-unique-card:nth-child(2) {
+    .app-unique-card:nth-child(even) {
         border-right: none;
     }
 
@@ -2666,6 +2841,12 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
 
 /* Mobile/Tablet breakpoint - show hamburger menu ONLY on small screens */
 @media (max-width: 768px) {
+    /* Scale down spacing for mobile */
+    :root {
+        --pad-x: 20px;
+        --pad-section: 64px;
+    }
+
     .nav-links {
         display: none !important;
     }
@@ -2710,6 +2891,50 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     .hero-wrap {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    /* Un-sticky the profile card so it doesn't compete with content on short screens */
+    .profile-col {
+        position: static;
+    }
+
+    /* AIS hero grid: stack vertically on mobile */
+    .ais-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Team grid: 2-column on mobile so images are legible */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .alumni-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .team-card {
+        padding: 36px 16px;
+    }
+
+    /* Student text grid: 2-column on mobile */
+    .student-text-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 16px;
+    }
+
+    /* Dark section: full width and tighter padding on mobile */
+    #app-area-unique-section {
+        width: 100% !important;
+        border-radius: 0;
+        padding: 40px 20px !important;
+        margin-bottom: 0 !important;
     }
 
     .ra-grid {
@@ -2937,6 +3162,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         line-height: 1;
         cursor: pointer;
         white-space: nowrap;
+        min-height: 40px;
     }
 
     .scandi-filter-btn:hover {
@@ -3129,6 +3355,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         text-align: center;
         white-space: nowrap;
         line-height: 1.3;
+        min-height: 40px;
     }
 
     .scandi-pub-link i {
@@ -3307,6 +3534,7 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         padding: 10px 12px;
         font-size: 10px;
         letter-spacing: 0.06em;
+        min-height: 40px;
     }
 
     .panel-grid.cols-2-1,
@@ -3456,6 +3684,11 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         text-align: left;
     }
 
+    .footer-cities {
+        text-align: left;
+        max-width: 100%;
+    }
+
     .ra-anim-wrapper {
         width: 100%;
         aspect-ratio: 16/9;
@@ -3593,8 +3826,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     }
 
     .team-img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 12px;
     }
 
@@ -3611,8 +3844,8 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
     }
 
     .alumni-img {
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
     }
 
     .app-unique-grid {
@@ -3667,16 +3900,21 @@ p a:not(.nav-link):not(.mobile-link):not(.pp-btn):not(.btn-sm):not(.btn-outline)
         font-size: 1.4rem;
     }
 
+    #contact-map {
+        min-height: 260px !important;
+    }
+
     /* Improve touch targets on mobile */
     .btn-sm {
         padding: 10px 16px;
         font-size: var(--text-xs);
-        min-height: 36px;
+        min-height: 40px;
         min-width: 85px;
         margin-bottom: 8px;
     }
 
     .filter-btn {
-        padding: 9px 18px;
+        padding: 10px 18px;
         font-size: 10px;
+        min-height: 40px;
     }
